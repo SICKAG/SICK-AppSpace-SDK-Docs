@@ -1,0 +1,252 @@
+= SICK AppSpace SDK - First SensorApp - step by step
+
+# About this Tutorial
+## Overview
+This demonstration allows a quick introduction to the SICK AppSpace toolchain. We follow Ulrike User and Doris Developer through the following steps:
+
+. Downloading a SensorApp from a public SICK repository
+. Connecting to SICK AppEngine and installing the SensorApp
+. Interacting with the web-based user interface of the SensorApp
+. Modifying the SensorApp functionality and user interface
+
+The described activity can be done without additional instructions to obtain a hands-on experience with SICK AppSpace, and it can be used as a demo in a training or discussion context.
+
+[NOTE]
+====
+The instructions are accompanied by comments in the source code of the SensorApp. Thus, for the standard exercise, participants only need to delete the characters "--" in front of the respective lines in the source code. The respective parts are marked/numbered within the source code by "\*#*" and referenced respectively within the instructions given in this exercise.
+====
+
+## Prerequisites
+ * _Microsoft Visual Studio Code_
+ * _SICK AppSpace SDK for Microsoft Visual Studio Code_ installed. Installation instructions can be found in the https://github.com/sas-test/AppStudio-VSC-extensions-User-Guide/blob/main/ASVSCExtensions/ASVSCExtensions.adoc#installation[SICK AppSpace SDK for VS Code guide]
+ * SICK AppEngine 1.3.2 or newer (https://www.sick.com/gb/en/sick-appspace/sick-appspace-software-tools/sick-appengine/c/g547567[download on sick.com, operational for 2 hours at a time as demo version])
+ * An up-to-date browser (Chrome recommended)
+ * Recommended: Very basic programming knowledge on the side of the participant(s)
+
+# Step-by-step guide
+.Story
+****
+_In a packaging facility, a printer prints individual QR codes. Ulrike User is tasked with setting up a sensor solution to verify that the printed QR codes have the correct content. She hears about the Development Demonstration SensorApp which may perform such a task when installed on a programmable InspectorP device from SICK._
+****
+
+In this tutorial, we will use the SICK AppEngine software instead of an actual device. This will allow everyone to follow the described process, even if no physical devices is at hand.
+
+## Step 1: Download and add the SensorApp to the workspace
+****
+_Ulrike finds the SensorApp in one of the public SICK repositories and downloads it._
+****
+. Access the linked https://github.com/sas-test/Overview-of-SICK-AppSpace-eco-system/tree/master/FirstStepsAppEngine/QRCodeReader.zip[zip file containing a sample SensorApp on github]
+. Click on the *Download* button in the browser
++
+image::media/Github_Download.png[]
+. Open _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
+. Open the workspace folder in the Explorer
+.. Right click on the empty space in the Workspace Folder section of the _Explorer_ view
+.. Select *Reveal in File Explorer*
++
+image::media/VSC_Reveal.png[]
+. Extract the downloaded zip file to a separate directory inside the Workspace Folder
+
+## Step 2: Connect to SICK AppEngine and install the SensorApp
+****
+_Ulrike now wants to find out if the Development Demonstration SensorApp serves her purpose of verifying the QR codes._
+****
+. Start SICK AppEngine
+. Connect the SDK with the SICK AppEngine
+.. Open the *SICK AppSpace development* view
++
+image::media/VSC_Step2_Hint1.png[]
+.. Find the *Device list* section
++
+image::media/VSC_Step2_Hint2.png[]
+.. Click on the settings button (cogwheel icon) next to the section's name. This will open a settings file
++
+image::media/VSC_Step2_Hint3.png[]
+.. Copy the code below into the file, replacing anything that might be there:
++
+[source,json]
+----
+{
+  "keepSdds": false,
+  "devices": [
+    {
+      "id": "test-device",
+      "ipAddress": "127.0.0.1",
+      "port": 2122,
+      "protocol": "COLA_2",
+      "byteOrder": "BIG_ENDIAN",
+      "addressingMode": "BY_NAME",
+      "driver": null
+    }
+  ]
+}
+----
+.. Save the file and close the tab displaying it
+.. Click on the refresh button next to the *Device list*
++
+image::media/VSC_Step2_Hint4.png[]
+.. The SICK AppEngine should now be visible in the list. Click on the circle to the left of the name of the device (in this case the SICK AppEngine). If connected correctly, circle should now include a check mark
++
+image::media/VSC_Step2_Hint5.png[]
++
+[NOTE]
+====
+If you encounter any problems trying to connect to the device / SICK AppEngine, please refer to the document https://github.com/sas-test/AppStudio-VSC-extensions-User-Guide/blob/main/ASVSCExtensions/ASVSCExtensions.adoc#connecting-to-the-device[SICK AppSpace SDK for VS Code guide]
+====
+. Upload / install the app to the device:
+.. Find the *QRCodeReader* SensorApp in the *Workspaces* section and click on the upload button (play icon with an upwards arrow) to the right of the name of the SensorApp to upload the SensorApp to the SICK AppEngine
++
+image::media/VSC_Step2_Hint6.png[]
+.. Press enter on your keyboard to confirm appearing prompts
++
+image::media/VSC_Step2_Hint7.png[]
+
+## Step 3: Adjusting the SensorApp
+****
+_Ulrike wants to check if the Development Demonstration SensorApp she just installed solves her verification application. She realizes, that it does not solve her application completely, so she asks her colleague Doris Developer for help._
+****
+. In a browser: enter the IP address of the device to access the SensorApp’s user interface (the SICK AppEngine is typically reachable under *127.0.0.1* or *localhost*)
+. Adjust the *Cycle time* to get the pictures in desired intervals
++
+[NOTE]
+====
+The additional settings available in the UI, namely _Exposure time_, _Gain_ and _Live mode_ are only available if the SensorApp is running on an actual programmable sensor. Therefore these are not available if you are using the SICK AppEngine for this exercise.
+====
+
+### Hint
+image::media/SensorAppUI_Step3.png[]
+
+## Step 4: Edit code
+****
+_Doris Developer adjusts the Development Demonstration SensorApp so that it reads QR codes._
+****
+. Open _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
+. If not connected already, connect to the device (see Step 2)
+. Open the script _scripts/Processing.lua_ via the Explorer to display it in the code editor
+. In the source code: create a CodeReader object named qrReader (see the comment containing "\*1.*" in the source code)
+. Use the object to decode and store the QR code from the images taken by the InspectorP63x. Visualize the codes that are found within the viewer on the UI of the SensorApp by calling the _visualizeResult()_ function (see \*2.\*)
+. Remove the leading "--" at the start of lines 83, 98 and 99
+** Resulting code:
++
+[source,lua]
+----
+-- *1.* Create a CodeReader object
+local qrReader = Image.CodeReader.QR.create()
+
+-- *3.* Define the target code content for comparison
+-- local validContent = "SICK AppSpace"
+
+-- Function is called from "Camera" Script
+--@processImage(img:Image, sensorData:SensorData)
+function processImage(img, sensorData)
+  if img:getType() ~= "UINT8" then
+    img:toGray()
+  end
+
+  displayImage(img)
+
+  -- *2.* Use Coder Reader object to decode image and show results in viewer
+local codes, duration = qrReader:decode(img)
+visualizeResult(img, codes)
+----
+. Save the file and upload the SensorApp to the device to apply the changes (see Step 2 for detailed instructions)
+. Reload the UI in your browser; the Results section now displays the QR code content and the codes are highlighted in the image shown in the viewer
+
+image::media/SensorAppUI_Step4.png[]
+
+## Step 5: Result feedback
+****
+_Ulrike is impressed by the progress. She asks Doris to make the device give visible (and / or audible) feedback, depending on whether the identified code content is "SICK AppSpace."_
+****
+
+. Define the validContent string to be equal to "SICK AppSpace" for the comparison with the decoded QR code (see \*3.*)
+. Extract the content of the first code identified from the image and print the results in the console (see \*4.*)
+. Add an if-statement to create device feedback based on the comparison of code content and target content (validContent) (see \*5.*)
+. Display the result of the comparison in the console and adjust the color of the overlay shown in the image on the UI of the SensorApp accordingly (see \*6.*)
+** Remove the leading "--" at the start of the respective lines
+** Resulting code:
++
+[source,lua]
+----
+-- *3.* Define the target code content for comparison
+local validContent = "SICK AppSpace"
+----
++
+[source,lua]
+----
+-- *4.* Extract content of first code (if any) and log comparison result
+  local codeContent = nil
+  if codes and #codes > 0  then
+    codeContent = tostring(codes[1]:getContent())
+  end
+  print("Valid Input:  ", validContent)
+  print("Code content: ", codeContent)
+
+  *5.* Add if-statement to create device feedback based on comparison of code content and target content
+  if codeContent == validContent then
+    visualizeResult(img, codes, true)
+    generateDeviceFeedback(true)
+    print("Content is valid!")
+  else
+    visualizeResult(img, codes, false)
+    generateDeviceFeedback(false)
+    print("Content is invalid!")
+  end
+
+  busy = false
+end
+----
++
+[source,lua]
+----
+- *6.* Console entry and overlay colors based on comparison of code content and target content
+    if contentIsValid then
+      textDeco:setColor(0, 255, 0)
+      codeDecoration:setLineColor(0, 255, 0)
+    elseif contentIsValid == false and contentIsValid ~= nil then
+      textDeco:setColor(255, 0, 0)
+      codeDecoration:setLineColor(255, 0, 0)
+    end
+----
+. Save the file and upload SensorApp to the device to apply the changes (see Step 2 for detailed instructions)
+
+## Step 6: Editing the UI
+****
+_Ulrike is happy that she can check if the printer printed QR codes with the content "SICK AppSpace." However, she expects that the code may change in the future. She wants to be able to change the code content that the device is checking for. Not being a developer herself, Ulrike cannot change the variable validContent in the source code. Therefore she asks Doris to enable the users of the SensorApp to change the value it is looking for without source code access. They decide that users should be able to input the target content via the SensorApp UI._
+****
+
+. Double click on _page/page/pages01/QR code reading.html_ in the Explorer to open it in the SICK UI-Builder
++
+image::media/UIBuilder_Step6_Hint1.png[]
+. Grab a *RowLayout* from the *Elements* selection on the left side and drag it onto the plus sign at the bottom of *ColumnLayout1*
++
+image::media/UIBuilder_Step6_Hint2.png[]
+. Take a *TextField* and drag-and-drop it onto the newly created *RowLayout7*
++
+image::media/UIBuilder_Step6_Hint3.png[]
+. Copy the already used _results_ field, move the copy between *RowLayout6* and *RowLayout7* and change the property _data-content_ on the right to "Target"
++
+image::media/UIBuilder_Step6_Hint4.png[]
+. Create bindings between the new UI elements and the functions for evaluation in the source code to allow them to interact
+** To bind the function _getValidContent_ to the *TextField* to display the QR code on the UI:
+
+... Click on the created text field, go to *Bindings* and press the *Add* button
++
+image::media/UIBuilder_Step6_Hint5.png[]
+... Press *Control property/ Event*, choose _value_ and as *Binding type* pick *Function(Crown)*
++
+image::media/UIBuilder_Step6_Hint6.png[]
+... Add the proposed binding _UI/getValidContent_
++
+image::media/UIBuilder_Step6_Hint7.png[]
+... Go to binding properties and set _auto-update_ to 0 and check _update-on-resume_
+** To bind the text field property change to the function _setValidContent_ to enable the user to change the value to which the app should compare the decoded QR code:
+... Go to *Bindings* and press *Add* button
+... Press *Control property/events*, choose _change_ and as *Binding type* pick *Function(Crown)*
+... Finally add the proposed binding _UI/setValidContent_
+... Leave binding properties as proposed
++
+image::media/UIBuilder_Step6_Hint8.png[]
+. Save the file and upload the SensorApp to the device to apply the changes and check the refreshed UI to see the new functionality (see Step 2)
+
+image::media/SensorAppUI_Step6.png[]
