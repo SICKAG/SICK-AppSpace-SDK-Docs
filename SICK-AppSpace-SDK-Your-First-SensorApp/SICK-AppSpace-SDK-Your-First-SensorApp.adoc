@@ -18,8 +18,8 @@ The instructions are accompanied by comments in the source code of the SensorApp
 
 ## Prerequisites
  * _Microsoft Visual Studio Code_
- * _SICK AppSpace SDK for Microsoft Visual Studio Code_ installed. Installation instructions can be found in the https://github.com/sas-test/AppStudio-VSC-extensions-User-Guide/blob/main/ASVSCExtensions/ASVSCExtensions.adoc#installation[SICK AppSpace SDK for VS Code guide]
- * SICK AppEngine 1.3.2 or newer (https://www.sick.com/gb/en/sick-appspace/sick-appspace-software-tools/sick-appengine/c/g547567[download on sick.com, operational for 2 hours at a time as demo version])
+ * _SICK AppSpace SDK for Microsoft Visual Studio Code_ installed. Installation instructions can be found in the https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/SICK-AppSpace-SDK-Getting-Started/SICK-AppSpace-SDK-Getting-Started.adoc#installation[SICK AppSpace SDK for VS Code guide]
+* SICK AppEngine 1.3.2 or newer download on sick.com, operational for 2 hours at a time as demo version: (https://www.sick.com/sick-appengine-28x6429-windows/p/p663780[for Windows] or https://www.sick.com/sick-appengine-28x6429-linux/p/p663779[for Linux])
  * An up-to-date browser (Chrome recommended)
  * Recommended: Very basic programming knowledge on the side of the participant(s)
 
@@ -35,7 +35,7 @@ In this tutorial, we will use the SICK AppEngine software instead of an actual d
 ****
 _Ulrike finds the SensorApp in one of the public SICK repositories and downloads it._
 ****
-. Access the linked https://github.com/sas-test/Overview-of-SICK-AppSpace-eco-system/tree/master/FirstStepsAppEngine/QRCodeReader.zip[zip file containing a sample SensorApp on github]
+. Access the linked https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/SICK-AppSpace-SDK-Your-First-SensorApp/QRCodeReader.zip[zip file containing a sample SensorApp on github]
 . Click on the *Download* button in the browser
 +
 image::media/Github_Download.png[]
@@ -91,7 +91,7 @@ image::media/VSC_Step2_Hint5.png[]
 +
 [NOTE]
 ====
-If you encounter any problems trying to connect to the device / SICK AppEngine, please refer to the document https://github.com/sas-test/AppStudio-VSC-extensions-User-Guide/blob/main/ASVSCExtensions/ASVSCExtensions.adoc#connecting-to-the-device[SICK AppSpace SDK for VS Code guide]
+If you encounter any problems trying to connect to the device / SICK AppEngine, please refer to the document https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/SICK-AppSpace-SDK-Getting-Started/SICK-AppSpace-SDK-Getting-Started.adoc#connecting-to-a-device[SICK AppSpace SDK for VS Code guide]
 ====
 . Upload / install the app to the device:
 .. Find the *QRCodeReader* SensorApp in the *Workspaces* section and click on the upload button (play icon with an upwards arrow) to the right of the name of the SensorApp to upload the SensorApp to the SICK AppEngine
