@@ -7,7 +7,7 @@ This tutorial explains how to install the SICK AppSpace SDK for Microsoft Visual
 ## Prerequisites
 * Rudimentary programming knowledge
 * Installed https://code.visualstudio.com/download[Microsoft Visual Studio Code]
-* Installed SICK AppEngine https://www.sick.com/gb/en/sick-appspace/sick-appspace-software-tools/sick-appengine/sick-appengine-28x6429/p/p662113[full version] or https://www.sick.com/gb/en/sick-appspace/sick-appspace-software-tools/sick-appengine/sick-appengine-28x6429-90-days-trial/p/p664247[trial version]
+* SICK AppEngine 1.3.2 or newer. Download demo version on sick.com, operational for 2 hours at a time: https://www.sick.com/sick-appengine-28x6429-windows/p/p663780[for Windows] or https://www.sick.com/sick-appengine-28x6429-linux/p/p663779[for Linux] - SICK ID required to download, registration just takes seconds.
 
 # The SICK AppSpace SDK components
 The _SICK AppSpace SDK_ is composed of several parts that come in a form of _extensions_ for Microsoft Visual Studio Code. Find below a list of the components with short explanations of their purpose:
@@ -40,7 +40,6 @@ After starting Microsoft Visual Studio Code for the first time after the install
 
 image::media/welcome_view.png[]
 
-// TODO: Add short instructions on how to add license
 ====
 *For SICK AppStudio users:*
 
@@ -251,5 +250,3 @@ Currently, it is not possible to delete, stop or start the SensorApps, which are
 
 # More details
 Please note, that additional tutorials and information on technical details as well as the latest releases will be made available in the future.
-
-# Download Tutorial as PDF
