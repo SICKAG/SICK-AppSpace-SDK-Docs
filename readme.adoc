@@ -30,7 +30,3 @@ https://github.com/SICKAG/sick-appspace-sdk-docs/blob/master/SICK-AppSpace-SDK-G
 Take the perspective of Doris Developer and Ulrike User to develop your first SensorApp. The described activity can be done without additional instructions to obtain a hands-on experience with SICK AppSpace, and it can be used as a demo in a training or discussion context.
 
 https://github.com/SICKAG/sick-appspace-sdk-docs/blob/master/SICK-AppSpace-SDK-Your-First-SensorApp/SICK-AppSpace-SDK-Your-First-SensorApp.adoc[Your first SensorApp]
-
-include::SICK-AppSpace-SDK-Your-First-SensorApp/SICK-AppSpace-SDK-Your-First-SensorApp.adoc[SICK AppSpace SDK - First SensorApp - step by step]
-include::SICK-AppSpace-SDK-Getting-Started/SICK-AppSpace-SDK-Getting-Started.adoc[SICK AppSpace SDK for VS Code - getting started]
-include::Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[Programming SensorApps: Lua annotations]
