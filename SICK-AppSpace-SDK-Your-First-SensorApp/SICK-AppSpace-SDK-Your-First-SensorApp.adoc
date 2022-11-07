@@ -39,7 +39,7 @@ _Ulrike finds the SensorApp in one of the public SICK repositories and downloads
 . Click on the *Download* button in the browser
 +
 image::media/Github_Download.png[]
-. Open _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
+. Start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
 . Open the workspace folder in the Explorer
 .. Right click on the empty space in the Workspace Folder section of the _Explorer_ view
 .. Select *Reveal in File Explorer*
@@ -51,6 +51,8 @@ image::media/VSC_Reveal.png[]
 ****
 _Ulrike now wants to find out if the Development Demonstration SensorApp serves her purpose of verifying the QR codes._
 ****
+
+. If not started yet, start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
 . Start SICK AppEngine
 . Connect the SDK with the SICK AppEngine
 .. Open the *SICK AppSpace development* view
@@ -120,12 +122,21 @@ image::media/SensorAppUI_Step3.png[]
 ****
 _Doris Developer adjusts the Development Demonstration SensorApp so that it reads QR codes._
 ****
-. Open _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
+. If not started yet, start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_ and _SICK AppEngine_
 . If not connected already, connect to the device (see Step 2)
-. Open the script _scripts/Processing.lua_ via the Explorer to display it in the code editor
-. In the source code: create a CodeReader object named qrReader (see the comment containing "\*1.*" in the source code)
-. Use the object to decode and store the QR code from the images taken by the InspectorP63x. Visualize the codes that are found within the viewer on the UI of the SensorApp by calling the _visualizeResult()_ function (see \*2.\*)
-. Remove the leading "--" at the start of lines 83, 98 and 99
+. Before editing the code, the SensorApp needs to be activated so the code completion can work properly
+.. Open the *SICK AppSpace development* view
++
+image::media/VSC_Step4_Hint1.png[]
+.. Find the *DeviceModel configuration* section and scroll down until you see the *Apps* selection
+.. In the apps selection find _QRCodeReader_ SensorApp and click on the circle to the left of it. If the SensorApp is activated correctly, the circle should now include a check mark
++
+image::media/VSC_Step4_Hint2.png[]
+. Open the script _scripts/Processing.lua_ and _scripts/UI.lua_ via the Explorer to display them in the code editor
+. In _Processing.lua_:
+.. Create a CodeReader object named qrReader (see the comment containing "\*1.*" in the source code)
+.. Use the object to decode and store the QR code from the images taken by the device. Visualize the codes that are found within the viewer on the UI of the SensorApp by calling the _visualizeResult()_ function (see \*2.\*)
+.. To clarify further: in summary, the instructions above ask you to remove the leading "--" at the start of lines 4, 43 and 44
 ** Resulting code:
 +
 [source,lua]
@@ -135,15 +146,18 @@ local qrReader = Image.CodeReader.QR.create()
 
 -- *3.* Define the target code content for comparison
 -- local validContent = "SICK AppSpace"
-
--- Function is called from "Camera" Script
---@processImage(img:Image, sensorData:SensorData)
-function processImage(img, sensorData)
+----
++
+[source,lua]
+----
+---Function that searches input images for QR codes
+---@param img Image Input image
+---@param sensorData SensorData Information about acquisition device state
+---@param visualizeResult function Function from UI script used to display images
+local function processImage(img, sensorData)
   if img:getType() ~= "UINT8" then
     img:toGray()
   end
-
-  displayImage(img)
 
   -- *2.* Use Coder Reader object to decode image and show results in viewer
 local codes, duration = qrReader:decode(img)
@@ -156,15 +170,17 @@ image::media/SensorAppUI_Step4.png[]
 
 ## Step 5: Result feedback
 ****
-_Ulrike is impressed by the progress. She asks Doris to make the device give visible (and / or audible) feedback, depending on whether the identified code content is "SICK AppSpace."_
+_Ulrike is impressed by the progress. She asks Doris to make the device give visible (and / or audible) feedback, depending on whether the identified code content is "SICK AppSpace"._
 ****
 
-. Define the validContent string to be equal to "SICK AppSpace" for the comparison with the decoded QR code (see \*3.*)
-. Extract the content of the first code identified from the image and print the results in the console (see \*4.*)
-. Add an if-statement to create device feedback based on the comparison of code content and target content (validContent) (see \*5.*)
-. Display the result of the comparison in the console and adjust the color of the overlay shown in the image on the UI of the SensorApp accordingly (see \*6.*)
-** Remove the leading "--" at the start of the respective lines
-** Resulting code:
+. In _Processing.lua_:
+.. Define the validContent string to be equal to "SICK AppSpace" for the comparison with the decoded QR code (see \*3.*)
+.. Extract the content of the first code identified from the image and print the results in the console (see \*4.*)
+.. Add an if-statement to create device feedback based on the comparison of code content and target content (validContent) (see \*5.*)
+. In _UI.lua_:
+.. Display the result of the comparison in the console and adjust the color of the overlay shown in the image on the UI of the SensorApp accordingly (see \*6.*)
+* Remove the leading "--" at the start of the respective lines
+* Resulting code:
 +
 [source,lua]
 ----
@@ -192,8 +208,6 @@ local validContent = "SICK AppSpace"
     generateDeviceFeedback(false)
     print("Content is invalid!")
   end
-
-  busy = false
 end
 ----
 +
@@ -231,22 +245,21 @@ image::media/UIBuilder_Step6_Hint4.png[]
 ** To bind the function _getValidContent_ to the *TextField* to display the QR code on the UI:
 
 ... Click on the created text field, go to *Bindings* and press the *Add* button
+... Press *Control property / event*, choose _value_ and as *Binding type* pick *Serves*
+... Select the function _UI/getValidContent_
+... Add the binding by pressing the *Add binding* button
 +
 image::media/UIBuilder_Step6_Hint5.png[]
-... Press *Control property/ Event*, choose _value_ and as *Binding type* pick *Function(Crown)*
+... Open the binding properties of this binding by selecting the newly added binding in the list
+... Set _auto-update-ms_ to 0 to avoid unnecessary updates to reduce the work load created by the binding
 +
 image::media/UIBuilder_Step6_Hint6.png[]
-... Add the proposed binding _UI/getValidContent_
-+
-image::media/UIBuilder_Step6_Hint7.png[]
-... Go to binding properties and set _auto-update_ to 0 and check _update-on-resume_
 ** To bind the text field property change to the function _setValidContent_ to enable the user to change the value to which the app should compare the decoded QR code:
 ... Go to *Bindings* and press *Add* button
-... Press *Control property/events*, choose _change_ and as *Binding type* pick *Function(Crown)*
-... Finally add the proposed binding _UI/setValidContent_
-... Leave binding properties as proposed
+... Press *Control property / event*, choose _change_ and as *Binding type* pick *Serves*
+... Finally, add the binding _UI/setValidContent_
 +
-image::media/UIBuilder_Step6_Hint8.png[]
+image::media/UIBuilder_Step6_Hint7.png[]
 . Save the file and upload the SensorApp to the device to apply the changes and check the refreshed UI to see the new functionality (see Step 2)
 
 image::media/SensorAppUI_Step6.png[]
