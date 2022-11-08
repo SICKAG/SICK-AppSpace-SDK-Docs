@@ -39,9 +39,10 @@ _Ulrike finds the SensorApp in one of the public SICK repositories and downloads
 . Click on the *Download* button in the browser
 +
 image::media/Github_Download.png[]
-. Start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
+. Start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_ and open a workspace folder (any folder in which you wish to keep your SensorApps)
 . Open the workspace folder in the Explorer
 .. Right click on the empty space in the Workspace Folder section of the _Explorer_ view
+// TODO: Linux has different prompt in the context menu. Maybe add alternatives
 .. Select *Reveal in File Explorer*
 +
 image::media/VSC_Reveal.png[]
@@ -107,7 +108,13 @@ image::media/VSC_Step2_Hint7.png[]
 ****
 _Ulrike wants to check if the Development Demonstration SensorApp she just installed solves her verification application. She realizes, that it does not solve her application completely, so she asks her colleague Doris Developer for help._
 ****
-. In a browser: enter the IP address of the device to access the SensorApp’s user interface (the SICK AppEngine is typically reachable under *127.0.0.1* or *localhost*)
+. Open the UI of the device
+** Click the *Open device user interfaces* button next to the name of the connected device in the *Device list* section and select *QRCodeReader* from the selection
++
+image::media/VSC_Step3_open_device_UI.png[]
++
+image::media/VSC_Step3_select_device_UI.png[]
+** Alternatively, open a web browser and type in the address of the device in the address bar (the SICK AppEngine is typically reachable under *127.0.0.1* or *localhost*)
 . Adjust the *Cycle time* to get the pictures in desired intervals
 +
 [NOTE]
@@ -126,9 +133,9 @@ _Doris Developer adjusts the Development Demonstration SensorApp so that it read
 . If not connected already, connect to the device (see Step 2)
 . Before editing the code, the SensorApp needs to be activated so the code completion can work properly
 .. Open the *SICK AppSpace development* view
+.. Find the the *App model configuration* section
 +
 image::media/VSC_Step4_Hint1.png[]
-.. Find the *DeviceModel configuration* section and scroll down until you see the *Apps* selection
 .. In the apps selection find _QRCodeReader_ SensorApp and click on the circle to the left of it. If the SensorApp is activated correctly, the circle should now include a check mark
 +
 image::media/VSC_Step4_Hint2.png[]
@@ -229,7 +236,7 @@ end
 _Ulrike is happy that she can check if the printer printed QR codes with the content "SICK AppSpace." However, she expects that the code may change in the future. She wants to be able to change the code content that the device is checking for. Not being a developer herself, Ulrike cannot change the variable validContent in the source code. Therefore she asks Doris to enable the users of the SensorApp to change the value it is looking for without source code access. They decide that users should be able to input the target content via the SensorApp UI._
 ****
 
-. Double click on _page/page/pages01/QR code reading.html_ in the Explorer to open it in the SICK UI-Builder
+. Double click on _pages/pages/pages01/QR code reading.html_ in the Explorer to open it in the SICK UI-Builder
 +
 image::media/UIBuilder_Step6_Hint1.png[]
 . Grab a *RowLayout* from the *Elements* selection on the left side and drag it onto the plus sign at the bottom of *ColumnLayout1*
