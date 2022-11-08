@@ -14,7 +14,7 @@ The _SICK AppSpace SDK_ is composed of several parts that come in a form of _ext
 
 * *SICK AppSpace Programmable Core* - provides core functionality and view (extension tabs) for SICK AppSpace SensorApp development
 * *SICK AppSpace Device Connectivity* - enables connection and communication with devices
-* *SICK AppSpace Lua Language Server* - supports working with _lua_ files
+* *SICK AppSpace Lua Language Server* - supports working with SICK AppSpace _lua_ files
 * *SICK AppSpace UI-Builder* - provides UI-Builder - a graphical editor for the _.html_ files
 
 # Installation
@@ -43,13 +43,14 @@ image::media/welcome_view.png[]
 ====
 *For SICK AppStudio users:*
 
-It is possible to also add your license file by opening the command prompt (default - click F1) and searching for _SICK AppSpace: Reset AppSpace license_ command.
+It is possible to also add your license file. By default, the SDK will ask for a license after it is started for the first time. In the bottom of the screen, a pop-up window will appear. Click *Choose license file* to select a license file from your computer.
+
+image:media/license_popup.png[]
+
+If the user already added the license, or if the license prompt didn't appear, the license can be reset by opening the command prompt (default - press F1) and searching for _SICK AppSpace: Reset AppSpace license_ command.
 
 image::media/commands_search_reset_license.png[]
 
-In the bottom of the screen a pop-up window will appear. Click *Choose license file* to select a license file from your computer.
-
-image:media/license_popup.png[]
 ====
 
 # The SICK AppSpace development view
@@ -57,7 +58,7 @@ Most of the features of the _SICK AppSpace SDK_ can be accessed via the *SICK Ap
 
 image::media/sick_appspace_dev_view_button.png[]
 
-The view consists out of three main sections: *Workspaces*, *Device list* and *DeviceModel configuration*. The sections central for SensorApp development.
+The view consists out of four main sections: *Workspaces*, *Device list* and *DeviceModel configuration* and *App model configuration*. The sections central for SensorApp development.
 
 # Development process
 This paragraph presents a general workflow for SensorApp development with the _SICK AppSpace SDK_. Depending on your task, not all of the steps may be relevant. This tutorial covers all steps in the general order, in which you would experience them when developing your very first SensorApp.
@@ -89,12 +90,14 @@ image::media/dev_view_to_workspaces.png[]
 It is recommended to select a specific device or manifest before starting the development of a SensorApp. Doing this enables the code completion to display the CROWNs (APIs), which the device offers as the manifest provides information about the CROWNs available on a specific device and their capabilities.
 
 ### Selecting existing manifest
-Selecting an existing manifest can be done in the *Device manifest* sub-section of the *DeviceModel configuration* section, which is part of the *SICK AppSpace development* view. There are several options readily available with the _SICK AppSpace SDK_, which includes most recent releases of the device manifests of most of the SICK AppSpace programmable devices. To select one of them, the circle on the left of the name of the manifest can be clicked. The current selection is indicated by the circle being filled and displaying a check mark. Only one device manifest can be active at a time.
+Selecting an existing manifest can be done in the *DeviceModel configuration* section, which is part of the *SICK AppSpace development* view. There are several options readily available with the _SICK AppSpace SDK_, which includes most recent releases of the device manifests of most of the SICK AppSpace programmable devices. To select one of them, the circle on the left of the name of the manifest can be clicked. The current selection is indicated by the circle being filled and displaying a check mark. Only one device manifest can be active at a time.
 
 image::media/devicemodel_selection.png[]
 
 ### Selecting a SensorApp manifest
-During the development of a solution consisting out of one or more SensorApps, some of them may provide their own CROWNs. The code completion for these specific CROWNs is not automatically enabled and needs to be switched on manually. This is done in a similar way as selecting a manifest of a specific device. This functionality is located in a sub-section of the *DeviceModel configuration* section, which is called *Apps* and located below all the listed device manifests. To activate the code completion based on one or more SensorApps, the circle on the left of the name of the SensorApp can be clicked. Each app that has been activated will be marked by a filled circle with a check mark in it. Multiple SensorApps can be active in this context at the same time. Activating the SensorApps this way is necessary for the UIBuilder's binding tool to function properly.
+During the development of a solution consisting out of one or more SensorApps, some of them may provide their own CROWNs. The code completion and UIBuilder binding connection for these specific CROWNs is not automatically enabled and needs to be switched on manually. This is done in a similar way as selecting a manifest of a specific device.
+
+This functionality is located in the *App model configuration* section, which is part of the *SICK AppSpace development* view. To activate the code completion based on one or more SensorApps, the circle on the left of the name of the SensorApp can be clicked. Each app that has been activated will be marked by a filled circle with a check mark in it. Multiple SensorApps can be active in this context at the same time. Activating the SensorApps this way is necessary for the UIBuilder's binding tool and Language Server's code completion to function properly.
 
 image::media/appmanifest_selection.png[]
 
@@ -144,7 +147,7 @@ Explanation of the fields in the configuration:
 * *protocol* - selected a _CoLa_ protocol for communication with this device. Possible values: *COLA_A*, *COLA_B* and *COLA_2*
 * *byteOrder* - byte order used to communicate with the device. Possible values: *BIG_ENDIAN*, *LITTLE_ENDIAN*
 * *addressingMode* - _CoLa_ addressing mode used in the communication. Possible values: *BY_NAME*, *BY_INDEX*
-* *driver* - path to the encrypted CID file, set to _null_ for automatic SDD/CID upload
+* *driver* - set to _null_ for automatic SDD/CID upload
 
 Adding more devices is possible by adding another device entry in the connection file.
 
@@ -194,7 +197,7 @@ More information about how to code SensorApps and coding guidelines will be adde
 
 The code editing and SensorApp designing is very similar to the way established in SICK AppStudio.
 
-The documentation style used in the SICK AppStudio versions before 3.7 is not supported by the code completion. The current annotation guide can be found here via this https://github.com/sas-test/Programming-SensorApps-Tutorials/blob/main/LuaAnnotationsTutorial/LuaAnnotations.adoc[link].
+The documentation style used in the SICK AppStudio versions before 3.7 is not supported by the code completion. The current annotation guide can be found here via this https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[link].
 ====
 
 Serving the functions and events to be available as CROWNs can be done via code actions. To serve a function, the name of the function needs to be selected in the code editor. You can open the code actions menu by pressing _CTRL + ._ or by right clicking the selected text and choosing the appropriate option from the context menu. Selecting *Serve Function* will create the respective documentation in the lua file, a line of code that serves the function and an entry in the manifest will be created, declaring the CROWN.
