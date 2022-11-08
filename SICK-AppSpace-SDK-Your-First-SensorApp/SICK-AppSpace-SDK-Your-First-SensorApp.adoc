@@ -56,7 +56,7 @@ _Ulrike now wants to find out if the Development Demonstration SensorApp serves 
 . If not started yet, start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
 . Start SICK AppEngine
 . Connect the SDK with the SICK AppEngine
-.. Open the *SICK AppSpace development* view
+.. Open the *SICK AppSpace SDK* view
 +
 image::media/VSC_Step2_Hint1.png[]
 .. Find the *Device list* section
@@ -132,7 +132,7 @@ _Doris Developer adjusts the Development Demonstration SensorApp so that it read
 . If not started yet, start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_ and _SICK AppEngine_
 . If not connected already, connect to the device (see Step 2)
 . Before editing the code, the SensorApp needs to be activated so the code completion can work properly
-.. Open the *SICK AppSpace development* view
+.. Open the *SICK AppSpace SDK* view
 .. Find the the *App model configuration* section
 +
 image::media/VSC_Step4_Hint1.png[]
