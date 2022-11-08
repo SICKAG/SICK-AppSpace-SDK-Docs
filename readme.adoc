@@ -8,7 +8,7 @@ SICK AppSpace SDK is an extension pack published on the Visual Studio Code Marke
 
 https://www.sick.com/sick-appspace[General overview about SICK AppSpace]
 
-https://marketplace.visualstudio.com/items?itemName=sickag.appspace-sdk-extension-pack[Extension Pack]
+https://marketplace.visualstudio.com/items?itemName=sickag.appspace-sdk-extension-pack[SICK AppSpace - SDK in VSCode marketplace]
 
 
 ## Supported platforms
