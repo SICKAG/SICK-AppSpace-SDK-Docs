@@ -19,19 +19,16 @@ The _SICK AppSpace SDK_ is composed of several parts that come in a form of _ext
 
 # Installation
 
-// To MH: These instructions are not correct. The release version will be in form of bundle installer, available on the VSC marketplace. It will install automatically the plugins in correct order. I don't have more info yet. Please disregard this section.
 Open the Microsoft Visual Studio Code and go to the Extensions view.
 
 image::media/extensions_icon.png[]
 
-In the search bar: type _SICK_. You should see the _SICK AppSpace SDK_ components listed above appear in the search results.
+In the search bar: type _SICK AppSpace SDK_. You should see the _SICK AppSpace SDK_ bundle and components listed above appear in the search results.
 
-// TODO: Replace with image with actual search results
 image::media/extension_search_results.png[]
 
-Install each of the components by individually clicking on each of them and clicking *Install* button in the extensions' windows' or by clicking *Install* button in the extensions' entries' in the search result window.
+Install the *SICK AppSpace SDK* bundle by clicking on it and clicking *Install* button in the extension window or by clicking *Install* button in the extension entry in the search result window.
 
-// TODO: Replace with images with real extensions
 image::media/extension_window_install.png[]
 image::media/extension_search_entry_install.png[]
 
@@ -53,8 +50,8 @@ image::media/commands_search_reset_license.png[]
 
 ====
 
-# The SICK AppSpace development view
-Most of the features of the _SICK AppSpace SDK_ can be accessed via the *SICK AppSpace development* view. This view is added by the the _SICK AppSpace-Programmable-Core_ component of _SICK AppSpace SDK_ and should be available after correct installation process. It can be opened by clicking the *SICK AppSpace button* on the sidebar of Microsoft Visual Studio Code.
+# The SICK AppSpace SDK view
+Most of the features of the _SICK AppSpace SDK_ can be accessed via the *SICK AppSpace SDK* view. This view is added by the the _SICK AppSpace-Programmable-Core_ component of _SICK AppSpace SDK_ and should be available after correct installation process. It can be opened by clicking the *SICK AppSpace button* on the sidebar of Microsoft Visual Studio Code.
 
 image::media/sick_appspace_dev_view_button.png[]
 
@@ -82,7 +79,7 @@ Existing workspaces are handled similarly. In that case, the folder, which conta
 
 NOTE: Selecting multiple workspaces is also possible by utilizing the https://code.visualstudio.com/docs/editor/multi-root-workspaces[multi-root feature of Microsoft Visual Studio Code].
 
-After selecting the workspace in the *SICK AppSpace development* view, the name of the selected workspace(s) should be visible in the *Workspaces* section. Clicking the expand button to the left of the workspace in the list shows and hides the apps inside that specific folder.
+After selecting the workspace in the *SICK AppSpace SDK* view, the name of the selected workspace(s) should be visible in the *Workspaces* section. Clicking the expand button to the left of the workspace in the list shows and hides the apps inside that specific folder.
 
 image::media/dev_view_to_workspaces.png[]
 
@@ -90,20 +87,20 @@ image::media/dev_view_to_workspaces.png[]
 It is recommended to select a specific device or manifest before starting the development of a SensorApp. Doing this enables the code completion to display the CROWNs (APIs), which the device offers as the manifest provides information about the CROWNs available on a specific device and their capabilities.
 
 ### Selecting existing manifest
-Selecting an existing manifest can be done in the *DeviceModel configuration* section, which is part of the *SICK AppSpace development* view. There are several options readily available with the _SICK AppSpace SDK_, which includes most recent releases of the device manifests of most of the SICK AppSpace programmable devices. To select one of them, the circle on the left of the name of the manifest can be clicked. The current selection is indicated by the circle being filled and displaying a check mark. Only one device manifest can be active at a time.
+Selecting an existing manifest can be done in the *DeviceModel configuration* section, which is part of the *SICK AppSpace SDK* view. There are several options readily available with the _SICK AppSpace SDK_, which includes most recent releases of the device manifests of most of the SICK AppSpace programmable devices. To select one of them, the circle on the left of the name of the manifest can be clicked. The current selection is indicated by the circle being filled and displaying a check mark. Only one device manifest can be active at a time.
 
 image::media/devicemodel_selection.png[]
 
 ### Selecting a SensorApp manifest
 During the development of a solution consisting out of one or more SensorApps, some of them may provide their own CROWNs. The code completion and UIBuilder binding connection for these specific CROWNs is not automatically enabled and needs to be switched on manually. This is done in a similar way as selecting a manifest of a specific device.
 
-This functionality is located in the *App model configuration* section, which is part of the *SICK AppSpace development* view. To activate the code completion based on one or more SensorApps, the circle on the left of the name of the SensorApp can be clicked. Each app that has been activated will be marked by a filled circle with a check mark in it. Multiple SensorApps can be active in this context at the same time. Activating the SensorApps this way is necessary for the UIBuilder's binding tool and Language Server's code completion to function properly.
+This functionality is located in the *App model configuration* section, which is part of the *SICK AppSpace SDK* view. To activate the code completion based on one or more SensorApps, the circle on the left of the name of the SensorApp can be clicked. Each app that has been activated will be marked by a filled circle with a check mark in it. Multiple SensorApps can be active in this context at the same time. Activating the SensorApps this way is necessary for the UIBuilder's binding tool and Language Server's code completion to function properly.
 
 image::media/appmanifest_selection.png[]
 
 ## Connecting to a device
 
-Connecting to a device like e.g. an InspectorP6xx or the SICK AppEngine on a PC can be done in the *Device list* section of the *SICK AppSpace development* view. Initially, the list is empty as the connection settings need to be configured first.
+Connecting to a device like e.g. an InspectorP6xx or the SICK AppEngine on a PC can be done in the *Device list* section of the *SICK AppSpace SDK* view. Initially, the list is empty as the connection settings need to be configured first.
 
 image::media/device_list_empty.png[]
 
@@ -172,7 +169,7 @@ image::media/device_list_unavailable.png[]
 After selecting a workspace, you can start developing your SensorApps. In a first step you either select an existing app to work on, or create a new one.
 
 ### Creating a new SensorApp
-To create a new SensorApp, the *SICK AppSpace development* view needs to be active. To create a new SensorApp, click on the plus button next to the name of the workspace.
+To create a new SensorApp, the *SICK AppSpace SDK* view needs to be active. To create a new SensorApp, click on the plus button next to the name of the workspace.
 
 image::media/dev_view_to_new_app.png[]
 
