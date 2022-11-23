@@ -106,9 +106,39 @@ image::media/device_list_empty.png[]
 
 The configuration of the connection can be done either automatically by using the scan functionality of the _SICK AppSpace SDK_, or manually by editing the JSON file containing settings options. Below you can find an explanation of the manual process. Instructions for the automated configuration will be added in the near future.
 
-// TODO: Add instructions for scan Automatic configuration
+### General information
+
+Connecting to the device is done by clicking on the circle to the left of the respective device in the list. 
+
+image::media/device_list_connected.png[]
+
+Connecting the device makes it also possible to use the manifest of the connected device for code completion. The option becomes available in the *DeviceModel configuration* section, usually at the top of the list.
+
+image::media/devicemodel_connected_device.png[]
+
+If the device is unavailable, a red X is visible next to its name on the device list. That may mean that the device is not connected, the IP address changed or something else is preventing a connection.
+
+image::media/device_list_unavailable.png[]
+
+Refreshing the status of the device doesn't happen automatically and therefore always needs to be performed manually.
+
+image::media/device_list_refresh.png[]
+
 ### Automatic configuration
-Coming soon...
+
+To automatically scan for devices on available network interfaces, the _Scan_ function can be used. To activate it click on the magnifying glass icon next to the *Device list* section title.
+
+image::media/device_list_scan.png[]
+
+After clicking on the magnifying glass icon, a menu appears within which you can select the network interfaces on which the device scan should be performed. Multiple interfaces can be selected. Each option has listed its IPv6 and IPv4 address range below its name. To scan for local devices such as AppEngine, select an option that has _127.0.0.1_ within its range. Click the *OK* button to start the scan.
+
+image::media/device_scan_interface_selection.png[]
+
+Depending on the number of selected interfaces and number of devices connected, the scan will take a different amount of time. The devices found during the scan appear in the menu window. Each entry includes the devices type, name, interface via which it is connected, IP address, communication protocol it uses (COLA_A/B or COLA_2), and firmware version. Select the device and click on the *OK* button to add it to *Device list*. Multiple devices can be selected and added at once.
+
+image::media/device_scan_devices_found.png[]
+
+Once added, the device(s) will become available in the *Device list* section and therefore can be connected to.
 
 ### Manual configuration
 To open the file containing the connection settings, click on the gear icon next to *Device list* section title.
@@ -148,22 +178,7 @@ Explanation of the fields in the configuration:
 
 Adding more devices is possible by adding another device entry in the connection file.
 
-After all the details are filled in and the device is connected to the computer, the list needs to be refreshed by clicking the refresh button next to title of the the *Device list* section. Refreshing the status of the device is never done automatically and needs always to be performed manually.
-
-image::media/device_list_refresh.png[]
-
-Connecting  to the device is done by clicking on the circle to the left of the device's name in the list. 
-
-image::media/device_list_connected.png[]
-
-Connecting the device makes it also possible to use the manifest of the connected device for code completion. The option becomes available in the *DeviceModel configuration* section, usually at the top of the list.
-
-image::media/devicemodel_connected_device.png[]
-
-If the device is unavailable, a red X is visible next to its name on the device list. That may mean that the device is not connected, the IP address changed or something else is preventing a connection.
-
-image::media/device_list_unavailable.png[]
-
+After all the details are filled in and the device is connected to the computer, the list needs to be refreshed by clicking the refresh button next to title of the the *Device list* section.
 
 ## Developing a SensorApp
 After selecting a workspace, you can start developing your SensorApps. In a first step you either select an existing app to work on, or create a new one.
