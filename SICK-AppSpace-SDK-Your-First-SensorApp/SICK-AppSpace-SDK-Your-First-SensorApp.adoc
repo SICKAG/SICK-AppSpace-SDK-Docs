@@ -62,35 +62,21 @@ image::media/VSC_Step2_Hint1.png[]
 .. Find the *Device list* section
 +
 image::media/VSC_Step2_Hint2.png[]
-.. Click on the settings button (cogwheel icon) next to the section's name. This will open a settings file
+.. Click on the scan button (magnifying glass icon) next to the name of the section. This will open a scan window
 +
 image::media/VSC_Step2_Hint3.png[]
-.. Copy the code below into the file, replacing anything that might be there:
-+
-[source,json]
-----
-{
-  "keepSdds": false,
-  "devices": [
-    {
-      "id": "test-device",
-      "ipAddress": "127.0.0.1",
-      "port": 2122,
-      "protocol": "COLA_2",
-      "byteOrder": "BIG_ENDIAN",
-      "addressingMode": "BY_NAME",
-      "driver": null
-    }
-  ]
-}
-----
-.. Save the file and close the tab displaying it
-.. Click on the refresh button next to the *Device list*
+.. Select the entry, which includes the local address in its description (127.0.0.1) and click *OK*
 +
 image::media/VSC_Step2_Hint4.png[]
-.. The SICK AppEngine should now be visible in the list. Click on the circle to the left of the name of the device (in this case the SICK AppEngine). If connected correctly, circle should now include a check mark
+.. Now the search process starts. After a successful search, the SICK AppEngine appears in the result window. Select it and click *OK*. You have now added it to the device list.
 +
 image::media/VSC_Step2_Hint5.png[]
+.. Click on the refresh button next to the *Device list*
++
+image::media/VSC_Step2_Hint6.png[]
+.. The SICK AppEngine should now be visible in the list. Click on the circle to the left of the name of the device (in this case the SICK AppEngine). If connected correctly, the circle should now include a check mark
++
+image::media/VSC_Step2_Hint7.png[]
 +
 [NOTE]
 ====
@@ -99,10 +85,10 @@ If you encounter any problems trying to connect to the device / SICK AppEngine, 
 . Upload / install the app to the device:
 .. Find the *QRCodeReader* SensorApp in the *Workspaces* section and click on the upload button (play icon with an upwards arrow) to the right of the name of the SensorApp to upload the SensorApp to the SICK AppEngine
 +
-image::media/VSC_Step2_Hint6.png[]
+image::media/VSC_Step2_Hint8.png[]
 .. Press enter on your keyboard to confirm appearing prompts
 +
-image::media/VSC_Step2_Hint7.png[]
+image::media/VSC_Step2_Hint9.png[]
 
 ## Step 3: Adjusting the SensorApp
 ****
