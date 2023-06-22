@@ -1,0 +1,92 @@
+= Scenarios and development options
+
+# Approaches
+
+Because *SICK AppSpace* supports several development approaches, that can be used to develop applications, developers can choose between options that are best suited for the specific application. 
+
+Here you can learn more about the approaches that best match to your requirements.
+
+## Flows
+
+image::media/flows.png[50,50]
+
+Integration of already available function blocks in one or more flows by using the *flow* approach.
+
+This is the most convenient way to create an application. You do not need any programming in either native or script language. You can simply combine function blocks to create a flow for your application.
+
+However, there is a limited number of function blocks immediately available on the devices and if some more specific functionalities are needed, they need to either be developed first using scripts or installed as a separate application.
+
+## Scripts
+
+image::media/scripts.png[50,50]
+
+Writing applications as scripts in Lua.
+
+This is also a quite convenient way to develop applications as scripting in the AppSpace is easy to learn and - beyond this - easy to use.
+
+This approach is sensible, if you would like to develop an application without the need to invoke a compiler. In addition, scripts are quite efficient in development, because you can always run your application without having to recompile anything.
+
+The *SICK AppSpace* development products, *SICK AppStudio* and *SICK AppSpace SDK*, include many tools that can help with selecting this approach, such as code completion, debugger etc.
+
+
+# Skills and tools
+
+## Requirements
+
+In order to start the development of application software (_SensorApps_) with *SICK AppSpace*, the following hardware & software tools, devices and utilities should be available:
+
+* Computer with Microsoft Windows 10+, 64 bit.
+** Verifying that the machine meets the minimum system requirements for the *SICK AppSpace* development product is recommended. If not, the  performance might be limited, e.g. resulting in long loading times.
+** Admin rights are required for the installation of the development tools
+
+* Optional: Ethernet cable to connect the programmable *SICK AppSpace* device, USB Ethernet adapter
+** If the Ethernet port of the PC/notebook is reserved for a LAN connection, a USB port of the PC can be used with a USB-to-Ethernet adapter. In that case, the IP address of the adapter must be adjusted accordingly to the device's subnet.
+
+* *SICK AppStudio* or *Microsoft Visual Studio Code* and *SICK AppSpace SDK* plugins
+** A valid personalized SICK AppStudio license is essential for the use of *SICK AppStudio* and provides access to the AppSpace area of the SICK support portal https://supportportal.sick.com/. To learn how you can obtain a valid license for *SICK AppStudio* , please contact your SICK representative
+** SICK AppStudio also provides an emulator functionality, making it possible to emulate a specific device. This can be used to start software development without the need for a HW device. However, any kind of input data like images must be available as resources in the corresponding app.
+
+* *SICK AppEngine*
+** *SICK AppEngine* allows for running and testing the developed applications and solution on the computer, without the need of being connected to the device all the times.
+** The software does not actually replace the real device and features only the emulation of the functions available on the specific hardware. It does not emulate the actual capabilities, such as limited hard drive space, memory or other physical resources
+** The *SICK AppStudio* features an option to download and install the *SICK AppEngine*. This specific installation can be used to emulate the different device capabilities, with the caveats described above
+
+* Optional: *SICK AppManager*
+** It is used for managing and installing SAPK packages on programmable devices
+** Can also be used to upgrade firmware of the connected device and make a backup of the _SensorApps_ and configuration of the device
+
+* *SICK AppSpace device*, e.g. InspectorP or SIM4000:
+** For device-specific "first steps" tutorial information, please refer to corresponding tutorial articles in the support portal. "First steps" information also contains recommendations on basic equipment and accessories for hardware setup.
+
+## SICK AppSpace Software Tools
+
+### SICK AppStudio
+image::media/AppStudio.png[100,100]
+
+*SICK AppStudio* is the Application Development Kit within the SICK AppSpace eco-system, which makes it possible to create application software for programmable sensors.
+
+*SICK AppStudio* consists of:
+
+* IDE (Integrated Development Environment) with editors, utilities, and various debugging features,
+* UIBuilder tool
+* Flow editor
+* and more
+
+*SICK AppStudio* requires a personalized license. Please contact your SICK representative to receive a license.
+
+### SICK AppSpace SDK
+
+*SICK AppSpace SDK* is a bundle of plugins that, used with *Microsoft Visual Studio Code*, allow for *SensorApp* development. Contrary to the *SICK AppStudio*, *SICK AppSpace SDK* does not require a license to function. This makes it a free alternative to our IDE. The license is still required if the developer wishes to publish their solutions for profit.
+
+The *SICK AppSpace SDK* is composed of following plugins:
+* *SICK AppSpace Programmable Core* - provides *SICK AppSpace* related services and UIs to configure these services. It is the foundation for all other extensions of the *SICK AppSpace SDK*
+* *SICK AppSpace Device Connectivity* - provides services and APIs that are required for communication with SICK devices
+* *SICK AppSpace Lua Language Server* - supports editing Lua files of _SensorApps_ in the *SICK AppSpace* ecosystem. This includes IntelliSense support for CROWNs, simple code generation for functions and events as well as annotations for documentation and type information
+* *SICK AppSpace UI-Builder* - a rich editor to create and edit user interfaces for _SensorApps_
+
+Please note, that none of the above plugins offers no value on its own and is meant to be used a part of the *SICK AppSpace SDK* bundle.
+
+### SICK AppManager
+image::media/AppManager.png[100,100]
+
+The *SICK AppManager* allows users to manage and install SAPK packages on SICK programmable devices in the field. Moreover, it features other tools: backup tool, firmware update, IP configurator and other.
