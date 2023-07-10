@@ -19,7 +19,9 @@ The instructions are accompanied by comments in the source code of the SensorApp
 ## Prerequisites
  * _Microsoft Visual Studio Code_
  * _SICK AppSpace SDK for Microsoft Visual Studio Code_ installed. Installation instructions can be found in the https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/SICK-AppSpace-SDK-Getting-Started/SICK-AppSpace-SDK-Getting-Started.adoc#installation[SICK AppSpace SDK for VS Code guide]
-* SICK AppEngine 1.3.2 or newer download on sick.com, operational for 2 hours at a time as demo version: (https://www.sick.com/sick-appengine-28x6429-windows/p/p663780[for Windows] or https://www.sick.com/sick-appengine-28x6429-linux/p/p663779[for Linux])
+ * SICK AppSpace enabled device - choose one of the following options:
+ ** Device emulation via SICK AppEngine 1.3.2 or newer (download available on https://sick.com[sick.com]; operational for 2 hours at a time as demo version: https://www.sick.com/sick-appengine-28x6429-windows/p/p663780[for Windows] or https://www.sick.com/sick-appengine-28x6429-linux/p/p663779[for Linux])
+ ** InspectorP with power supply and connection cables (recommendation: InspectorP 63x - using other models is also possible but might result in some limitations in step 5 due to potentially not providing a beeper or a red feedback LED) 
  * An up-to-date browser (Chrome recommended)
  * Recommended: Very basic programming knowledge on the side of the participant(s)
 
@@ -48,14 +50,21 @@ image::media/Github_Download.png[]
 image::media/VSC_Reveal.png[]
 . Extract the downloaded zip file to a separate directory inside the Workspace Folder
 
-## Step 2: Connect to SICK AppEngine and install the SensorApp
+## Step 2: Connect to the SICK AppSpace device and install the SensorApp
 ****
 _Ulrike now wants to find out if the Development Demonstration SensorApp serves her purpose of verifying the QR codes._
 ****
 
 . If not started yet, start _Microsoft Visual Studio Code_ with installed _SICK AppSpace SDK_
-. Start SICK AppEngine
-. Connect the SDK with the SICK AppEngine
+. Start the SICK AppSpace device:
+* If you are not using a real device: start SICK AppEngine
+* If you are using InspectorP:
+.. Connect the InspectorP to the power supply
+.. Connect the InspectorP to the computer via ethernet
++
+NOTE: More information on how to connect the InspectorP can be found in the Operating Instructions of the device https://cdn.sick.com/media/docs/6/76/776/operating_instructions_inspectorp63x_flex_c_mount_and_s_mount_en_im0068776.pdf[(link to the respective InspectorP63x document)]
+
+. Connect the SDK with the SICK AppSpace device:
 .. Open the *SICK AppSpace SDK* view
 +
 image::media/VSC_Step2_Hint1.png[]
@@ -65,18 +74,24 @@ image::media/VSC_Step2_Hint2.png[]
 .. Click on the scan button (magnifying glass icon) next to the name of the section. This will open a scan window
 +
 image::media/VSC_Step2_Hint3.png[]
-.. Select the entry, which includes the local address in its description (127.0.0.1) and click *OK*
+.. Select the interface, which includes your device
+* If you are using SICK AppEngine: select the entry, which includes the local IP address in its description (127.0.0.1) and click *OK*
 +
 image::media/VSC_Step2_Hint4.png[]
-.. Now the search process starts. After a successful search, the SICK AppEngine appears in the result window. Select it and click *OK*. You have now added it to the device list.
+* If you are using an InspectorP: select the entry, which fits to the IP address of the device in its description and click *OK*
+** Example: your InspectorP has the address _192.168.0.1_, therefore _Ethernet 5_ from the list needs to be selected as it is located in the same network
 +
 image::media/VSC_Step2_Hint5.png[]
-.. Click on the refresh button next to the *Device list*
+.. Now the search process starts. After a successful search, the found SICK AppSpace device appears in the result window. Select it and click *OK*. You have now added it to the device list.
 +
 image::media/VSC_Step2_Hint6.png[]
-.. The SICK AppEngine should now be visible in the list. Click on the circle to the left of the name of the device (in this case the SICK AppEngine). If connected correctly, the circle should now include a check mark
-+
 image::media/VSC_Step2_Hint7.png[]
+.. Click on the refresh button next to the title of the *Device list*
++
+image::media/VSC_Step2_Hint8.png[]
+.. The SICK AppSpace device is now displayed in the list. Click on the circle to the left of the name of the device (in this case the SICK AppEngine). If connected correctly, the circle should now include a check mark
++
+image::media/VSC_Step2_Hint9.png[]
 +
 [NOTE]
 ====
@@ -85,10 +100,10 @@ If you encounter any problems trying to connect to the device / SICK AppEngine, 
 . Upload / install the app to the device:
 .. Find the *QRCodeReader* SensorApp in the *Workspaces* section and click on the upload button (play icon with an upwards arrow) to the right of the name of the SensorApp to upload the SensorApp to the SICK AppEngine
 +
-image::media/VSC_Step2_Hint8.png[]
+image::media/VSC_Step2_Hint10.png[]
 .. Press enter on your keyboard to confirm appearing prompts
 +
-image::media/VSC_Step2_Hint9.png[]
+image::media/VSC_Step2_Hint11.png[]
 
 ## Step 3: Adjusting the SensorApp
 ****
@@ -100,7 +115,7 @@ _Ulrike wants to check if the Development Demonstration SensorApp she just insta
 image::media/VSC_Step3_open_device_UI.png[]
 +
 image::media/VSC_Step3_select_device_UI.png[]
-** Alternatively, open a web browser and type in the address of the device in the address bar (the SICK AppEngine is typically reachable under *127.0.0.1* or *localhost*)
+** Alternatively, open a web browser and use the IP address of the device in the address bar (the SICK AppEngine is typically reachable using IP address *127.0.0.1* or *localhost* and the InspectorP via its IP address)
 . Adjust the *Cycle time* to get the pictures in desired intervals
 +
 [NOTE]
@@ -214,6 +229,30 @@ end
       textDeco:setColor(255, 0, 0)
       codeDecoration:setLineColor(255, 0, 0)
     end
+----
+. (InspectorP exclusive) In _Processing.lua_:
+.. Create handles for the beeper and LED to provide audiovisual feedback (see \*7.*)
++
+[source,lua]
+----
+-- *7:* Create handle for accessing feedback LED and beeper (InspectorP only)
+local feedbackLED = LED.create("FEEDBACK_LED")
+local intBeeper = Beeper.create()
+----
+.. In function _generateDeviceFeedback_ activate the beeper and the LED (see \*8.*)
++
+[source,lua]
+----
+  -- *8.* Beep for 200ms and blink for 500ms (positive: high pitch and green, negative: low pitch and red) 
+  if wasValidContent == true then
+    intBeeper:beep(20, 200, 100)
+    feedbackLED:setColor("green")
+    feedbackLED:activate(500)
+  else 
+    intBeeper:beep(1, 200, 100)
+    feedbackLED:setColor("red")
+    feedbackLED:activate(500)
+  end
 ----
 . Save the file and upload SensorApp to the device to apply the changes (see Step 2 for detailed instructions)
 
