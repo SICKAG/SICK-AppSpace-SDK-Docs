@@ -1,8 +1,10 @@
 = AppEngine framework
+:source-highlighter: highlight.js
+:source-language: lua
 
-The _AppEngine_ is part of all programmable SICK AppSpace devices and contains an event loop, libraries and drivers to control input and output data. To get a SensorApp up and running, the underlying runtime environment of the _AppEngine_ must be launched first.
+The AppEngine is part of all programmable SICK AppSpace devices and contains an event loop, libraries and drivers to control input and output data. To get an app up and running, the underlying runtime environment of the AppEngine must be launched first.
 
-The *SICK AppEngine* is a program that can be installed on Windows or Linux machine to emulate the behavior of a real hardware device. In *SICK AppStudio* the program can be additionally configured to include only the APIs available in the specific devices.
+The *SICK AppEngine* is a program that can be installed on Windows or Linux machine to emulate the behaviour of a real hardware device. In *SICK AppStudio* the program can be additionally configured to include only the APIs available in the specific devices.
 
 The following section explains how the *SICK AppEngine* functions as an emulator:
 
@@ -14,15 +16,12 @@ The following section explains how the *SICK AppEngine* functions as an emulator
 
 image::media/AppEngine.png[]
 
-// add more content; e.g. from https://mosaicplus.sick.com/display/wikiAppSpace/Runtime+Model:
-
 The AppEngine has just two aspects:
 
 * serving functions:
 ** For instance, the following function is a service to send a message on the TCPIP client
 connection.
 +
-[source, lua]
 ----
 TCPIPClient.transmit(handle, message)
 ----
@@ -31,7 +30,6 @@ TCPIPClient.transmit(handle, message)
 
 ** For instance the event _TCPIPClient.OnReceive_ can be observed by registering a callback function to it.
 +
-[source, lua]
 ----
 function handleOnReceive( data ) 
   -- Insert event handling code here end

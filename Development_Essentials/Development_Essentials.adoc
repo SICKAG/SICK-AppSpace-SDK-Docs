@@ -1,4 +1,6 @@
 = Development essentials
+:source-highlighter: highlight.js
+:source-language: lua
 
 # Always be connected!
 The capabilities of the device are loaded directly from the connected device including the capabilities of the running apps. It is necessary to always be connected to a device or the representing emulator to use all context aware help from *SICK AppStudio* or *SICK AppSpace SDK*.
@@ -18,24 +20,24 @@ The global scope runs once during the startup and contains, e.g. all constants, 
 # Object Oriented Programming
 *SICK AppStudio* and *SICK AppSpace SDK* enable developers to program using an object-oriented approach with the API as well. This can be performed on any object returned by a function. E.g. the call _Timer.create_ returns a timer handle object :
 
-```lua
+----
 local timerHandle = Timer.create()
-```
+----
 
 Now with this handle object, a function from that object can be called using either:
 
 . CROWN-oriented syntax:
 * CROWN.SUBCROWN.FUNCTION( handle, parameter1, … ). For example: 
 +
-```lua
+----
 Timer.setExpirationTime( timerHandle, 1000 )
-```
+----
 . Or object-oriented syntax:
 * object:FUNCTION( parameter1, … ). For example:
 +
-```lua
+----
 timerHandle:setExpirationTime( 1000 )
-```
+----
 
 The differences are that the first approach must contain the whole CROWN structure separated by dots and the (handle-) object as the first parameter. The second object-oriented approach can use the created (or returned) object to determine the context. Therefore, it is possible to just write the function directly after the object separated by a colon. Because it is now clear to which object the function belongs, the first parameter can be omitted.
 
@@ -59,11 +61,11 @@ User-defined CROWNs can be created (served) using apps properties. Every app aut
 NOTE: Please refer to tutorials for further information on how to create user defined CROWNS.
 
 # Code Completion
-*SICK AppStudio* and *SICK AppSpace SDK* offer code completion relevant to the context. The code completion can always be called using *"ctrl + space"* either on an empty line or on the relevant place of an existing line, e.g. after the dot or inside the function parameter section for retrieving enums.
+*SICK AppStudio* and *SICK AppSpace SDK* offer code completion relevant to the context. The code completion can always be called using *"Ctrl" + "Space"* either on an empty line or on the relevant place of an existing line, e.g. after the dot or inside the function parameter section for retrieving enums.
 
 To also use the code completion on parameters of a self-written function it is necessary to announce them via annotations. For example:
 
-```lua
+----
 ---Function used to binarize an image using a set threshold
 ---@param image Image Image to process
 ---@param threshold int Threshold applied to the image
@@ -72,11 +74,11 @@ local function binarize(image, threshold)
     local imageProcessed = image:threshold(threshold)
     return imageProcessed
 end
-```
+----
 
 The annotations are also a good place to provide a short documentation for the user-created functions. The code completion will take that prompt and show it too.
 
-More about the annotations can be found in the Programming SensorApps: Lua annotations tutorial https://supportportal.sick.com/tutorial/programming-sensorapps-lua-annotations/[on supportportal] or https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[on github].
+More about the annotations can be found in the Programming Apps: Lua annotations tutorial https://supportportal.sick.com/tutorial/programming-sensorapps-lua-annotations/[on supportportal] or https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[on github].
 
 # Lua Variable Scope
 In contrast to many programming languages, the default scope of variable in Lua is *global*, therefore it is advised to use the "local" statement whenever possible.
