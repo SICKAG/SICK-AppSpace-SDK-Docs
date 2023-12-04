@@ -1,0 +1,316 @@
+= UI-Builder: UI element libraries for SensorApps
+
+# General
+The UI-Builder in SICK AppStudio uses a library of UI elements to build user interfaces for SensorApps. The default library includes the most commonly used collections of UI elements. Larger libraries can be loaded instead to make more UI elements available for building SensorApp user interfaces.
+
+This article describes how to exchange the library of UI elements in SICK AppStudio and provides an overview of available libraries and versions.
+
+# How to exchange the library of UI elements for the UI-Builder
+The library of UI elements for SICK AppStudio is stored in the folder "C:\Users\<username>\AppData\Local\SICK\AppStudio\<appstudio-version>\uiextensionrepository". It can be exchanged by replacing the content of this folder. This can be achieved via the following steps:
+
+. Close SICK AppStudio
+. Download the library that is compatible with your version of SICK AppStudio (see overview of all available libraries below)
+. Extract the folder "package" from the .tgz file to "C:\Users\<username>\AppData\Local\SICK\AppStudio\<appstudio-version>\package"
+. Rename the folder "uiextensionrepository" in "C:\Users\<username>\AppData\Local\SICK\AppStudio\<appstudio-version>", e.g., to "uiextensionrepository_old"
+. Rename the folder "package" in "C:\Users\<username>\AppData\Local\SICK\AppStudio\<appstudio-version>" to "uiextensionrepository"
+. Restart SICK AppStudio
+
+# Overiew of available libraries
+## Default libraries
+[cols="28%,20%,28%,24%""]
+|===
+| *Library name* | *SICK AppStudio version* | *Included collections* | *Download .tgz file*
+| @sick-appspace/controllibrary@1.0.2
+| 3.0.0
+| @sick-davinci/basic-elements@4.0.3 +
+  @sick-appspace/appspaceviewers@3.0.0
+| link:https://supportportal.sick.com/file/74cd39d1-f070-4f6b-bdab-313f3bd6ae41/[SICK AppSpace Control Library 1.0.2 (TGZ, 2 MB)]
+
+| @sick-appspace/controllibrary@1.1.1
+| 3.1.0
+| @sick-davinci/basic-elements@5.0.4 +
+  @sick-appspace/appspaceviewers@3.1.0
+| link:https://supportportal.sick.com/file/4278aef0-5fa7-439d-81fc-210604b3f9ac/[SICK AppSpace Control Library 1.1.1 (TGZ, 2 MB)]
+
+| @sick-appspace/controllibrary@2.0.0
+| 3.1.1
+| @sick-davinci/basic-elements@5.0.5 +
+  @sick-appspace/appspaceviewers@3.1.0 +
+  @sick-appspace/as-ui-elements@2.0.0 +
+  @sick-appspace/curie-elements@0.2.0
+| link:https://supportportal.sick.com/file/11234c4a-257e-4f2a-aed2-c01b3939b50d/[SICK AppSpace Control Library 2.0.0 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.0.0
+| 3.2.0 & 3.2.1
+| @sick-davinci/basic-elements@5.0.5 +
+  @sick-appspace/appspaceviewers@3.2.3 +
+  @sick-appspace/as-bindings@1.0.1 +
+  @sick-appspace/as-ui-elements@2.0.0 +
+  @sick-appspace/curie-elements@0.2.0
+| link:https://supportportal.sick.com/file/f438fda7-06ca-4f32-8c44-86a28cb4cafd/[SICK AppSpace Control Library 3.0.0 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.2.0
+| 3.3.0 & 3.3.1
+| @sick-davinci/basic-elements@5.1.0 +
+  @sick-appspace/appspaceviewers@3.2.3 +
+  @sick-appspace/as-bindings@1.0.2 +
+  @sick-appspace/as-ui-elements@2.0.1 +
+  @sick-appspace/curie-elements@0.4.0
+| link:https://supportportal.sick.com/file/62ca6adb-e25d-4930-a3db-faf25d8c0246/[SICK AppSpace Control Library 3.2.0 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.2.3
+| 3.3.2
+| @sick-davinci/basic-elements@5.1.0 +
+  @sick-appspace/appspaceviewers@3.2.3 +
+  @sick-appspace/as-bindings@1.0.2 +
+  @sick-appspace/as-ui-elements@2.0.2 +
+  @sick-appspace/curie-elements@0.5.0
+| link:https://supportportal.sick.com/file/9c642692-f7fc-49a7-8975-d2bef1ed703f/[SICK AppSpace Control Library 3.2.3 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.4.0
+| 3.3.2
+| @sick-davinci/basic-elements@5.2.1 +
+  @sick-appspace/appspaceviewers@3.6.0 +
+  @sick-appspace/as-bindings@1.1.0 +
+  @sick-appspace/as-ui-elements@2.1.0 +
+  @sick-appspace/curie-elements@0.6.0
+| link:https://supportportal.sick.com/file/326dd2b5-4015-4522-8024-6cd1cb0f21c0/[SICK AppSpace Control Library 3.4.0 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.4.2
+| 3.4.0
+| @sick-appspace/appspaceviewers@3.6.1 +
+  @sick-appspace/as-bindings@1.1.0 +
+  @sick-appspace/as-ui-elements@2.1.0 +
+  @sick-appspace/curie-elements@0.6.0 +
+  @sick-davinci/basic-elements@5.2.1
+| link:https://supportportal.sick.com/file/d9248f1a-d9e5-4a94-8f53-d327f8498276/[SICK AppSpace Control Library 3.4.2 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.5.0
+| 3.5.0
+| @sick-appspace/appspaceviewers@3.6.1 +
+  @sick-appspace/as-bindings@1.2.0 +
+  @sick-appspace/as-ui-elements@2.1.0 +
+  @sick-appspace/curie-elements@0.6.0 +
+  @sick-davinci/basic-elements@5.3.2
+| link:https://supportportal.sick.com/file/c442c1c4-804b-41c8-9845-7bf8d64b82bd/[SICK AppSpace Control Library 3.5.0 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.6.0
+| 3.6.0
+| @sick-appspace/appspaceviewers@3.6.1 +
+  @sick-appspace/as-bindings@1.2.1 +
+  @sick-appspace/as-ui-elements@2.2.0 +
+  @sick-appspace/curie-elements@0.7.0 +
+  @sick-davinci/basic-elements@5.4.2
+| link:https://supportportal.sick.com/file/1a325e38-22ea-4e35-a07d-0a843ed632fe/[SICK AppSpace Control Library 3.6.0 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.7.1
+| 3.7.0
+| @sick-appspace/appspaceviewers@3.9.0 +
+  @sick-appspace/as-bindings@1.2.3 +
+  @sick-appspace/as-ui-elements@2.3.1 +
+  @sick-appspace/curie-elements@0.9.0 +
+  @sick-davinci/basic-elements@5.5.2
+| link:https://supportportal.sick.com/file/8d859939-0adb-432c-a5c4-87160338ad58/[SICK AppSpace Control Library 3.7.1 (TGZ, 3 MB)]
+
+| @sick-appspace/controllibrary@3.9.0
+| 3.8.0
+| @sick-appspace/appspaceviewers@3.10.2 +
+  @sick-appspace/as-bindings@1.4.0 +
+  @sick-appspace/as-ui-elements@2.4.1 +
+  @sick-appspace/curie-elements@0.10.0 +
+  @sick-davinci/basic-elements@5.6.3
+| link:https://supportportal.sick.com/file/dfc921c2-0975-462b-814a-f2656a49ceb0/[SICK AppSpace Control Library 3.9.0 (TGZ, 4 MB)]
+
+| @sick-appspace/control-library@4.0.0
+| 3.9.0
+| @sick-appspace/appspaceviewers@3.11.0 +
+  @sick-appspace/as-bindings@2.0.1 +
+  @sick-appspace/as-ui-elements@2.4.2 +
+  @sick-appspace/curie-elements@0.10.1 +
+  @sick-davinci/basic-elements@5.6.4
+| link:https://supportportal.sick.com/file/39223af0-a4bd-41b8-abf6-456e44ea6fbb/[SICK AppSpace Control Library 4.0.0 (TGZ, 4 MB)]
+
+| @sick-appspace/control-library@4.0.1
+| 3.9.1
+| @sick-appspace/appspaceviewers@3.11.0 +
+  @sick-appspace/as-bindings@2.0.2 +
+  @sick-appspace/as-ui-elements@2.4.3 +
+  @sick-appspace/curie-elements@0.10.2 +
+  @sick-davinci/basic-elements@5.6.4
+| link:https://supportportal.sick.com/file/093a595b-f663-4450-a578-f25a122a241d/[SICK AppSpace Control Library 4.0.1 (TGZ, 4 MB)]
+
+| @sick-appspace/control-library@4.0.2
+| 3.9.2
+| @sick-appspace/appspaceviewers@3.11.0 +
+  @sick-appspace/as-bindings@2.0.2 +
+  @sick-appspace/as-ui-elements@2.4.4 +
+  @sick-appspace/curie-elements@0.10.2 +
+  @sick-davinci/basic-elements@5.6.5
+| link:https://supportportal.sick.com/file/0c485604-95c6-462c-94e2-a1951085cf3f/[SICK AppSpace Control Library 4.0.2 (TGZ, 4 MB)]
+
+|===
+
+## Extended libraries
+[cols="28%,20%,28%,24%""]
+|===
+| *Library name* | *SICK AppStudio version* | *Included collections* | *Download .tgz file*
+| @sick-appspace/extendedcontrollibrary@1.0.0
+| 3.0.0
+| @sick-davinci/basic-elements@4.0.3 +
+  @sick-appspace/appspaceviewers@3.0.0 +
+  @sick-davinci/vision-elements@1.1.0 +
+  @sick-davinci/dashboard-elements@1.2.0
+| link:https://supportportal.sick.com/file/06e558fc-2f28-4bca-8ad5-e9322c2e4b07/[SICK AppSpace Extended Control Library 1.0.0 (TGZ, 44 MB)]
+
+| @sick-appspace/extendedcontrollibrary@1.1.1
+| 3.1.0
+| @sick-davinci/basic-elements@5.0.4 +
+  @sick-appspace/appspaceviewers@3.1.0 +
+  @sick-davinci/vision-elements@1.1.0 +
+  @sick-davinci/dashboard-elements@1.2.0
+| link:https://supportportal.sick.com/file/4f02bd92-cb74-43fd-94bf-f321a63fe0af/[SICK AppSpace Extended Control Library 1.1.1 (TGZ, 44 MB)]
+
+| @sick-appspace/extendedcontrollibrary@2.0.1
+| 3.1.1
+| @sick-davinci/basic-elements@5.0.5 +
+  @sick-appspace/appspaceviewers@3.1.0 +
+  @sick-appspace/as-ui-elements@2.0.0 +
+  @sick-appspace/curie-elements@0.2.0 +
+  @sick-davinci/vision-elements@1.1.0 +
+  @sick-davinci/dashboard-elements@1.2.2
+| link:https://supportportal.sick.com/file/a055f393-4bfb-482c-92be-6286f5a1d07a/[SICK AppSpace Extended Control Library 2.0.1 (TGZ, 46 MB)]
+
+| @sick-appspace/extendedcontrollibrary@3.0.0
+| 3.2.0 & 3.2.1
+| @sick-davinci/basic-elements@5.0.5 +
+  @sick-appspace/appspaceviewers@3.2.3 +
+  @sick-appspace/as-bindings@1.0.1 +
+  @sick-appspace/as-ui-elements@2.0.0 +
+  @sick-appspace/curie-elements@0.2.0 +
+  @sick-davinci/vision-elements@1.1.0 +
+  @sick-davinci/dashboard-elements@1.2.2
+| link:https://supportportal.sick.com/file/4ae6411d-a7cd-4527-9fe7-c246952c64ae/[SICK AppSpace Extended Control Library 3.0.0 (TGZ, 46 MB)]
+
+| @sick-appspace/extendedcontrollibrary@4.0.0
+| 3.3.0 & 3.3.1
+| @sick-davinci/basic-elements@5.1.0 +
+  @sick-appspace/appspaceviewers@3.2.3 +
+  @sick-appspace/as-bindings@1.0.2 +
+  @sick-appspace/as-ui-elements@2.0.1 +
+  @sick-appspace/curie-elements@0.4.0 +
+  @sick-davinci/visual-elements@2.0.0 +
+  @sick-davinci/dashboard-elements@2.0.0
+| link:https://supportportal.sick.com/file/5e41b040-071b-4cfb-9f16-8971aee10fa2/[SICK AppSpace Extended Control Library 4.0.0 (TGZ, 10 MB)]
+
+| @sick-appspace/extendedcontrollibrary@4.0.3
+| 3.3.2
+| @sick-davinci/basic-elements@5.1.0 +
+  @sick-appspace/appspaceviewers@3.2.3 +
+  @sick-appspace/as-bindings@1.0.2 +
+  @sick-appspace/as-ui-elements@2.0.2 +
+  @sick-appspace/curie-elements@0.5.0 +
+  @sick-davinci/visual-elements@2.0.0 +
+  @sick-davinci/dashboard-elements@2.0.0
+| link:https://supportportal.sick.com/file/dc51541d-470f-4f0a-8ad3-8b84bab86cb7/[SICK AppSpace Extended Control Library 4.0.3 (TGZ, 10 MB)]
+
+| @sick-appspace/extendedcontrollibrary@5.0.1
+| 3.4.0
+| @sick-appspace/appspaceviewers@3.6.1 +
+  @sick-appspace/as-bindings@1.1.0 +
+  @sick-appspace/as-ui-elements@2.1.0 +
+  @sick-appspace/curie-elements@0.6.0 +
+  @sick-davinci/basic-elements@5.2.1 +
+  @sick-davinci/dashboard-elements@4.0.2 +
+  @sick-davinci/visual-elements@2.0.1
+| link:https://supportportal.sick.com/file/70525008-41c2-4ab8-b6b6-2e35cf434843/[SICK AppSpace Extended Control Library 5.0.1 (TGZ, 10 MB)]
+
+| @sick-appspace/extendedcontrollibrary@5.1.0
+| 3.5.0
+| @sick-appspace/appspaceviewers@3.6.1 +
+  @sick-appspace/as-bindings@1.2.0 +
+  @sick-appspace/as-ui-elements@2.1.0 +
+  @sick-appspace/curie-elements@0.6.0 +
+  @sick-davinci/basic-elements@5.3.2 +
+  @sick-davinci/dashboard-elements@4.0.2 +
+  @sick-davinci/visual-elements@2.0.1
+| link:https://supportportal.sick.com/file/95f4e6bd-e518-499c-af18-0c79cb65e1d7/[SICK AppSpace Extended Control Library 5.1.0 (TGZ, 11 MB)]
+
+| @sick-appspace/extendedcontrollibrary@5.1.1
+| 3.5.0
+| @sick-appspace/appspaceviewers@3.6.1 +
+  @sick-appspace/as-bindings@1.2.0 +
+  @sick-appspace/as-ui-elements@2.1.0 +
+  @sick-appspace/curie-elements@0.6.0 +
+  @sick-davinci/basic-elements@5.3.2 +
+  @sick-davinci/dashboard-elements@4.0.2 +
+  @sick-davinci/visual-elements@2.0.1
+| link:https://supportportal.sick.com/file/aa9afd21-b8a7-4a44-a1bf-71cd5fd61a71/[SICK AppSpace Extended Control Library 5.1.1 (TGZ, 11 MB)]
+
+| @sick-appspace/extendedcontrollibrary@5.2.0
+| 3.6.0
+| @sick-appspace/appspaceviewers@3.6.1 +
+  @sick-appspace/as-bindings@1.2.1 +
+  @sick-appspace/as-ui-elements@2.2.0 +
+  @sick-appspace/curie-elements@0.7.0 +
+  @sick-davinci/basic-elements@5.4.2 +
+  @sick-davinci/dashboard-elements@4.1.0 +
+  @sick-davinci/visual-elements@2.0.1
+| link:https://supportportal.sick.com/file/4a1641b7-980f-49ab-8bcb-81a62b0f4734/[SICK AppSpace Extended Control Library 5.2.0 (TGZ, 12 MB)]
+
+| @sick-appspace/extendedcontrollibrary@6.0.0
+| 3.7.0
+| @sick-appspace/appspaceviewers@3.9.0 +
+  @sick-appspace/as-bindings@1.2.3 +
+  @sick-appspace/as-ui-elements@2.3.1 +
+  @sick-appspace/curie-elements@0.9.0 +
+  @sick-davinci/basic-elements@5.5.2 +
+  @sick-davinci/dashboard-elements@5.1.0 +
+  @sick-davinci/visual-elements@2.0.1
+| link:https://supportportal.sick.com/file/0ab519b5-5828-4b80-846e-08714e1863e7/[SICK AppSpace Extended Control Library 6.0.0 (TGZ, 12 MB)]
+
+| @sick-appspace/extendedcontrollibrary@7.0.0
+| 3.8.0
+| @sick-appspace/appspaceviewers@3.10.2 +
+  @sick-appspace/as-bindings@1.4.0 +
+  @sick-appspace/as-ui-elements@2.4.1 +
+  @sick-appspace/curie-elements@0.10.0 +
+  @sick-davinci/basic-elements@5.6.3 +
+  @sick-davinci/dashboard-elements@6.2.0 +
+  @sick-davinci/visual-elements@2.1.0
+| link:https://supportportal.sick.com/file/d9065570-00ef-4bf9-81d2-bb9ba83d5ae6/[SICK AppSpace Extended Control Library 7.0.0 (TGZ, 14 MB)]
+
+| @sick-appspace/extended-control-library@8.0.0
+| 3.9.0
+| @sick-appspace/appspaceviewers@3.11.0 +
+  @sick-appspace/as-bindings@2.0.1 +
+  @sick-appspace/as-ui-elements@2.4.2 +
+  @sick-appspace/curie-elements@0.10.1 +
+  @sick-davinci/basic-elements@5.6.4 +
+  @sick-davinci/dashboard-elements@6.4.1 +
+  @sick-davinci/visual-elements@2.1.1
+| link:https://supportportal.sick.com/file/e48447a7-bbe6-4211-84b4-b8cfd8f7b8f4/[SICK AppSpace Extended Control Library 8.0.0 (TGZ, 17 MB)]
+
+| @sick-appspace/extended-control-library@8.0.1
+| 3.9.1
+| @sick-appspace/appspaceviewers@3.11.0 +
+  @sick-appspace/as-bindings@2.0.2 +
+  @sick-appspace/as-ui-elements@2.4.3 +
+  @sick-appspace/curie-elements@0.10.2 +
+  @sick-davinci/basic-elements@5.6.4 +
+  @sick-davinci/dashboard-elements@6.4.1 +
+  @sick-davinci/visual-elements@2.1.2
+| link:https://supportportal.sick.com/file/b13502d3-ecda-478e-9d6b-276c0dcac8e8/[SICK AppSpace Extended Control Library 8.0.1 (TGZ, 17 MB)]
+
+| @sick-appspace/extended-control-library@8.0.2
+| 3.9.2
+| @sick-appspace/appspaceviewers@3.11.0 +
+  @sick-appspace/as-bindings@2.0.2 +
+  @sick-appspace/as-ui-elements@2.4.4 +
+  @sick-appspace/curie-elements@0.10.2 +
+  @sick-davinci/basic-elements@5.6.5 +
+  @sick-davinci/dashboard-elements@6.4.1 +
+  @sick-davinci/visual-elements@2.1.2
+| link:https://supportportal.sick.com/file/f443a1f4-aefe-4c04-8617-2f3a7d9cfcdf/[SICK AppSpace Extended Control Library 8.0.2 (TGZ, 17 MB)]
+
+|===
+
