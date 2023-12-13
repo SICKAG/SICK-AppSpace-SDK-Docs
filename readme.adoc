@@ -4,6 +4,11 @@ This repository provides documentation and helpful resources for the SICK AppSpa
 
 SICK AppSpace SDK is an extension pack published on the Visual Studio Code Marketplace. It provides all extensions that are required to develop apps for devices of the SICK AppSpace ecosystem.
 
+## How to report a bug
+
+If you encounter a bug or an issue with the SICK AppSpace development tools for VSCode please https://jira.sick.com/rest/collectors/1.0/template/form/5e947ee6[Report a bug] at our Jira project.
+If you're missing features feel free to  https://jira.sick.com/rest/collectors/1.0/template/form/08bd7384[Create a feature request] at our Jira project.
+
 ## Find more information here
 
 https://www.sick.com/sick-appspace[General overview about SICK AppSpace]
