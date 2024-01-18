@@ -1,0 +1,82 @@
+= Performance Patterns - improving the app performance
+
+# About this tutorial
+
+The goal of this article is to describe patterns and to give concrete hints on how App developer can improve the performance of an app.
+You can make use of all listed options if they are applicable for your app design.
+
+# Reduce workload
+
+* Reduce the incoming event frequency.
+** E.g. by making use of "Scan.Provider.RemoteScanner.setBlockSize" it will collect several event payloads in one event.
+{empty} +
+{empty} +
+* Reduce the outgoing event frequency.
+** E.g. sending data to the WebUI needs resources. Reducing its frequency and payload size can help.
+** Therefore it is recommended to use events instead of polling whenever this is possible.
+{empty} +
+{empty} +
+* Limit or prioritize incoming events.
+** E.g. "Script.Queue" can throw excess data away or only keep the latest payload. Additionally, it can prioritize important events above others.
+{empty} +
+{empty} +
+* Reduce data object sizes.
+** E.g. "Image.resize/crop", "Profile.resize/crop", "PointCloud.resample/cropShape".
+{empty} +
+{empty} +
+* Reduce blocking timeouts.
+** E.g. "TCPIPClient.setTransmitTimeout" and "TCPIPClient.setTransmitAckTimeout" can reduce the time of blocking in an app.
+{empty} +
+{empty} +
+* Reduce UI and viewer update frequencies.
+** E.g. use "Viewer.Channel" "LIVE" instead of "ASSURED" for View.present to only view the latest data and disable the internal queue.
+** E.g. use UI event bindings instead of cyclic polling binding.
+
+# Parallelize work
+
+* Use multiple script interpreters.
+** E.g. "Script.startScript" / "Script.getStartArguments" to start an additional interpreter context within the same app and pass an argument to it.
+** Alternatively you can use multiple apps.
+{empty} +
+{empty} +
+* Use asynchronous function execution.
+** E.g. use "Engine.AsyncFunction" to run longer or blocking functions without blocking the current script interpreter execution and retrieve the result later.
+
+# Use memory efficiently
+
+* Tune the Lua garbage collection.
+** Disable the automatic garbage collection (highly recommended for high frequency event handling).
+*** The default SICK AppEngine behaviour ensures that "collectgarbage()" is called automatically when the interpreter is done with processing a line of code. (To achieve a deterministic behaviour.) To disable this behaviour, use "Script.disableGarbageCollectionByEngine", or alternatively: set app property "LuaGarbageCollectionByEngine" to "false" (since SICK AppEngine 2.12).
+*** Drawback: You need to know the garbage collection behaviour and think more about object lifecycles. Use "Script.releaseObject" for deterministic releasing.
+{empty} +
+{empty} +
+** Explicit Lua require of all SICK AppEngine API.
+*** Set app property "LuaLoadAllEngineAPI" to "false" (since AEF 2.12).
+*** All APIs are iterated every time by the Lua garbage collector. By using this switch, only the relevant APIs need to be required manually, which makes the garbage collector faster because it has less objects to handle. Additionally, your app garbage collection behaviour isn't depending any more on the number of APIs of the device it runs on.
+{empty} +
+{empty} +
+* Reduce number of copies of data and objects.
+** Event notifications clone the data if there are multiple registrations of the same event.
+*** Consider to use "const" event parameters to avoid the described cloning of the data.
++
+[NOTE]
+====
+It is possible to check with "Script.isEventRegistered" how many times the event is registered.
+====
+** Cloning/Creation of objects in functions e.g. algorithms functions.
+*** Check if algorithms modify existing objects or create new objects.
+*** Use the "inplace"-suffixed functions, which modify existing objects instead of creating new ones.
+{empty} +
+{empty} +
+* Realize an effective data transport.
+** Design of crowns, e.g. use "Object.Binary" instead of binary data type.
+** Use "Container" CROWN to transfer data of e.g. multiple strings, binaries or objects together as one object.
+** Use "msgpack" over "json", e.g. for binding/transfering to/from the UI: prefer "crownMSGPACK" over "crownJSON".
+
+# Measure the performance
+
+* Track memory usage in the SICK AppStudio monitor.
+* Track CPU usage in the SICK AppStudio monitor.
+* Make use of the script debugger in SICK AppStudio showing the execution time of each script line.
+* Measure timings in live application, e.g. "DateTime.getTimestamp" and "DateTime.getTimestampOfContextMicroseconds".
+

@@ -1,0 +1,237 @@
+= Lua Garbage Collection
+
+# About this tutorial
+
+The goal of this article is to help you to optimize the performance of your Lua script applications in case of:
+
+* High-frequent processing of events/callbacks in a Lua app
+* Too high CPU load with Lua apps
+
+The garbage collection is one of the most discussed topics in Lua. It is a very complex topic, but it is also very valuable to understand it.
+
+# What is the garbage collector
+
+The garbage collector in Lua takes care of the memory freeing, so that the user does not have to take care of it. Memory is not directly freed if it is not used any more, it is marked for the garbage collector, so that it can later free it.
+
+E.g. if the script releases variable values, the before assigned memory isn't freed directly:
+
+[source,lua]
+----
+local var = "test"
+var = nil -- the memory of content "test" isn't freed here, it will be garbage collected
+----
+
+People mainly face this problem if they have a handle and set it to nil and wonder why the resource is still allocated:
+
+[source,lua]
+----
+handle = SerialCom.create("SERIAL1")
+handle = nil
+handle = SerialCom.create("SERIAL1")
+assert(handle) -- fails because the handle still exists in the garbage collector
+----
+
+[source,lua]
+----
+handle = TCPIPServer.create()
+handle:setPort(1234)
+assert(handle:listen())
+handle = TCPIPServer.create()
+handle:setPort(1234)
+assert(handle:listen()) -- fails because other handle still is open and blocks the port
+----
+
+The garbage collector has several states like iterating over all memory, marking all unused content and freeing the collected marked memory.
+
+A full collection run can be done as follows:
+
+[source,lua]
+----
+collectgarbage()
+collectgarbage("collect") -- identical call but with explicit argument
+----
+
+Instead of a full run, the garbage collection can be run in minor steps doing just "some parts of the work":
+
+[source,lua]
+----
+collectgarbage("step")
+----
+
+Please note, that these steps are also done by the Lua interpreter while interpreting a script automatically. So to say there are step calls inside the Lua interpreter c-code.
+
+This means that *per default the memory is collected automatically while executing the script* and running in the interpreter.
+
+Whether these steps should be performed or not can be controlled as follows:
+
+[source,lua]
+----
+collectgarbage("stop") -- don't do any steps
+collectgarbage("start") -- do steps again
+----
+
+The user can control the size of each step by using the following functions:
+
+[source,lua]
+----
+collectgarbage("setpause", 100) -- means always run without waiting for memory increase. Default is 200 which would mean do not do collection cycles until memory is increased
+collectgarbage("setstepmul", 400) -- controls how much works is done with each step relative to the number of memory which is allocated. A higher value needs more cpu but collects more memory.
+----
+
+Read more here in the Lua documentation about collectgarbage: https://www.lua.org/manual/5.3/manual.html#pdf-collectgarbage
+
+# What the SICK AppEngine does
+
+The garbage collection is not a deterministic behaviour and also hard to understand.
+
+Therefore the SICK AppEngine calls after every function callback execution a full garbage collection, so that used memory references are released after a callback.
+
+This is useful so that objects, which are passed to callbacks, get released deterministically after a callback execution.
+
+[source,lua]
+----
+function handleOnNewImage(img)
+  img:doSomething()
+end
+-- after end, the engine calls implicitly a "collectgarbage()"
+----
+
+So the default engine behaviour is as shown below:
+
+[source,lua]
+----
+function handleOnNewImage(img)
+  img:doSomething()
+  img = nil
+  collectgarbage()
+end
+----
+
+In most cases the callbacks are not executed very frequently, so the overhead of the "collectgarbage()" call isn't relevant in terms of performance.
+
+But for high-frequent applications, this can be bad.
+
+## Disabling the automatic full garbage collection
+
+This "Script.disableGarbageCollectionByEngine()" function can be called in the beginning of the script. It disables the implicit "collectgarbage()" call after every callback (see description above).
+
+This means the user needs to take care that during lifetime of the script the memory garbage is collected enough to not run out of memory.
+
+The function also tunes the Lua default garbage collection settings by setting the "pause" to 100 (default 200) and "stepmul" to 400 (default 200) so that the garbage collection cycle always runs and is more aggressive. The user can set his own values after calling the function.
+
+[source,lua]
+----
+Script.disableGarbageCollectionByEngine()
+collectgarbage("setstepmul", 600) -- set it to even more aggressive in case the default is too low
+
+function handleOnNewImage(img)
+  img:doSomething()
+end
+-- After the callback the object "img" is still allocated and referenced. Other callers / apps still think it is used by this Lua app.
+----
+
+### Disabling via App property
+
+Available since SICK AppEngine 2.12:
+
+Beside the Script API call, the App property "LuaGarbageCollectionByEngine" can be set to "false" to disable the garbage collection of the script of the app.
+
+# Memory overrun behaviour
+
+If the engine detects that the overall RAM memory of the devices is used above 90%, it one time calls a "collectgarbage()" for all Lua interpreters on their next execution.
+
+This should help in a long-memory leak to recover.
+
+# Recommendations
+
+Following recommendations are useful for app developers who want to optimize for general performance. This is useful for high-frequency event handling apps, or apps serving functions which are called very frequently.
+
+## Disable engine collection and release objects explicitly
+
+To gain performance, the usage of "Script.disableGarbageCollectionByEngine()" can be recommended.
+
+Additionally the function "Script.releaseObject()" can be used to explicitly free the reference of shared objects and handles from the interpreter, to have a deterministic point in time for releasing objects and handles from the CROWN framework.
+
+[source,lua]
+----
+Script.disableGarbageCollectionByEngine()
+function handleOnNewImage(img)
+  img:doSomething()
+  Script.releaseObject(img) -- in this call the image object behind is explicitly released and if nothing else holds a reference it is freed.
+end
+----
+
+Of course the "Script.releaseObject()" function can generally be used to free objects explicitly.
+
+This approach is also useful to release resources directly if someone wants to use them again right away:
+
+[source,lua]
+----
+handle = SerialCom.create("SERIAL1")
+Script.releaseObject(handle)
+handle = SerialCom.create("SERIAL1") -- success because handle was released internally
+----
+
+# Advanced recommendations
+
+## Disable auto requiring of all APIs into the interpreter
+
+Available since SICK AppEngine 2.12:
+
+By default all APIs are loaded into the lua interpreter by the engine so that the users can use them conveniently.
+
+The drawback is that they also need to be checked by the garbage collector run. Therefore the time required for a full garbage collector cycle increases a lot depending on the number of APIs in the device.
+
+With the App property "LuaLoadAllEngineAPI" the described auto API requiring can be disabled.
+
+The downside of this approach is, that the code needs to be written differently regarding the API usage: all explicit API requires need to be added individually.
+
+_Hint_: If the API is cascaded, it is important that the require is done in the correct cascading order by starting with the parents.
+
+[source,lua]
+----
+Timer = require 'API.Timer'
+
+handle = Timer.create()
+----
+
+# Pitfalls
+
+## Assigning a different value does not free variable related memory
+
+When a different value is assigned, the formerly hold memory is just marked for future garbage collection.
+
+[source,lua]
+----
+function handleOnNewImage(img)
+  img:doSomething()
+  img = nil -- this does not free the memory at this location here
+end
+----
+
+## Using local variables does not free related memory when going out of scope
+
+When an execution scope like a function is left, the contained local variables and their memory is not freed, but just marked for future garbage collection.
+
+[source,lua]
+----
+function handleOnTimerExpired()
+  local img = Image.create(1024, 1024, 8)
+end
+-- the memory of 'img' is still in the garbage collector
+----
+
+# Outlook
+
+Lua 5.4 will have the main feature improvement of an generational garbage collector mode.
+
+http://www.lua.org/work/doc/manual.html#2.5.2
+
+It seems like then there will be major and minor collection cycle types, which can be useful to avoid major collection cycles in the API at all.
+
+# Useful Links
+
+https://www.lua.org/manual/5.3/manual.html#2.5
+
+https://www.lua.org/manual/5.3/manual.html#pdf-collectgarbage
+
