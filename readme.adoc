@@ -29,9 +29,9 @@ https://github.com/SICKAG/sick-appspace-sdk-docs/blob/master/Release%20Notes/SIC
 ### SICK AppSpace SDK - Getting started
 This tutorial explains how to install the SICK AppSpace SDK for Microsoft Visual Studio Code and how to start developing SensorApps.
 
-https://github.com/SICKAG/sick-appspace-sdk-docs/blob/master/SICK-AppSpace-SDK-Getting-Started/SICK-AppSpace-SDK-Getting-Started.adoc[Getting started]
+https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/tree/master/Documentation%20and%20Tutorials/AppStudio%20VSC%20extensions%20User%20Guide/SICK-AppSpace-SDK-Getting-Started/SICK-AppSpace-SDK-Getting-Started.adoc[Getting started]
 
 ### SICK AppSpace SDK - Your first SensorApp
 Take the perspective of Doris Developer and Ulrike User to develop your first SensorApp. The described activity can be done without additional instructions to obtain a hands-on experience with SICK AppSpace, and it can be used as a demo in a training or discussion context.
 
-https://github.com/SICKAG/sick-appspace-sdk-docs/blob/master/SICK-AppSpace-SDK-Your-First-SensorApp/SICK-AppSpace-SDK-Your-First-SensorApp.adoc[Your first SensorApp]
+https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Documentation%20and%20Tutorials/Overview%20of%20SICK%20AppSpace%20eco-system/SICK-AppSpace-SDK-Your-First-SensorApp/SICK-AppSpace-SDK-Your-First-SensorApp.adoc[Your first SensorApp]
