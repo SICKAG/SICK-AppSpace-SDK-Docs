@@ -1,0 +1,85 @@
+= App components
+:source-highlighter: highlight.js
+:source-language: lua
+
+# Overview
+
+. Depending on the type of application you are developing and the approach you selected, your need of app components may vary.
+. All available components can be added or removed
+** In *SICK AppStudio* - in the Working directory: components are removed by deleting the component folder or added by right clicking on the app and choosing the components to add.
++
+image::media/Components_AppStudio.png[]
+image::media/AddComponents_AppStudio.png[]
+
+** In *SICK AppSpace SDK*: currently all newly created apps are created with all components and it is only possible to remove components by removing their directories in the "Explorer" view. For now, they can not be added individually.
++
+image::media/Components_SDK.png[]
+. The root of your app corresponds to the name of your app.
+
+# Types of Components
+
+## Manifest
+
+Every app includes a manifest file which contains metadata and is located in the root directory of the application. The manifest provides the SICK AppEngine with essential references to the contents of the app: the capabilities of your application ("Serves") as well as its needs ("Uses"). This also defines the app's namespace and references all components of your application.
+
+In addition, other relevant data such as application name, author, version, and license information are listed in the manifest file.
+
+In *SICK AppStudio*, the manifest file does not need to be edited directly. The "App properties" tab within the IDE can provide a more convenient way of customizing the metadata. The "App properties" tab can be accessed for each app in the workspace individually, by selecting each app in the AppExplorer tab.
+
+
+## Flows
+Flows are graphical programming approaches that can for some apps be used as an alternative to writing code. The data sources and processing functions are represented by function blocks and links between them by wires. The FlowEditor tool essentially creates and edits an .xml file that is used by the engine to run the application.
+Each flow file can define one or more flows of an application.
+There are two different types of flows: *data-flows* and *control-flows*
+
+Developing an application with the use of flows offers a seamless transition from design to implementation. See more details in the Flows Tutorial https://supportportal.sick.com/tutorial/flows-first-steps/[on the SICK Support Portal]
+// TODO: add link to github once available
+
+### Control Flow
+Control flows can only be used for wiring of digital signal processing blocks such as _DigitalLogic.Gate.and_. Control flows run on the highest priority available on the device and often are accelerated by the device's FPGA. We call this the Hard-Real-Time (HRT) priority level. Available _control flow blocks_ are determined by the device and cannot be extended by the user. Access to and from scripts can be created using the _Engine.Event blocks_.
+
+### Data Flow
+Data flows can be used for wiring of complex data processing blocks such as a Scan.EdgeHitFilter.filter. Data flows run on the priority level of the app that contains the flow. We call this the Real-Time (RT) priority level. User-defined data flow blocks can also be created by serving functions or events and enabling the Include 'data-flow' option in the app properties for that entry.
+
+## Scripts
+Apps can be written using solely the scripting approach. The language to be used is *lua* - a lightweight and fast scripting language well suited for the use in the context of embedded software. Developers can create one or more lua scripts inside one application. All the APIs and language features can be accessed from within the script. There the user is assisted by the code completion feature and other tool available in the code editor.
+
+NOTE: To ensure that the application is running correctly with the scripts, it is important to mark one of the lua files as a starting point ('main' script). It usually is automatically done by the programming tool, however that information should be kept in mind in case of any problems.
+
+For more details see Scripting - First Steps tutorial https://supportportal.sick.com/tutorial/first-steps-scripting/[on the SICK Support Portal].
+// TODO: add link to github once available
+
+## Parameters
+Apps can also contain parameter definitions. Parameters are described in the .cid.xml file. Every parameter file that is added to an application adds its contents to a general parameter repository of the device.
+
+### Features of parameters
+
+* They can be directly accessed from the scripts, UI and SOPAS protocol
+* Each one has a unique name allowing for individual access
+* Parameter variable types vary from the ones typically available in lua.
+* They can assume only the basic types, such as _Real_, _UInt_, _Bool_ or _String_
+* Parameters can be arranged in the following structures: _Struct_ - a table containing several parameters, which can be of various types, and _Array_ - can contain multiple entries of the same type, including _Structs_
+* In the definition file, a default value for a parameter can be supplied
+* Dependent on the type some more properties can be defined and some are mandatory. They include settings such as _MinValue_, _MaxValue_ and _Length_
+* They can have a property which defines the minimum user level which is needed to write the parameter
+
+For more details see Parameter handling tutorial https://supportportal.sick.com/tutorial/parameter-handling/[on the SICK Support Portal].
+// TODO: add link to github once available
+
+## Pages
+The Pages component contains the user interface of an app. Pages consist of various files of different types that together define the user experience. This UI is automatically built when the application is deployed. When connecting to a device via a web browser, the UI is interpreted and the data it contains is displayed. Developers can change the contents and layout of the web page without a need to restart the device. Pages can be easily created or edited using the UI-Builder tool in the programming environment, which opens automatically when double-clicking on an .html file. Elements on a page can be linked to functions, events or parameters and communicate using HTTP protocol or webhooks.
+
+NOTE: Since the user interface provided by the app is not running directly on the device and just communicates with it via various  protocols, it is not possible to access features that are not either inherently accessible outside of the device or made accessible by the user (e.g. by using serves)
+
+For more details see Application specific user interface tutorial https://supportportal.sick.com/tutorial/ui-builder2-application-specific-ui/[on the SICK Support Portal] and other UI building tutorials.
+// TODO: add link to github once available
+
+## Resources
+If the app needs additional resources other than the ones offered by the application components, corresponding files should be included within the resources component. E.g. HALCON procedures or reference images can be used as resources. Any type of file can be placed inside this component and can be accessed from the lua scripts of the application. Resources are private and thus can't be accessed by apps other than the one which they were included in.
+
+From the programming perspective, resources component is just another storage directory and can be accessed by any API that reads data from file, like _File.open_:
+
+----
+local myFile = File.open("resources/MyFile.txt")
+----
+

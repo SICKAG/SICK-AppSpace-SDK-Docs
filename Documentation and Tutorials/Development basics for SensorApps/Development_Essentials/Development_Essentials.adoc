@@ -1,0 +1,89 @@
+= Development essentials
+:source-highlighter: highlight.js
+:source-language: lua
+
+# Always be connected!
+The capabilities of the device are loaded directly from the connected device including the capabilities of the running apps. It is necessary to always be connected to a device or the representing emulator to use all context aware help from *SICK AppStudio* or *SICK AppSpace SDK*.
+
+# Event driven development (vs. cyclic development)
+Events will be triggered from the AppEngine at a specific time. E.g. the _Engine.OnStarted_ event triggers when the device is ready and Global Scope is running. Or _Image.Provider.Camera.OnNewImage_ triggers every time a new image is taken.
+
+Functions can be registered (linked) to these events. From now on, every time the event is triggered, the registered function will be called.
+
+Also user-defined events can be created and triggered (e.g. when a processing step is finished).
+
+# Global Scope vs. Function and Event Scope
+Based on the event-driven development apps (and scripts) can be divided into Global Scope and Function and Event Scope.
+
+The global scope runs once during the startup and contains, e.g. all constants, variable initializations and services. Also event registrations and the function headers are part of the global scope. After the Startup, the _Engine.OnStarted_ event is triggered, marking the point where the whole global scope is run down and the app is in the event loop or function and event scope.
+
+# Object Oriented Programming
+*SICK AppStudio* and *SICK AppSpace SDK* enable developers to program using an object-oriented approach with the API as well. This can be performed on any object returned by a function. E.g. the call _Timer.create_ returns a timer handle object :
+
+----
+local timerHandle = Timer.create()
+----
+
+Now with this handle object, a function from that object can be called using either:
+
+. CROWN-oriented syntax:
+* CROWN.SUBCROWN.FUNCTION( handle, parameter1, … ). For example: 
++
+----
+Timer.setExpirationTime( timerHandle, 1000 )
+----
+. Or object-oriented syntax:
+* object:FUNCTION( parameter1, … ). For example:
++
+----
+timerHandle:setExpirationTime( 1000 )
+----
+
+The differences are that the first approach must contain the whole CROWN structure separated by dots and the (handle-) object as the first parameter. The second object-oriented approach can use the created (or returned) object to determine the context. Therefore, it is possible to just write the function directly after the object separated by a colon. Because it is now clear to which object the function belongs, the first parameter can be omitted.
+
+# CROWNs and their contents
+CROWN is an acronym for **C**ommon **R**eusable **O**bject **W**ired by **N**ame.
+
+A CROWN can have:
+
+* *Sub-crowns:*
+** E.g. _Image.Provider.Camera..._
+* *Functions:*
+** E.g. _Timer.start()_
+* *Events:*
+** E.g. _Timer.OnExpired_
+* And also declared *Enums:*
+** E.g. ports from a device.
+** Can be reached via the code completion (ctrl + space) when in the context of a function where the enum must be applied to. E.g. in parameter brackets of: _Connector.DigitalIn.create( "DI1" )_.
+
+User-defined CROWNs can be created (served) using apps properties. Every app automatically offers a main CROWN which has the same name as the app that enables new CROWNs to be created. When apps are running with user-defined CROWNs that serve functions and/or events on the device, they can be used like the API devices including code completion.
+
+NOTE: Please refer to tutorials for further information on how to create user defined CROWNS.
+
+# Code Completion
+*SICK AppStudio* and *SICK AppSpace SDK* offer code completion relevant to the context. The code completion can always be called using *"Ctrl" + "Space"* either on an empty line or on the relevant place of an existing line, e.g. after the dot or inside the function parameter section for retrieving enums.
+
+To also use the code completion on parameters of a self-written function it is necessary to announce them via annotations. For example:
+
+----
+---Function used to binarize an image using a set threshold
+---@param image Image Image to process
+---@param threshold int Threshold applied to the image
+---@return Image imageProcessed Binarized image
+local function binarize(image, threshold)
+    local imageProcessed = image:threshold(threshold)
+    return imageProcessed
+end
+----
+
+The annotations are also a good place to provide a short documentation for the user-created functions. The code completion will take that prompt and show it too.
+
+More about the annotations can be found in the Programming Apps: Lua annotations tutorial https://supportportal.sick.com/tutorial/programming-sensorapps-lua-annotations/[on supportportal] or https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[on github].
+
+# Lua Variable Scope
+In contrast to many programming languages, the default scope of variable in Lua is *global*, therefore it is advised to use the "local" statement whenever possible.
+
+A "local" variable is only visible within its scope. Scope means, e.g. inside a loop, inside a function or even inside a script. This means a local variable inside a function cannot be accessed from outside that function, or a local variable in the script cannot be accessed from another script.
+
+NOTE: Global Scope (in contrast to Function and Event scope) in App Context is not the same as the global scope (in contrast to local scope) of the variables!*
+
