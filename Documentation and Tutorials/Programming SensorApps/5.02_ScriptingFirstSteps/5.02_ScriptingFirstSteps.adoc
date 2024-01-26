@@ -22,6 +22,7 @@ image::media/api_hardwareAccess.png[]
 image::media/api_algorithm.png[]
 
 
+
 # Lifecycle of scripts
 
 1. Scripts have a *Global Scope*, which runs every time the script is started.
@@ -50,6 +51,7 @@ image::media/CodeCompletion.png[]
 +
 image::media/function.png[]
 // info: missing, shortcut doesn't work
+
 # Accessing the API from scripts in an object oriented context
 
 1. When programming object oriented, the intelligent code completion supports you when typing ":".

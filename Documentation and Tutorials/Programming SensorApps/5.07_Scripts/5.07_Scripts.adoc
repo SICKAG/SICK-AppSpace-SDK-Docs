@@ -1,6 +1,5 @@
 = Scripts
 
-
 # Overview
 SICK AppSpace applications can be developed using scripts and the language Lua.
 Scripting is a convenient way of creating extensive and complex applications. From within scripts, the whole API of the device is accessible and can be connected and enhanced without rigid limitations. Scripts can also be used to publish functions and events to be used as CROWN interfaces within other apps or components.
@@ -91,7 +90,4 @@ Runtime checks are performed to ensure that the object remains constant.
 # Script Editing in SICK AppStudio
 SICK AppStudio offers a Lua editor including intelligent code completion and code highlighting. There are also advanced debugging functionalities including the possibility to visually debug 2D and 3D data.
 
-Applications can contain one or several scripts which facilitates the possibility of creating structured and complex applications. Script files are pure text files with the file extension "lua". They can be added to the component type "scripts" using the AppExplorer in SICK AppStudio.
-
-
-
+Applications can contain one or several scripts which facilitates the possibility of creating structured and complex applications. Script files are pure text files with the file extension "lua". They can be added to the component type "scripts" using the "Working directory" in SICK AppStudio.

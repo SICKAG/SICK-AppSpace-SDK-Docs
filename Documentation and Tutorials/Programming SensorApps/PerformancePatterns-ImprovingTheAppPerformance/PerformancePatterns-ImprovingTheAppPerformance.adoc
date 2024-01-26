@@ -59,10 +59,9 @@ You can make use of all listed options if they are applicable for your app desig
 ** Event notifications clone the data if there are multiple registrations of the same event.
 *** Consider to use "const" event parameters to avoid the described cloning of the data.
 +
-[NOTE]
-====
+*NOTE:*
 It is possible to check with "Script.isEventRegistered" how many times the event is registered.
-====
+
 ** Cloning/Creation of objects in functions e.g. algorithms functions.
 *** Check if algorithms modify existing objects or create new objects.
 *** Use the "inplace"-suffixed functions, which modify existing objects instead of creating new ones.

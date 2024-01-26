@@ -6,10 +6,8 @@ In this tutorial you will learn how you can use symbolic links (also symlinks) t
 ## General information
 In some SensorApps it could be necessary to use the same lua code in multiple apps. Duplicating your code makes it very hard to make changes and to maintain your code. To solve this problem symbolic links can be used.
 
-[NOTE]
-====
+*NOTE:*
 symbolic links are fully supported only from SICK AppStudio version 3.6.0 on. Please update if you are using an older version of SICK AppStudio and want to use symbolic links.
-====
 
 ## What are symbolic links and how to create them
 A symbolic link is a file, which contains a reference to another file or folder in the form of an absolute or relative path.
@@ -65,10 +63,8 @@ Also, all files copied into Shared\scripts will be automatically added to the sc
 When you transfer apps to the device, all symbolic links will be resolved. This means on the device the apps will no longer contain symbolic links but the target of the link will be copied.
 Therefore, the apps on the device are still self-contained.
 
-[WARNING]
-====
+*WARNING:*
 this also means, that if you transfer apps from the device e.g. into a new working directory, the apps will contain no more symbolic links.
-====
 
 Packaging your apps e.g., to upload them to SICK AppPool, will also resolve all links. This means, that inside a sapk file all apps are self-contained.
 

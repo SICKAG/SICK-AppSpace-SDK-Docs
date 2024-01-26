@@ -215,7 +215,7 @@ local clientTCP = TCPClient.create()
 ----
 
 ## Annotations and comments
-Annotating the code using the emmyLua convention helps the language server to provide the code completion hints and provides an opportunity to write documentation. At least, functions that have inputs and outputs should always be annotated. Providing annotations in other cases is also useful. To learn more about how to construct annotations, refer to the https://supportportal.sick.com/tutorial/programming-sensorapps-lua-annotations/["Programming SensorApps: Lua annotations" tutorial on SICK Support Portal].
+Annotating the code using the emmyLua convention helps the language server to provide the code completion hints and provides an opportunity to write documentation. At least, functions that have inputs and outputs should always be annotated. Providing annotations in other cases is also useful. To learn more about how to construct annotations, refer to the https://supportportal.sick.com/tutorial/programming-sensorapps-lua-annotations/["Programming SensorApps: Lua annotations" tutorial on SICK Support Portal] or https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Documentation%20and%20Tutorials/Programming%20SensorApps/Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[on github].
 
 Comments can be written using lua standard comment functionality - double dashes for one line or in-line comments and --[[ ]]-- structure for block comments.
 

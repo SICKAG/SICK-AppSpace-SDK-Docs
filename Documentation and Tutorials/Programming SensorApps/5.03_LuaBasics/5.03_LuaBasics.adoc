@@ -152,7 +152,7 @@ print( math.min( 56, 4, 76, 23, 2, 76 ) )   --> "2"
 print( math.frexp( 255 ) )                  --> "0.99609375 8"
 ----
 
-Try more by using the "math" library of lua
+Try more by using the "math" library of lua.
 
 image::media/mathLibrary.png[]
 

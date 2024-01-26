@@ -3,7 +3,7 @@
 
 Every application has an application manifest which is part of the app’s properties. This file represents the essential meta-information about the app and contains its capabilities and requirements.
 
-The manifest XML file should not be edited by the programmer directly. To prevent inconsistencies, its content must be edited using the built-in properties editor. This can be accessed by selecting an app in the AppExplorer and choosing "Properties" from the context menu.
+The manifest XML file should not be edited by the programmer directly. To prevent inconsistencies, its content must be edited using the built-in properties editor. This can be accessed by selecting an app in the "Working directory" and choosing "App properties" from the right panel of the IDE.
 
 The following meta-information is included in the app manifest:
 
@@ -19,25 +19,25 @@ The following meta-information is included in the app manifest:
 # Manifest contents
 [cols="1, 4"]
 |===
-| *Application name* |
+| Application name |
 The name of an app corresponds to the name of the project. This name can be changed using the context menu.
 
-| *Meta-information* |
+| Meta-information |
 Meta-information such as "Author", "Version", and "Protection". Most of this meta-information can be edited in the "General" tab in the "App Properties" dialog.
 
-| *Components* |
+| Components |
 Components referring to the app components used, e.g. "Scripts", "Flows", or "Pages".
 
-| *Capabilities* (Serves) |
+| Capabilities (Serves) |
 If the application publishes functions and/or events which can be used by other components or apps, this must be stated within the "Serves" in the "App Properties" dialog.
 
-| *Requirements* (Uses) |
+| Requirements (Uses) |
 "Uses" can be declared in the "App Properties" dialog. Here, all functions and events used can be declared. This information is used to verify whether the app(s) fit the target device.
 |===
 
 
 # CROWN data types
-The following data types can be used to wire CROWN components for parameters and return values, respectively. Please note that these type definitions are language neutral. See the Scripts section to learn about mapping to Lua.
+The following data types can be used to wire CROWN components for parameters and return values, respectively. Please note that these type definitions are language neutral. See the "Scripts" section to learn about mapping to Lua.
 
 // comment YS: merged with comments from Mosaic+ page (https://mosaicplus.sick.com/display/wikiAppSpace/Manifest)
 [cols="1,6"]

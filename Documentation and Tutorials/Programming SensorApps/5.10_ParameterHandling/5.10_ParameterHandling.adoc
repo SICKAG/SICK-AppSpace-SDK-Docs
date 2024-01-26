@@ -79,7 +79,7 @@ The following sample CID file is also included in the https://gitlab.com/sick-ap
 +
 image::media/appExplorer_parameters.png[]
 
-2. Create a "New Parameter definition" and input a filename, e.g. parameters.cid.xml.
+2. Create a "New Parameter definition" and input a filename, e.g. "parameters.cid.xml".
 +
 image::media/createNewParameter.png[]
 
@@ -163,10 +163,8 @@ Access with UI-Builder:
 
 image::media/arrays_accessUIBuilder.png[]
 
-[NOTE]
-====
+*NOTE:*
 The array field index starts with 0 and is hexadecimal, therefore a conversion may be necessary!
-====
 
 # Parameters - types: Struct definition
 
@@ -208,11 +206,8 @@ Access with UI-Builder:
 
 image::media/struct_accessUIBuilder.png[]
 
-[NOTE]
-====
+*NOTE:*
 The array field index starts with 0 and is hexadecimal, therefore a conversion may be necessary!
-====
-
 
 // information that needs to be added (see comments on mosaic https://mosaicplus.sick.com/display/wikiAppSpace/Parameters)
 // * example how to access a parameter array

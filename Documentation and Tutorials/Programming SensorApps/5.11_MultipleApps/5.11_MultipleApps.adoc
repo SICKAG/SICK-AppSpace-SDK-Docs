@@ -4,13 +4,13 @@
 
 *Task:* Pass data from one app to another app.
 
-*Solution A:* Create an event using the 'Serve event' dialog.
+*Solution A:* Create an event using the "Serve event" dialog.
 
-Right click anywhere (for high availability within the global scope) in the script of the data producer to open the context menu and choose the 'Serve event' option to open the dialog.
+Right click anywhere (for high availability within the global scope) in the script of the data producer to open the context menu and choose the "Serve event" option to open the dialog.
 
 image::media/serveEvent_dialog_basic.png[]
 
-Select an event name, add one or multiple desired parameters and click 'Serve' to automatically declare the event and insert the ServeEvent code into the script.
+Select an event name, add one or multiple desired parameters and click "Serve" to automatically declare the event and insert the ServeEvent code into the script.
 
 image::media/serveEvent_dialog_advanced.png[]
 
@@ -22,10 +22,8 @@ image::media/barcodeReading_script.png[]
 
 image::media/eventHandler.png[]
 
-[IMPORTANT]
-====
+*IMPORTANT:*
 Be aware of the fact, that if you change e.g. the handle for the event within the code at a later point in time, you have to manually adjust the app properties accordingly. They are not updated automatically. (See screenshots in "Solution B").
-====
 
 
 Solution B: Declare an event in the "App properties" dialog of the data producer app.
@@ -72,7 +70,7 @@ Alternative to events: Call a function of the data consumer in the data producer
 +
 *or*
 +
-3. When things get too complicated, use CROWNs with "Properties" to group data together, like in a "struct" in C and pass the grouped data via events.
+3. When things get too complicated, use CROWNs with "Properties" to group data together, like in a struct in C and pass the grouped data via events.
 
 See also SampleApp https://gitlab.com/sick-appspace/samples/Properties[Properties] for a new data type called "Address" which is a compound of address-related information (first name, last name, street, city etc.).
 
@@ -80,7 +78,7 @@ image::media/dataType_address.png[]
 
 
 # How to design multiple apps III
-*Task:*  There is a data processing which takes different amounts of time to process data, leading to jitter effects, but you want real-time behavior.
+*Task:* There is a data processing which takes different amounts of time to process data, leading to jitter effects, but you want real-time behavior.
 
 *Solution:* Decouple data output from data processing by splitting the solution into two separate apps.
 
@@ -92,7 +90,7 @@ image::media/dataType_address.png[]
 ** Choose other processing algorithms that are less time consuming.
 ** Control the data source to deliver less data.
 
-Use case /flow chart diagram:
+Use a case /flow chart diagram:
 
 image::media/flowChartDiagram.png[]
 
