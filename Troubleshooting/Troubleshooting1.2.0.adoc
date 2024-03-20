@@ -16,7 +16,11 @@
 | Myproblem
 | Mysolution
 
-| MyComponent
-| Myproblem
-| Mysolution
+| Device console
+| Output messages are not printed for selected device
+| Restart VSCode, if restart does not help, delete maxwell connect
+
+| Device console
+| Output messages are not printed for selected device and a restart 
+| Restart VSCode
 |===
