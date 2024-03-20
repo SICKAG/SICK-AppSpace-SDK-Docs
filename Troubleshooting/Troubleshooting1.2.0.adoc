@@ -1,4 +1,4 @@
-# Troubleshooting Guide
+
 [cols="1,1,1"]
 |===
 | *Component* | *Problem* | *Solution*
