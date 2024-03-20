@@ -1,1 +1,20 @@
+# Troubleshooting Guide
+[cols="20%,40%,40%""]
+|===
+| *Component* | *Problem* | *Solution*
+| MyComponent
+| Myproblem
+| Mysolution
 
+| MyComponent
+| Myproblem
+| Mysolution
+
+| MyComponent
+| Myproblem
+| Mysolution
+
+| MyComponent
+| Myproblem
+| Mysolution
+|===
