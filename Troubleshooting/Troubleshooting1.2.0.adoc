@@ -1,5 +1,5 @@
 # Troubleshooting Guide
-[cols="20%,40%,40%"]
+[cols="1,1,1"]
 |===
 | *Component* | *Problem* | *Solution*
 
