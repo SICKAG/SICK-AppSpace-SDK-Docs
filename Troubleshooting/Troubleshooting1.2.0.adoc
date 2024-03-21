@@ -82,6 +82,24 @@ stopped)
 | Use built-in functionality of UI-Builder
 |===
 
+## Dveice / App model
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| Device console
+| Output messages are not printed for selected device
+a| 
+
+* Restart VSCode
+* if restart does not help, delete maxwell connect
+
+| Device console
+| Output messages are not printed for selected device and a restart 
+| Restart VSCode
+|===
+
 ## Output
 
 [cols="1,1,1"]
@@ -99,3 +117,37 @@ a|
 | Output messages are not printed for selected device and a restart 
 | Restart VSCode
 |===
+
+## Debugging
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| Breakpoints
+| Breakpoint on comment line skipped
+| Move preakpoint
+
+| Breakpoints
+| Breakpoints still shown after sample delete
+| Restart VSCode
+|===
+
+## Explorer
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| Device file system
+| Create new file on device file
+system shows error
+| Refresh the "File explorer" view after
+the error message appeared
+
+| Device file system
+| Files with special symbols in
+name are no longer accessible
+| Rename file and avoid special non-ASCII symbols in filename
+|===
+
