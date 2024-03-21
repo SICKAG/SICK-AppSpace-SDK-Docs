@@ -4,8 +4,7 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## Workspace
 
-[cols="1,4,5"]
-[width=100%]
+[cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -24,8 +23,7 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## Code editor
 
-[cols="1,4,5"]
-[width=100%]
+[cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
