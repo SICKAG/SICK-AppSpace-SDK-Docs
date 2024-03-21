@@ -48,3 +48,54 @@ a|
 | Output messages are not printed for selected device and a restart 
 | Restart VSCode
 |===
+
+## UI-Builder
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| Keyboard shortcuts
+| Changed keyboard shortcuts are not respected by the UI-Builder
+| Add activeCustomEditorId != 'sickag.uibuilder-plugin.HtmlEditor' to the When condition in Keyboard Shortcuts
+
+| VSCode Edit operations
+| Unexpected behavior with VSCode menu Edit > operations
+| Use built-in functionality of UI-Builder
+|===
+
+## Device list
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| Device selection
+| After removing and adding the same device
+again, the device model configuration shows
+"No reachable device selected"
+| Restart VSCode (Wait 5 seconds to make sure the device connectivity process is
+stopped)
+
+| VSCode Edit operations
+| Unexpected behavior with VSCode menu Edit > operations
+| Use built-in functionality of UI-Builder
+|===
+
+## Output
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| Device console
+| Output messages are not printed for selected device
+a| 
+
+* Restart VSCode
+* if restart does not help, delete maxwell connect
+
+| Device console
+| Output messages are not printed for selected device and a restart 
+| Restart VSCode
+|===
