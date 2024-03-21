@@ -2,7 +2,7 @@
 
 ## Workspace
 
-[cols="1,1,1"]
+[cols="20%,40%,40%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -128,12 +128,12 @@ stopped)
 | *Component* | *Problem* | *Solution*
 
 | Breakpoints
-| Breakpoint on comment line skipped
-| Move preakpoint
+| Breakpoints on comment lines are skipped without any indication
+| Avoid breakpoints on comment lines
 
 | Breakpoints
-| Breakpoints still shown after sample delete
-| Restart VSCode
+| Breakpoints for deleted Sample are cached and ignored for debugging
+| Remove all breakpoints
 |===
 
 ## Explorer
