@@ -1,20 +1,20 @@
 # Troubleshooting Guide
 
-## Workspace
+## Workspace & building
 
 [cols="1,1,1"]
 |===
 | *Component* | *Problem* | *Solution*
 
-| MyComponent
-| Myproblem
-| Mysolution
+| Build watcher
+| Watcher does not work fpr symlinked files and only works for directories
+| Include parent directory as symlink
 
-| MyComponent
-| Myproblem
-| Mysolution
+| Builder
+| VSCode slow due to unnecessary rebuilds
+| Restart VSCode
 
-| MyComponent
+| Manifest
 | Myproblem
 | Mysolution
 
