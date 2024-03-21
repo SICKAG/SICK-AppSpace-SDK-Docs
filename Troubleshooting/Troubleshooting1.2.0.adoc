@@ -1,8 +1,10 @@
 # Troubleshooting Guide
 
+Please also have a look in the 'Known Issues' section in our release notes, if your issue is not listed in the Troubleshooting document.
+
 ## Workspace
 
-[cols="20%,40%,40%"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -21,7 +23,7 @@
 
 ## Code editor
 
-[cols="20%,40%,40%"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -40,7 +42,7 @@
 
 ## UI-Builder
 
-[cols="1,1,1"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -55,7 +57,7 @@
 
 ## Device list
 
-[cols="1,1,1"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -90,7 +92,7 @@ The configuration file can be found within the installations folder under "mwc/n
 
 ## Device / App model
 
-[cols="1,1,1"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -106,7 +108,7 @@ variable
 
 ## Output
 
-[cols="1,1,1"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -123,7 +125,7 @@ stopped)
 
 ## Debugging
 
-[cols="1,1,1"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -154,10 +156,9 @@ name are no longer accessible
 | Rename file and avoid special non-ASCII symbols in filename
 |===
 
-
 ## Hibernation
 
-[cols="1,1,1"]
+[cols="10%,40%,50%"]
 |===
 | *Component* | *Problem* | *Solution*
 
