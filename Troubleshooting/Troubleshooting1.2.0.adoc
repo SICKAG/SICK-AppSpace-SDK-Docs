@@ -42,7 +42,7 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## UI-Builder
 
-[cols="10%,40%,50%"]
+[cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
