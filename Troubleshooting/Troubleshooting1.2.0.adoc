@@ -165,3 +165,22 @@ name are no longer accessible
 | Rename file and avoid special non-ASCII symbols in filename
 |===
 
+
+## Hibernation
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| Device file system
+| Create new file on device file
+system shows error
+| Refresh the "File explorer" view after
+the error message appeared
+
+| Device file system
+| Files with special symbols in
+name are no longer accessible
+| Rename file and avoid special non-ASCII symbols in filename
+|===
+
