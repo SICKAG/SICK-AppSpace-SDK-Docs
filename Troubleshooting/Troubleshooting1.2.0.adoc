@@ -175,7 +175,7 @@ stopped)
 . Add device to Device list
 |===
 
-[width="15%"]
+[width="50%"]
 |=======
 |1 |2 |A
 |3 |4 |B
