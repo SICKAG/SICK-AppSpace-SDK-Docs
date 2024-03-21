@@ -127,8 +127,7 @@ stopped)
 
 ## Debugging
 
-[cols="1,4,5"]
-[width=100%]
+[width=100%, cols="1,4,5"]
 |===
 | *Component* | *Problem* | *Solution*
 
