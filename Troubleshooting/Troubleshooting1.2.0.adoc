@@ -4,7 +4,7 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## Workspace
 
-[cols="10,40,50"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -23,7 +23,7 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## Code editor
 
-[cols="10,40,50"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -42,7 +42,7 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## UI-Builder
 
-[cols="10,40,50"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -57,7 +57,7 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## Device list
 
-[cols="10%,40%,50%"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -92,7 +92,7 @@ The configuration file can be found within the installations folder under "mwc/n
 
 ## Device / App model
 
-[cols="10%,40%,50%"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -108,7 +108,7 @@ variable
 
 ## Output
 
-[cols="10%,40%,50%"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -125,8 +125,7 @@ stopped)
 
 ## Debugging
 
-.Windtrainer workouts
-[width="50%",cols="3,^2,10",options="header"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -141,7 +140,7 @@ stopped)
 
 ## Explorer
 
-[cols="1,1,1"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -159,7 +158,7 @@ name are no longer accessible
 
 ## Hibernation
 
-[cols="10%,40%,50%"]
+[width="%100",cols="10,40,50"]
 |===
 | *Component* | *Problem* | *Solution*
 
@@ -172,10 +171,3 @@ a|
 stopped)
 . Add device to Device list
 |===
-
-[width="50%"]
-|=======
-|1 |2 |A
-|3 |4 |B
-|5 |6 |C
-|=======
