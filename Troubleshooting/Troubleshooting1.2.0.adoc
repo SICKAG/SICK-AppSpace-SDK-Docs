@@ -1,43 +1,33 @@
 # Troubleshooting Guide
 
-## Workspace & building
+## Workspace
 
 [cols="1,1,1"]
 |===
 | *Component* | *Problem* | *Solution*
 
 | Build watcher
-| Watcher does not work fpr symlinked files and only works for directories
+| Watcher does not work for symlinked files and only works for directories
 | Include parent directory as symlink
 
 | Builder
-| VSCode slow due to unnecessary rebuilds
+| VSCode still slow after removing symlinked directory due to unnecessary rebuilds
 | Restart VSCode
 
-| Manifest
-| Myproblem
-| Mysolution
-
-| Device console
-| Output messages are not printed for selected device
-a| 
-
-* Restart VSCode
-* if restart does not help, delete maxwell connect
-
-| Device console
-| Output messages are not printed for selected device and a restart 
-| Restart VSCode
+| App installation
+| App installation on device does not work after App manifest has been changed
+| Delete App from device and install again
 |===
-## Device console
+
+## Code editor
 
 [cols="1,1,1"]
 |===
 | *Component* | *Problem* | *Solution*
 
-| MyComponent
-| Myproblem
-| Mysolution
+| Language Server
+| Directories defined in _Lua.workspace.library_ are not loaded
+| A further scripts folder must be placed in which the Lua code must be placed
 
 | MyComponent
 | Myproblem
