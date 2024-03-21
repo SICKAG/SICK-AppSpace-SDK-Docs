@@ -79,14 +79,11 @@ stopped)
 
 | Device connectivity
 | sickag.device-connectivity activation fails
-a| If the device connectivity services fail to start, a webview should
-open and perform several diagnostics.
+a| If the device connectivity services fail to start, a webview should open and perform several diagnostics.
 Try to resolve the issue with the offered solutions (buttons).
 Possible solution (manual):
 
-. Check the log of the device connectivity (see output
-channel)
-The blocked ports should be listed in the log.
+. Check the log of the device connectivity (see output channel). The blocked ports should be listed in the log.
 . Delete the following folder:
 Windows: '%APPDATA%/SICK/AppSpace
 /MaxwellConnect'
@@ -94,16 +91,14 @@ Linux: '~/.config/SICK/AppSpace/MaxwellConnect
 
 | Device list
 | Device list empty after SICK AppSpace SDK update
-| Either populate the device list again or
+a| Either populate the device list again or
 Migrate the configuration:
-Identify the current and previous version of the device
-connectivity services. Respectively the ones with the highest
-and second highest version.
-Windows: '%APPDATA%/SICK/AppSpace
+. Identify the current and previous version of the device connectivity services. Respectively the ones with the highest and second highest version.
+.. Windows: '%APPDATA%/SICK/AppSpace
 /MaxwellConnect/instances'
-Linux: '~/.config/SICK/AppSpace/MaxwellConnect
+.. Linux: '~/.config/SICK/AppSpace/MaxwellConnect
 /instances'
-Copy the configuration file to the new version.
+. Copy the configuration file to the new version.
 The configuration file can be found within the installations
 folder under "mwc/native-access/colax/config.json".
 e.g. copy the file from "mwc-appspace-win-x64-0.24.4
