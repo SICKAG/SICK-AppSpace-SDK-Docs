@@ -127,18 +127,16 @@ stopped)
 
 ## Debugging
 
-[width="50%"]
-|===
+.Windtrainer workouts
+[width="50%",cols="3,^2,10",options="header"]
+|=========================================================
 | *Component* | *Problem* | *Solution*
 
-| Breakpoints
-| Breakpoints on comment lines are skipped without any indication
-| Avoid breakpoints on comment lines
+| Breakpoints | Breakpoints on comment lines are skipped without any indication | Avoid breakpoints on comment lines
 
-| Breakpoints
-| Breakpoints for deleted Sample are cached and ignored for debugging
-| Remove all breakpoints
-|===
+| Breakpoints | Breakpoints for deleted Sample are cached and ignored for debugging | Remove all breakpoints
+
+|=========================================================
 
 ## Explorer
 
