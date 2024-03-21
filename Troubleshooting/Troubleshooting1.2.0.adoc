@@ -77,27 +77,57 @@ again, the device model configuration shows
 | Restart VSCode (Wait 5 seconds to make sure the device connectivity process is
 stopped)
 
-| VSCode Edit operations
-| Unexpected behavior with VSCode menu Edit > operations
-| Use built-in functionality of UI-Builder
+| Device connectivity
+| "Failed to activate
+extension: sickag.
+device-connectivity"
+again, the device model configuration shows
+"No reachable device selected"
+| If the device connectivity services fail to start, a webview should
+open and perform several diagnostics.
+Try to resolve the issue with the offered solutions (buttons).
+Possible solution (manual):
+Check the log of the device connectivity (see output
+channel)
+The blocked ports should be listed in the log.
+Delete the following folder:
+Windows: '%APPDATA%/SICK/AppSpace
+/MaxwellConnect'
+Linux: '~/.config/SICK/AppSpace/MaxwellConnect
+
+| Device list
+| Device list empty after SICK AppSpace SDK update
+| Either populate the device list again or
+Migrate the configuration:
+Identify the current and previous version of the device
+connectivity services. Respectively the ones with the highest
+and second highest version.
+Windows: '%APPDATA%/SICK/AppSpace
+/MaxwellConnect/instances'
+Linux: '~/.config/SICK/AppSpace/MaxwellConnect
+/instances'
+Copy the configuration file to the new version.
+The configuration file can be found within the installations
+folder under "mwc/native-access/colax/config.json".
+e.g. copy the file from "mwc-appspace-win-x64-0.24.4
+/native-access/colax/config.json" to "mwc-appspace-winx64-
+0.25.3/native-access/colax/config.json"
 |===
 
-## Dveice / App model
+## Device / App model
 
 [cols="1,1,1"]
 |===
 | *Component* | *Problem* | *Solution*
 
-| Device console
-| Output messages are not printed for selected device
+| Device manifest
+| Device manifest not
+loaded
 a| 
 
-* Restart VSCode
-* if restart does not help, delete maxwell connect
-
-| Device console
-| Output messages are not printed for selected device and a restart 
-| Restart VSCode
+* Ensure device is in the same network
+* Add device IP to NO_PROXY environment
+variable
 |===
 
 ## Output
