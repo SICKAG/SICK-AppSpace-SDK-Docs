@@ -26,16 +26,16 @@
 | *Component* | *Problem* | *Solution*
 
 | Language server
+| Code-completion stops working
+| Restart the Lua Language Server in the Status bar
+
+| Language server
 | Directories defined in _Lua.workspace.library_ are not loaded
 | A further scripts folder must be placed in which the Lua code must be placed
 
 | Language server
 | Certain Lua.format.* options do not have an effect
 | Use Lua.format.defaultConfig instead
-
-| MyComponent
-| Myproblem
-| Mysolution
 
 | Device console
 | Output messages are not printed for selected device
