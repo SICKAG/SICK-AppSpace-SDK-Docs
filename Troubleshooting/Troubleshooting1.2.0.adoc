@@ -93,6 +93,7 @@ Linux: '~/.config/SICK/AppSpace/MaxwellConnect
 | Device list empty after SICK AppSpace SDK update
 a| Either populate the device list again or
 Migrate the configuration:
+
 . Identify the current and previous version of the device connectivity services. Respectively the ones with the highest and second highest version.
 .. Windows: '%APPDATA%/SICK/AppSpace
 /MaxwellConnect/instances'
