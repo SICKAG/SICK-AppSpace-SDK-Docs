@@ -85,26 +85,18 @@ Possible solution (manual):
 
 . Check the log of the device connectivity (see output channel). The blocked ports should be listed in the log.
 . Delete the following folder:
-Windows: '%APPDATA%/SICK/AppSpace
-/MaxwellConnect'
-Linux: '~/.config/SICK/AppSpace/MaxwellConnect
+.. Windows: '%APPDATA%/SICK/AppSpace/MaxwellConnect'
+.. Linux: '~/.config/SICK/AppSpace/MaxwellConnect'
 
 | Device list
 | Device list empty after SICK AppSpace SDK update
-a| Either populate the device list again or
-Migrate the configuration:
+a| Either populate the device list again or migrate the configuration:
 
 . Identify the current and previous version of the device connectivity services. Respectively the ones with the highest and second highest version.
-.. Windows: '%APPDATA%/SICK/AppSpace
-/MaxwellConnect/instances'
-.. Linux: '~/.config/SICK/AppSpace/MaxwellConnect
-/instances'
+.. Windows: '%APPDATA%/SICK/AppSpace/MaxwellConnect/instances'
+.. Linux: '~/.config/SICK/AppSpace/MaxwellConnect/instances'
 . Copy the configuration file to the new version.
-The configuration file can be found within the installations
-folder under "mwc/native-access/colax/config.json".
-e.g. copy the file from "mwc-appspace-win-x64-0.24.4
-/native-access/colax/config.json" to "mwc-appspace-winx64-
-0.25.3/native-access/colax/config.json"
+The configuration file can be found within the installations folder under "mwc/native-access/colax/config.json". e.g. copy the file from "mwc-appspace-win-x64-0.24.4/native-access/colax/config.json" to "mwc-appspace-winx64-0.25.3/native-access/colax/config.json"
 |===
 
 ## Device / App model
