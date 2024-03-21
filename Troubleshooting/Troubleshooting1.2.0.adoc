@@ -127,7 +127,7 @@ stopped)
 
 ## Debugging
 
-[width=100%]
+[width=50%]
 |===
 | *Component* | *Problem* | *Solution*
 
