@@ -1,5 +1,35 @@
 # Troubleshooting Guide
+## Workspace
+
+[cols="1,1,1"]
+|===
+| *Component* | *Problem* | *Solution*
+
+| MyComponent
+| Myproblem
+| Mysolution
+
+| MyComponent
+| Myproblem
+| Mysolution
+
+| MyComponent
+| Myproblem
+| Mysolution
+
+| Device console
+| Output messages are not printed for selected device
+a| 
+
+* Restart VSCode
+* if restart does not help, delete maxwell connect
+
+| Device console
+| Output messages are not printed for selected device and a restart 
+| Restart VSCode
+|===
 ## Device console
+
 [cols="1,1,1"]
 |===
 | *Component* | *Problem* | *Solution*
