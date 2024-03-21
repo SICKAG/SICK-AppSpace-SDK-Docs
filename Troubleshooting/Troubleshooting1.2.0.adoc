@@ -74,7 +74,7 @@ a|
 | After removing and adding the same device
 again, the device model configuration shows
 "No reachable device selected"
-| Restart VSCode (Wait 5 seconds to make sure the device connectivity process is
+| Restart VSCode (wait 5 seconds to make sure the device connectivity process is
 stopped)
 
 | Device connectivity
@@ -125,12 +125,11 @@ variable
 | Output messages are not printed for selected device
 a| 
 
-* Restart VSCode
-* if restart does not help, delete maxwell connect
-
-| Device console
-| Output messages are not printed for selected device and a restart 
-| Restart VSCode
+* Restart VSCode (wait 5 seconds to make sure the device connectivity process is
+stopped)
+* if restart does not help delete the following folder:
+.. Windows: '%APPDATA%/SICK/AppSpace/MaxwellConnect'
+.. Linux: '~/.config/SICK/AppSpace/MaxwellConnect'
 |===
 
 ## Debugging
