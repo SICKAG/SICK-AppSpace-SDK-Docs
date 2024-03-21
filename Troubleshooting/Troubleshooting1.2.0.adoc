@@ -172,15 +172,13 @@ name are no longer accessible
 |===
 | *Component* | *Problem* | *Solution*
 
-| Device file system
-| Create new file on device file
-system shows error
-| Refresh the "File explorer" view after
-the error message appeared
+| Device connectivity
+| After hibernation device connection breaks and device cannot be reconnected
+a|
 
-| Device file system
-| Files with special symbols in
-name are no longer accessible
-| Rename file and avoid special non-ASCII symbols in filename
+. Delete device from Device list
+. Restart VSCode (wait 5 seconds to make sure the device connectivity process is
+stopped)
+. Add device to Device list
 |===
 
