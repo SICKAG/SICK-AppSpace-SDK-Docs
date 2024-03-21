@@ -36,17 +36,6 @@
 | Language server
 | Certain Lua.format.* options do not have an effect
 | Use Lua.format.defaultConfig instead
-
-| Device console
-| Output messages are not printed for selected device
-a| 
-
-* Restart VSCode
-* if restart does not help, delete maxwell connect
-
-| Device console
-| Output messages are not printed for selected device and a restart 
-| Restart VSCode
 |===
 
 ## UI-Builder
