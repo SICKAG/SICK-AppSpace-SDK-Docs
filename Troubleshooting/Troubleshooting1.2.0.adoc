@@ -21,7 +21,7 @@
 
 ## Code editor
 
-[cols="1,1,1"]
+[cols="20%,40%,40%"]
 |===
 | *Component* | *Problem* | *Solution*
 
