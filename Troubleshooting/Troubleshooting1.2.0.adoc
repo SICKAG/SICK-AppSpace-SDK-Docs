@@ -78,19 +78,16 @@ again, the device model configuration shows
 stopped)
 
 | Device connectivity
-| "Failed to activate
-extension: sickag.
-device-connectivity"
-again, the device model configuration shows
-"No reachable device selected"
-| If the device connectivity services fail to start, a webview should
+| sickag.device-connectivity activation fails
+a| If the device connectivity services fail to start, a webview should
 open and perform several diagnostics.
 Try to resolve the issue with the offered solutions (buttons).
 Possible solution (manual):
-Check the log of the device connectivity (see output
+
+. Check the log of the device connectivity (see output
 channel)
 The blocked ports should be listed in the log.
-Delete the following folder:
+. Delete the following folder:
 Windows: '%APPDATA%/SICK/AppSpace
 /MaxwellConnect'
 Linux: '~/.config/SICK/AppSpace/MaxwellConnect
