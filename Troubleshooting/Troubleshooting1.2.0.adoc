@@ -4,7 +4,8 @@ Please also have a look in the 'Known Issues' section in our release notes, if y
 
 ## Workspace
 
-[cols="10%,40%,50%"]
+[cols="1,4,5"]
+[width=100%]
 |===
 | *Component* | *Problem* | *Solution*
 
