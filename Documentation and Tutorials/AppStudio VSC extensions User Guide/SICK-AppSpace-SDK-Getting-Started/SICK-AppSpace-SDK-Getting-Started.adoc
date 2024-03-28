@@ -55,10 +55,28 @@ Most of the features of the _SICK AppSpace SDK_ can be accessed via the *SICK Ap
 
 image::media/sick_appspace_dev_view_button.png[]
 
-The view consists out of four main sections: *Workspaces*, *Device list* and *DeviceModel configuration* and *App model configuration*. The sections central for SensorApp development.
+The view consists out of four main sections: *Home*, *Workspaces*, *Device list* and *DeviceModel configuration* and *App model configuration*. These sections are central for SensorApp development.
 
 # Development process
 This paragraph presents a general workflow for SensorApp development with the _SICK AppSpace SDK_. Depending on your task, not all of the steps may be relevant. This tutorial covers all steps in the general order, in which you would experience them when developing your very first SensorApp.
+
+## Home section
+
+The *Home* section is a central entry point to quickly access common functionalities and find useful information.
+
+image::media/home_section.png[]
+
+It consists of the following components:
+
+* *Quick actions* - contains several actions that are useful for working with the *SICK AppSpace SDK*.
+** *Settings* - opens the settings menu, focusing on options relevant to the *SICK AppSpace SDK*.
+** *Commands* - opens command palette with all the *SICK AppSpace SDK* commands.
+* *Documentation* - contains links to sources containing tutorials and code samples.
+* *Feedback & Issues* - helps with creating bug reports and feature suggestions.
+** *Report bug & issues* - opens a web site for reporting encountered bugs and other issues.
+** *Zip log files* - compresses log files from the current session and puts them in user's 'Download' folder.
+** *Create feature request* - opens a web site for providing other feedback and requesting features.
+* *Enabled extensions* - shows all the enabled *SICK AppSpace SDK* extensions and their versions.
 
 ## Selecting a workspace
 A workspace is the location, in which the SensorApps are saved. Selecting it is necessary for the _SICK AppSpace SDK_ to work as intended. It can either be an empty folder or a location already containing some SensorApps. You can read more about Microsoft Visual Studio Code workspaces via this https://code.visualstudio.com/docs/editor/workspaces[link].
@@ -202,14 +220,19 @@ Once the SensorApp is created, it becomes possible to work with its components. 
 #### Writing Lua scripts
 Writing the code can be done in the text editor of Microsoft Visual Studio Code. The IntelliSense code completion fully supports the device and SensorApp CROWNs (provided they were correctly activated as described in *_Selecting a device model or manifest_* paragraph).
 // TODO: Add links when available
+
 More information about how to code SensorApps and coding guidelines will be added in the future.
+
+*Note*: If you are experiencing issues with the autocompletion, you can restart the Lua Language Server by clicking on the Lua Language Server status in the bottom status bar, in the left section.
+
+image::media/reset-language-server.png[]
 
 ====
 *For SICK AppStudio users:*
 
 The code editing and SensorApp designing is very similar to the way established in SICK AppStudio.
 
-The documentation style used in the SICK AppStudio versions before 3.7 is not supported by the code completion. The current annotation guide can be found here via this https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[link].
+The documentation style used in the SICK AppStudio versions before 3.7 is not supported by the code completion. Please refer to the https://supportportal.sick.com/tutorial/programming-sensorapps-lua-annotations/["Programming SensorApps: Lua annotations" tutorial on the SICK Support Portal] or https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/tree/master/Documentation%20and%20Tutorials/Programming%20SensorApps/Programming-SensorApps-LUA-Annotations/Programming-SensorApps-LUA-Annotations.adoc[on GitHub].
 ====
 
 Serving the functions and events to be available as CROWNs can be done via code actions. To serve a function, the name of the function needs to be selected in the code editor. You can open the code actions menu by pressing _CTRL + ._ or by right clicking the selected text and choosing the appropriate option from the context menu. Selecting *Serve Function* will create the respective documentation in the lua file, a line of code that serves the function and an entry in the manifest will be created, declaring the CROWN.
@@ -258,11 +281,54 @@ In the next step, the upload wizard will ask to provide user level and password 
 
 image::media/upload_apps_process.png[]
 
-## Managing SensorApps on a device
-Currently, it is not possible to delete, stop or start the SensorApps, which are deployed on a device. It is also not possible to download SensorApps from the devices. It is recommended to use SICK AppStudio and / or SICK AppManager to execute such actions.
-// TODO: # File system management
-// TODO: Add link when available.
+# Managing SensorApps on a device
+Besides uploading the SensorApps to the device, it is also important to manage the apps that are already on the device. This includes starting and stopping apps as well as removing them. 
+
+## Starting and stopping apps
+The apps on the device can be started and stopped all together or individually. Stopping an app means that the app won't be loaded and executed when the runtime starts. Stopping or starting an app also restarts all the other apps on the device. However, whenever the device is restarted it will start all the installed apps regardless of their start/stop state.
+
+To start and stop all apps on the device at once use the 'play' and 'stop' buttons next to the device entry in the *Device list* section. Each app has an indicator on its icon showing whether it is stopped or running. Stopped apps display an empty circle, running apps - a filled circle combined with a triangle 'play' shape.
+
+image::media/devices_start_stop.png[]
+
+To individually manage the started and stopped state of the apps, use the "play" and "stop" buttons next to the app entry in the *Device list* section.
+
+image:media/app_start.png[]
+image:media/app_stop.png[]
+
+## Removing apps
+Managing the apps also includes removing them from the device. When this action is performed, the selected app or apps are completely removed from the device and can't be restored. Thus, each time a confirmation is required in the respective dialog.
+
+To remove all the apps from the device, right click on the selected device in the *Device list* section and select "Remove all apps" from the context menu. This will clean the device from all the currently installed apps.
+
+image::media/devices_remove_all.png[]
+
+To remove a single app, use the "trash bin" button next to the app entry in the *Device list* section. Removing a single app from the device will also restart all remaining apps.
+
+image::media/app_delete.png[]
+
+# Device filesystem management
+Each programmable SICK AppSpace device offers some sort of storage that can be accessed and used by the apps. Usually it is a partition internal storage of the device but also can include plugged-in memory cards, volatile RAM storage and others. SICK AppSpace SDK allows the users to manually access that storage via emulation of the filesystem.
+
+Working with the filesystems visually is similar to adding a new workspace folder to the workspace. To work with the filesystem, open *SICK AppSpace SDK* view, navigate to the *Device list* section and click on the three dots icon next to the title of the section. This will open an extra function menu. Select the option "Add device filesystem to workspace".
+
+image::media/devices_add_filesystem.png[]
+
+This will add all filesystems of the connected devices to the current workspace. Now, they can be browsed and managed like any other folder in the *Explorer* view.
+
+image::media/explorer_device_filesystem.png[]
+
+## Importing apps into the workspace
+In is possible to import and export apps as zip archives (without any encryption) individually. The SICK AppSpace SDK can help with the former.
+
+To start an app import, navigate to the *SICK AppSpace SDK* view and click the "screen" button next to the title of the workspace in the *Workspaces* section. This will open a window from which compressed apps can be chosen.
+
+image:media/import-app.png[] ->
+image:media/import-app-selection.png[]
+
+After confirming the selection, the extension will unpack the app and place it in the workspace.
+
+image::media/import-app-done.png[]
 
 # More details
 Please note, that additional tutorials and information on technical details as well as the latest releases will be made available in the future.
-
