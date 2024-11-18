@@ -23,7 +23,7 @@ Windows x64
 
 ## Quick links
 ### Release Notes
-https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Release%20Notes/SICKAppSpaceSDK1.2.0_Release_Notes.pdf[Latest release notes]
+https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Release%20Notes/SICKAppSpaceSDK1.3.0_Release_Notes.pdf[Latest release notes]
 
 
 ### SICK AppSpace SDK - Getting started
