@@ -242,4 +242,3 @@ The UI element library contains several viewers that can be used to visualize 2D
 If you need to use controls of legacy packages which have been released for SICK AppStudio version <=2.4.2, you can use the Legacy section. Legacy packages (.package files) can be added to the elements library with the "+" button. Note that legacy controls are wrapped with SJSWrapper elements. This means that all properties and attributes of the control can only be changed by editing the JSON string in the options property field. The Legacy Elements group is only visible after adding the first legacy package.
 
 image::media/legacyelements.png[]
-

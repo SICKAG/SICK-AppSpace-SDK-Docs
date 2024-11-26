@@ -5,7 +5,6 @@
 :source-highlighter: highlightjs
 
 Apps can include a web-page which represents the user interface of the application. It is advised to create an application specific user interface (UI) if you want to have human machine interaction of any kind. Creating a custom UI also ensures that the UI works independently from the firmware of the device. 
-```
 
 We do not recommend you to rely on the the Default User Interface (explained in the next paragraph), which comes with the firmware of each device since this standard user interface and its API can change with newer firmware versions. Consequently, the default user interface might not work as expected after a firmware update.
 
@@ -472,4 +471,3 @@ image::media/cleanmenu.png[]
 Select the projects to clean or clean all projects:
 
 image::media/cleandialog.png[]
-

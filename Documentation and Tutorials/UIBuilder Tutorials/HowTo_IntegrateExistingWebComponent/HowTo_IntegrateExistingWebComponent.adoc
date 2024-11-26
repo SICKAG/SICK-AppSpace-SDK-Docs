@@ -337,4 +337,3 @@ Start the emulator, run the app on the emulator and open the device page. It sho
 image:media/15_colorPicker_finishedPage_PickerClosed.png[colorPicker closed in finished page, 500]
 
 image:media/16_colorPicker_finished_PickerOpened.png[colorPicker opened in finished page, 200]
-

@@ -107,7 +107,7 @@ image::media/addBindingFunctionSetw.png[]
 With the binding type "Parameters", a control property is bound to a SOPAS variable (parameter, e.g. "AppEngineVersion"), which is defined in the cid.xml file of an app (located in $appName/parameters).
 
 #### Parameter changed event → Control property
-The CrownOn binding is used to react directly to value changes of a parameter (i.e. update the control to the new value of the changed parameter).
+The ParameterOn binding is used to react directly to value changes of a parameter (i.e. update the control to the new value of the changed parameter).
 In the image below, you can see that available parameter events are listed in the "Add binding" dialog. Note: If the parameter crown is deactivated for security
 reasons ParameterOn bindings will not work.
 
@@ -135,26 +135,98 @@ Events of controls can be bound to setting a parameter on your SensorApp. In the
 
 image::media/binding_parameter_set.png[]
 
-### UI: binding to other UI elements
+### UI: binding to a topic
 
-With the binding type "UI", bindings can be made within the UI to allow UI elements to interact directly with each other (no link to the Lua code needed). This type of binding is also called a local binding.  
+With the binding type "UI", bindings can be made within the UI to allow UI elements to interact directly with each other (no link to the Lua code needed). This type of binding is also called a local binding. By using a local binding, a  UI topic, i.e. an entry in a local store will be created. This topic is accessible from other local bindings as well.
 
-The UI-Builder offers several predefined UI bindings which are shown in the "Add binding" dialog. In addition, customized UI bindings can be defined via the "Generate" button in the Bindings tab. For more information, see paragraph "Bindings to UI internal variables". 
+#### UI topic -> Control property
+
+As soon as the value of a UI topic changes the LocalOn binding will update the property of its parent control. Note that the topic's value has to be of the same type as the control property. 
+The UI-Builder offers the predefined "currentuser" topic, which is shown in the "Add binding" dialog. In addition, custom topics can be defined via the "Generate" button in the Bindings tab. For more information, see paragraph "Bindings to UI internal variables". 
+
+image::media/add_local_on.png[]
+
+This binding only allows unidirectional access, i.e. reading and writing require different bindings, see below.
+
+#### Control Event -> UI topic
+
+The LocalSet binding can be used to update a topic's value if an event is fired on its parent control. Note that the "Add binding" dialog for this usecase will be empty if there is no local binding in your code, as there is no write access to the predefined "currentuser" topic. To create a new custom UI topic consult the paragraph "Bindings to UI internal variables".
+
+image::media/add_local_set.png[]
 
 ## Legacy bindings
 
-Legacy bindings are needed if the UI will be deployed on a device that runs with an old firmware based on an AppEngine framework version lower than 2.9.
+Legacy bindings are needed if the UI will be deployed on a device that runs with an old firmware based on an AppEngine framework version lower than 2.9. The new local bindings, are an exception and can be used for older AppEngine framework versions, however, the predefined UI topics "shownavigation", "currentpage", "deviceident" only exist in the local store of the legacy bindings.
+Furthermore, the restriction to only using legacy bindings if the device firmware is based on an AppEngine framework version lower than 2.9 does not hold true for the parameter bindings ParameterGet and ParameterSet, that use the "srt"
+protocol by default. Still the user can use the legacy sopas-binding instead of ParameterGet and ParameterSet if desired. 
 
 image::media/legacy.png[]
 
 It is recommended to not enable the "Support legacy" setting without a reason because
 
+* legacy bindings can only be used within the SopasJS framework. If another UI framework is chosen they will not work
 * the new bindings, i.e. non-legacy bindings, have a better performance
 * the number of parallel requests is configurable for the new bindings
-* listening on parameter changes is only possible for the ParameterOn binding
+* listening on parameter changes, which are triggered from the backend, is only possible for the ParameterOn binding
+* for local bindings the legacy binding store can only be accessed from the legacy bindings and the new local store can only be accessed from the new local bindings
 
-The restriction to only using legacy bindings if the device firmware is based on an AppEngine framework version lower than 2.9 does not hold true for the parameter bindings ParameterGet and ParameterSet, that use the "srt"
-protocol by default. Still the user can use the legacy sopas-binding if desired.
+Note that legacy bindings can be upgraded automatically from the messages panel in UI-Builder, by hovering over the legacy warning and clicking on "Upgrade" or "Upgrade All":
+
+image::media/upgrade-binding-message.png[]
+
+### Issues with upgrading of legacy bindings
+
+Legacy bindings can be upgraded to newer bindings automatically, using the ui-builder editor. However, some special cases will need some manual adjustments which we list here.
+
+#### Initial values
+
+The new bindings don't have the `update-if-not-initialized` and `update-on-resume` parameters that were present in the legacy bindings. Therefore the parent property connected by `crown-on` or `local-on` binding is not automatically set after initialization (unless the value watched by `local-on` was already set before).
+
+To get the same result as in the legacy bindings, the connected property should be set to the expected initial value. This is not done by the ui-builder editor automatically and needs to be updated manually.
+
+Legacy binding:
+
+[source, html]
+----
+<davinci-button type="accent" icon-position="append" icon="alert/warning">
+  <span>Delete configuration</span>
+  <local-binding property="disabled" name="confirmDeletion" update-on-resume converter="(x) => (!x)"> </local-binding>
+</davinci-button>
+
+<davinci-toggle-switch title="Confirm deletion">
+  <local-binding event="change" name="confirmDeletion"></local-binding>
+</davinci-toggle-switch>
+----
+
+New bindings:
+
+[source, html]
+----
+<davinci-button type="accent" icon-position="append" icon="alert/warning" disabled>
+  <span>Delete configuration</span>
+  <local-on property="disabled" identifier="confirmDeletion" converter="(x) => (!x)"></local-on>
+</davinci-button>
+
+<davinci-toggle-switch title="Confirm deletion">
+  <local-set event="change" identifier="confirmDeletion"></local-set>
+</davinci-toggle-switch>
+----
+
+Alternatively for `local-on` binding the initial value can be passed in also in the `init-value` property:
+
+[source, html]
+----
+<davinci-button type="accent" icon-position="append" icon="alert/warning">
+  <span>Delete configuration</span>
+  <local-on property="disabled" identifier="confirmDeletion" converter="(x) => (!x)" init-value="false"></local-on>
+</davinci-button>
+
+<davinci-toggle-switch title="Confirm deletion">
+  <local-set event="change" identifier="confirmDeletion"></local-set>
+</davinci-toggle-switch>
+----
+
+Note, that the `init-value` is the value of the local property defined by `identifier`, not the bound parent `property`, so it will still be passed to converter before applying to the parent.
 
 ## Binding properties
 Binding properties can be edited after the initial creation of a binding via the Bindings tab on the right side of the UI-Builder. Depending on the chosen binding type, there are different editable binding properties.
@@ -254,7 +326,6 @@ If the desired functionality is not listed in the table of available bindings, t
 * Downloading the app onto the device leads to performance issues: +
 There might be too many Function bindings with the "auto-update" option set to a value bigger than 0. Try to set them to 0 and communicate changes from the device via Events instead.
 
-
 [[internal_vars]]
 ## Bindings to UI internal variables
 
@@ -266,28 +337,27 @@ To add a local binding, you need to define the two endpoints of the local bindin
 
 Usually, you first want to define a "binding source" by opening the "Generate binding" dialog in the Bindings tab.
 
-In the image below, the "Generate binding" dialog is shown. The "input" event of a TextField was chosen and the New local tab is selected. In the "Topic" field, you can enter the name of the topic under which all updates should be published. The local "binding source" is created by pressing the "Add local binding" button.
+In the image below, the "Generate binding" dialog is shown. The "input" event of a TextField was chosen and the "New local" tab is selected. In the "Topic" field, you can enter the name of the topic under which all updates should be published. The local "binding source" is created by pressing the "Add local binding" button.
 
-image::media/new-local-binding.png[]
+image::media/generate_local_set.png[]
 
 The resulting binding looks as follows
 [source, html]
 ----
 <davinci-text-field id="TextField1" type="text">
-	<local-binding name="updateText" event="input"></local-binding>
+	<local-set identifier="updateText" event="input"></local-set>
 </davinci-text-field>
 ----
 
 To define a "binding target", a new binding has to be added to the target control. In the example below, the "value" property of a second TextField is selected. The UI tab provides the formerly defined topic name "updateText".
 
-image::media/new-local-binding2.png[]
+image::media/add_custom_local_on.png[]
 
 The code of the generated binding is shown in the following snippet.
 [source, html]
 ----
 <davinci-text-field id="TextField2" type="text">
-	<local-binding property="value" name="updateText" update-on-resume>
-	</local-binding>
+	<local-on property="value" identifier="updateText"></local-on>
 </davinci-text-field>
 ----
 
@@ -487,14 +557,14 @@ You are free to choose the data-content of the options and to add whichever elem
 To bind the selected pane to an input value, add the following line of code in front of the closing tag of the stackedView element ("</stacked-view>"):
 [source, html]
 ----
-<local-binding property="value" name="selectedItem" init="first pane"></local-binding>
+<local-on property="value" identifier="selectedItem" init-value="first pane"></local-on>
 ----
-This creates a binding called "selectedItem" which sets the "value" property of the stackedView element. The "init" property is used to set the initially shown pane when the page gets loaded for the first time.
+This creates a binding called "selectedItem" which sets the "value" property of the stackedView element. The "init-value" property is used to set the initially shown pane when the page gets loaded for the first time.
 
 To specify the input value from above, add the following line of code in front of the closing tag of the dropDown element ("</davinci-drop-down>"):
 [source, html]
 ----
-<local-binding event="change" name="selectedItem"></local-binding>
+<local-set event="change" identifier="selectedItem"></local-set>
 ----
 
 Start the emulator and open the UI page provided by the app. As you can see, the StackedPane changes with the selected option.
@@ -582,4 +652,3 @@ image::media/option3.png[]
 // Bindings return a .json string (a format to store information in a hierarchical way) to hand over the information and SICK AppStudio uses the "path" property to extract the data from it. For "Function (Crown)" bindings, the path to the data always has the prefix "result/data".
 
 // Since the lua function "getXYZ" returns three values, the path "result/data" would lead to extracting all three of them. By suffixing "/x", "/y" or "/z", the desired value is specified and the correct data can be extracted.
-

@@ -148,6 +148,15 @@ The library of UI elements for SICK AppStudio is stored in the folder "C:\Users\
   @sick-davinci/basic-elements@5.6.5
 | link:https://supportportal.sick.com/file/0c485604-95c6-462c-94e2-a1951085cf3f/[SICK AppSpace Control Library 4.0.2 (TGZ, 4 MB)]
 
+| @sick-appspace/control-library@5.0.2
+| TODO: TBD?
+| @sick-appspace/appspaceviewers@4.0.0 +
+  @sick-appspace/as-bindings@2.1.1 +
+  @sick-appspace/as-ui-elements@3.0.0 +
+  @sick-appspace/curie-elements@0.11.0 +
+  @sick-davinci/basic-elements@7.2.3
+| TODO: link
+
 |===
 
 ## Extended libraries
@@ -312,5 +321,15 @@ The library of UI elements for SICK AppStudio is stored in the folder "C:\Users\
   @sick-davinci/visual-elements@2.1.2
 | link:https://supportportal.sick.com/file/f443a1f4-aefe-4c04-8617-2f3a7d9cfcdf/[SICK AppSpace Extended Control Library 8.0.2 (TGZ, 17 MB)]
 
-|===
+| @sick-appspace/extended-control-library@9.0.2
+| TODO: TBD?
+| @sick-appspace/appspaceviewers@4.0.0 +
+  @sick-appspace/as-bindings@2.1.1 +
+  @sick-appspace/as-ui-elements@3.0.0 +
+  @sick-appspace/curie-elements@0.11.0 +
+  @sick-davinci/basic-elements@7.2.3 +
+  @sick-davinci/dashboard-elements@7.1.0 +
+  @sick-davinci/visual-elements@2.1.2
+| TODO: link
 
+|===
