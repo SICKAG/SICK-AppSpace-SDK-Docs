@@ -11,7 +11,7 @@ If you're missing features feel free to  https://jira.sick.com/rest/collectors/1
 
 ## Find more information here
 
-https://www.sick.com/sick-appspace[General overview about SICK AppSpace]
+https://www.sick.com/de/de/sick-appspace-developers/s/sas-developers[General overview about SICK AppSpace]
 
 https://marketplace.visualstudio.com/items?itemName=sickag.appspace-sdk-extension-pack[SICK AppSpace - SDK in VSCode marketplace]
 
