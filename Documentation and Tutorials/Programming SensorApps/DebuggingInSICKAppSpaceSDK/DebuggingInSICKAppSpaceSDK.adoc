@@ -46,11 +46,13 @@ image::media/console_SDK.png[]
 
 . To debug an app, click F5 on your keyboard or select the "Start Debugging" option from the "Run" menu.
 +
-NOTE: Please note that you just can debug one application at once.
+NOTE: Please note that multi app debugging is not yet supported by all devices.
++
+NOTE: The debugger starts all apps, regardless of their previous state.
 +
 image::media/startDebugging_SDK.png[]
 
-. From the help menu, select the App you want to debug with arrow keys and press Return or click on it with a mouse cursor. Select the service run level and confirm the password by pressing Return if prompted.
+. From the help menu, select the App(s0 you want to debug with arrow keys and press Return or click on it with a mouse cursor. Select the service run level and confirm the password by pressing Return if prompted.
 +
 image::media/selectApp_SDK.png[]
 
