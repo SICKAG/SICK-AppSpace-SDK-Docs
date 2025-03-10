@@ -14,7 +14,7 @@ It allows developers to quickly identify and differentiate between parts of the 
 The highlighting in VS Code can generally be modified by customizing syntax styling and coloring in the user settings.
 To apply your own styling, open the user settings (Open Command Palette > _Preferences: Open User Settings (JSON)_).
 
-![Screenshot from 2025-03-10 15-58-31](https://github.com/user-attachments/assets/5c68952f-9db7-40b0-9a31-c159d0a49065)
+![image](https://github.com/user-attachments/assets/0cc7cea8-dae2-4fbb-a09c-310c09f239b0)
 
 There, you can define your own styling rules. The general scheme looks like this:
 
