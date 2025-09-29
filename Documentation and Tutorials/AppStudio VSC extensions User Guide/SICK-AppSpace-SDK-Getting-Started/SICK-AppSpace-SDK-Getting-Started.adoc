@@ -37,19 +37,6 @@ After starting Microsoft Visual Studio Code for the first time after the install
 
 image::media/welcome_view.png[]
 
-====
-*For SICK AppStudio users:*
-
-It is possible to also add your license file. By default, the SDK will ask for a license after it is started for the first time. In the bottom of the screen, a pop-up window will appear. Click *Choose license file* to select a license file from your computer.
-
-image:media/license_popup.png[]
-
-If the user already added the license, or if the license prompt didn't appear, the license can be reset by opening the command prompt (default - press F1) and searching for _SICK AppSpace: Reset AppSpace license_ command.
-
-image::media/commands_search_reset_license.png[]
-
-====
-
 # The SICK AppSpace SDK view
 Most of the features of the _SICK AppSpace SDK_ can be accessed via the *SICK AppSpace SDK* view. This view is added by the the _SICK AppSpace-Programmable-Core_ component of _SICK AppSpace SDK_ and should be available after correct installation process. It can be opened by clicking the *SICK AppSpace button* on the sidebar of Microsoft Visual Studio Code.
 
@@ -332,3 +319,4 @@ image::media/import-app-done.png[]
 
 # More details
 Please note, that additional tutorials and information on technical details as well as the latest releases will be made available in the future.
+
