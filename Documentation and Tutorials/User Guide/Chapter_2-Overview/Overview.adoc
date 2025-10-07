@@ -4,10 +4,34 @@
 Some content here...
 
 //footer: navigation
+== Sidebar
+//TODO: Add some images here
+The Sidebar is located on the very left of VSCode and contains quick access to various VSCode features and extensions. After installing the *SICK Sentio App Designer* extension, a new icon will appear in the sidebar that provides access to the main features of the extension.
+
+We recommend moving the *SICK Sentio App Designer* icon to the secondary sidebar on the very right, this way all Designer related features can be viewed while also accessing the VSCode file explorer, debugger and additional tools.
+
+== Parts
+//TODO: Add screenshot and descriptions of the different parts of the UI
+// Parts:
+// Explorer
+// Home
+// Workspace
+// Device List
+// Device Model Config
+// App Model Config
+// Device Monitor
+
+== Editors
+//TODO: Add subpages describing all editors in detail
+// Manifest (Script)
+// Lua (Script)
+// UI-Builder
+// Flows (Blocks-Editor)
+// Parameters (Script & Outline)
 
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
 |xref:../Chapter_1-Getting_Started/Getting_Started.adoc[Back: Getting Started]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../Chapter_3-App_development/App_Development.adoc[Next: App Development]
+xref:../Chapter_3-App_Development/App_Development.adoc[Next: App Development]
 |===

@@ -1,8 +1,17 @@
 = SICK Sentio App Designer - Miscellaneous
 // This chapter provides an miscellaneous collection of topics related to the SICK Sentio App Designer that do not fit into the other chapters.
 
-Some content here...
+== Commands
+The *SICK Sentio App Designer* extension adds several commands to the VSCode command palette. You can access the command palette by pressing `Ctrl+Shift+P` and typing the desired command name.
+List of available commands
+// TODO: Add link to subpage
 
-//horizontal line
+== Troubleshooting
+// TODO: Fill
+
+
 ---
-xref:../User_Guide.adoc[Back to User Guide]
+[cols="<,^,>", frame=none, grid=none]
+|===
+|xref:../Chapter_3-App_Development/App_Development.adoc[Back: App Development]|xref:../User_Guide.adoc[Back to User Guide]|
+|===

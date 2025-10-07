@@ -56,6 +56,7 @@ For more information on how to create and manage profiles, please refer to the o
 //footer: navigation
 
 ---
+
 [cols="<,^,>", frame=none, grid=none]
 |===
 ||xref:../User_Guide.adoc[Back to User Guide]|

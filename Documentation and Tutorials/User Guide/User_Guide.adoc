@@ -1,19 +1,31 @@
 = SICK Sentio App Designer - User Guide
-:doctype: book 
-:stylesdir: _style
-:stylesheet: style.css
+:doctype: book
 
 // Some opening words about the SICK Sentio App Designer
 
-// list table of contents
+This User guide provides a comprehensive overview of the *SICK Sentio App Designer*, its features, and its capabilities. It includes detailed instructions on how to install, configure, and use the tool effectively for developing applications for SICK Sentio devices.
 
+// list table of contents
 * xref:Chapter_1-Getting_Started/Getting_Started.adoc[Getting Started]
 ** xref:Chapter_1-Getting_Started/Getting_Started.adoc#VSCode[VSCode]
 ** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Best Practices[Best Practices]
 ** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Installation[Installation]
+
 * xref:Chapter_2-Overview/Overview.adoc[Overview]
-* xref:Chapter_3-App_development/App_Development.adoc[App Development]
+** xref:Chapter_2-Overview/Overview.adoc#Sidebar[Sidebar]
+** xref:Chapter_2-Overview/Overview.adoc#Parts[Parts]
+* xref:Chapter_2-Overview/Overview.adoc#Editors[Editors]
+
+* xref:Chapter_3-App_Development/App_Development.adoc[App Development]
+** xref:Chapter_3-App_Development/App_Development.adoc#New Sensor App[New Sensor App]
+** xref:Chapter_3-App_Development/App_Development.adoc#Development Cycle[Development Cycle]
+** xref:Chapter_3-App_Development/App_Development.adoc#Debugging[Debugging]
+** xref:Chapter_3-App_Development/App_Development.adoc#Packaging and Deployment[Packaging and Deployment]
+** xref:Chapter_3-App_Development/App_Development.adoc#Protecting Intellectual Property[Protecting Intellectual Property]
+
 * xref:Chapter_4-Misc/Misc.adoc[Miscellaneous]
+* xref:Chapter_4-Misc/Misc.adoc#Commands[Commands]
+* xref:Chapter_4-Misc/Misc.adoc#Troubleshooting[Troubleshooting]
 // == link:./Chapter_1-Getting_Started/Chapter_1-Getting_Started.adoc[Chapter 1 - Getting Started]
 
 
