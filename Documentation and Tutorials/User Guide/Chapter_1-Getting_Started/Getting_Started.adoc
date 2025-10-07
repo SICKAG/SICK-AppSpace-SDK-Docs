@@ -1,12 +1,11 @@
 = SICK Sentio App Designer - Getting Started
-:doctype: book 
-:preface-title: Preface 
-:toc-title: Outline:
+:toc-title:
 :toc:
-// This chapter provides an introduction to the SICK Sentio App Designer, including installation instructions,
-// best practices like profile usage and general vscode tips and tricks.
-//TOC::[]
 
+This chapter provides an introduction to the SICK Sentio App Designer, including installation instructions,
+best practices like profile usage and general vscode tips and tricks.
+
+---
 
 == Requirements
 In order to start the development of application software (SensorApps) with *SICK Sentio App Designer*, the following hardware & software tools, devices and utilities should be available:

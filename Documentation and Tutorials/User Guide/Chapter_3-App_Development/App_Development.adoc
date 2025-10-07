@@ -1,15 +1,41 @@
 = SICK Sentio App Designer - App development
-// This chapter provides the full toolchain to create, develop, debug and deploy applications using the SICK Sentio App Designer.
+:toc-title:
+:toc:
+
+This chapter provides the full toolchain to create, develop, debug and deploy applications using the SICK Sentio App Designer.
+
+---
+
+//TODO: Move parts into subpages
 
 == New Sensor App
 
 == Development Cycle
 
+=== Editing
+=== Deployment
+=== Sharing Code
+
 == Debugging
+
+=== Start debugger
+//TODO: Single and multi app debugging
+
+=== Breakpoints
+//TODO: Basic and conditional breakpoints
+=== Timings
+=== Inspecting Variables
+//TODO: Basic variables as well as 2D and 3D variables
+=== Stack Trace
+=== Interacting with the Device
+//TODO: Debug Console, Set Variables, etc.
 
 == Packaging and Deployment
 
+=== Packaging
+//TODO: Creating SAPK files
 === Protecting Intellectual Property
+//TODO: aka encryption workflow
 
 
 ---
