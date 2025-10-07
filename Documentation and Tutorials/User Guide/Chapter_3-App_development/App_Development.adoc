@@ -1,5 +1,8 @@
 = SICK Sentio App Designer - App development
 // This chapter provides the full toolchain to create, develop, debug and deploy applications using the SICK Sentio App Designer.
 
+Some content here...
 
-== link:../User Guide.adoc[Back to User Guide]
+//horizontal line
+---
+xref:../User_Guide.adoc[Back to User Guide]

@@ -1,10 +1,63 @@
 = SICK Sentio App Designer - Getting Started
+:doctype: book 
+:preface-title: Preface 
+:toc-title: Outline:
+:toc:
 // This chapter provides an introduction to the SICK Sentio App Designer, including installation instructions,
 // best practices like profile usage and general vscode tips and tricks.
+//TOC::[]
 
-Some content here...
 
-//horizontal line
+== Requirements
+In order to start the development of application software (SensorApps) with *SICK Sentio App Designer*, the following hardware & software tools, devices and utilities should be available:
+
+* Computer with Microsoft Windows 10+, 64 bit. or 64 bit Linux system
+
+* Optional: Ethernet cable to connect the programmable *SICK Sentio* device, USB Ethernet adapter
+** If the Ethernet port of the PC/notebook is reserved for a LAN connection, a USB port of the PC can be used with a USB-to-Ethernet adapter. In that case, the IP address of the adapter must be adjusted accordingly to the device's subnet.
+
+* *Microsoft Visual Studio Code* and *SICK Sentio App Designer* extensions
+** For productive use of *SICK Sentio App Designer*, a https://id.sick.com/[*SICK ID*] account is required.
+
+* *SICK AppEngine*
+** *SICK Sentio App Designer* also provides emulator functionality, making it possible to emulate a device. This can be used to start software development without the need for a HW device. However, any kind of input data like images must be available as resources in the corresponding app.
+** The software does not actually replace the real device and features only the emulation of functions. It does not emulate the actual capabilities, such as limited hard drive space, memory or other physical resources
+
+* Optional: https://www.sick.com/de/de/produkte/digitale-dienste-und-software/software/sentio-creator/p/p686849[*SICK Sentio Creator*]
+** It is used for managing and installing SAPK packages on programmable devices
+** Can also be used to upgrade firmware of the connected device and make a backup of the apps as well as configuration of the device
+
+* *SICK AppSpace device*, e.g. InspectorP or SIM2000:
+** For device-specific "first steps" tutorial information, please refer to corresponding tutorial articles in the support portal. "First steps" information also contains recommendations on basic equipment and accessories for hardware setup.
+
+== VSCode
+VSCode is a powerful and state-of-the-art source code editor. It is highly customizable and supports a wide range of programming languages and frameworks through extensions.
+    For additional information, please refer to the official https://code.visualstudio.com/docs[documentation]
+// Add some general VSCode documentation here...
+
+== Best Practices
+=== Profiles
+Using profiles in VSCode adds a big performance boost to the environment by only having the necessary extensions and settings loaded for a specific environment.
+We highly recommend to create a dedicated profile for developing with SICK Sentio App Designer.
+
+
+For more information on how to create and manage profiles, please refer to the official https://code.visualstudio.com/docs/editor/profiles[VSCode Profiles Documentation].
+
+== Installation
+1. Open up Visual Studio Code.
+2. Navigate to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
+3. In the search bar, type "SICK Sentio App Designer".
+4. Locate the "SICK Sentio App Designer" extension in the search results and click on it.
+5. Click the "Install" button to install the extension.
+6. Once the installation is complete, you may need to reload Visual Studio Code for the extension to be fully activated. You can do this by clicking the "Reload" button that appears after installation or by manually restarting Visual Studio Code.
+7. The SICK Sentio App Designer extension will perform installation of the device connectivity module, this might take a short amount of time on the first startup.
+8. After the installation is complete, you can start using the SICK Sentio App Designer extension to develop applications for SICK Sentio devices.
+
+//footer: navigation
+
 ---
-
-xref:../User_Guide.adoc[Back to User Guide]
+[cols="<,^,>", frame=none, grid=none]
+|===
+||xref:../User_Guide.adoc[Back to User Guide]|
+xref:../Chapter_2-Overview/Overview.adoc[Next: Overview]
+|===

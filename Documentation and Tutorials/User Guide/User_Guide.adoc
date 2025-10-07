@@ -1,7 +1,20 @@
 = SICK Sentio App Designer - User Guide
+:doctype: book 
+:stylesdir: _style
+:stylesheet: style.css
+
 // Some opening words about the SICK Sentio App Designer
 
 // list table of contents
 
-== xref:Chapter_1-Getting_Started/Getting_Started.adoc[Getting Started].
+* xref:Chapter_1-Getting_Started/Getting_Started.adoc[Getting Started]
+** xref:Chapter_1-Getting_Started/Getting_Started.adoc#VSCode[VSCode]
+** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Best Practices[Best Practices]
+** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Installation[Installation]
+* xref:Chapter_2-Overview/Overview.adoc[Overview]
+* xref:Chapter_3-App_development/App_Development.adoc[App Development]
+* xref:Chapter_4-Misc/Misc.adoc[Miscellaneous]
 // == link:./Chapter_1-Getting_Started/Chapter_1-Getting_Started.adoc[Chapter 1 - Getting Started]
+
+
+xref:Chapter_1-Getting_Started/Getting_Started.adoc[Getting Started]

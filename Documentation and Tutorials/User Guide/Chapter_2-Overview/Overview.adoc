@@ -1,0 +1,13 @@
+= SICK Sentio App Designer - Overview
+// This chapter provides an overview of the SICK Sentio App Designer, its features, and its capabilities and includes a general overview over the user interface.
+
+Some content here...
+
+//footer: navigation
+
+---
+[cols="<,^,>", frame=none, grid=none]
+|===
+|xref:../Chapter_1-Getting_Started/Getting_Started.adoc[Back: Getting Started]|xref:../User_Guide.adoc[Back to User Guide]|
+xref:../Chapter_3-App_development/App_Development.adoc[Next: App Development]
+|===
