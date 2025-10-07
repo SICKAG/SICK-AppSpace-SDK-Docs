@@ -1,0 +1,5 @@
+= SICK Sentio App Designer - Miscellaneous
+// This chapter provides an miscellaneous collection of topics related to the SICK Sentio App Designer that do not fit into the other chapters.
+
+
+== link:../User Guide.adoc[Back to User Guide]
