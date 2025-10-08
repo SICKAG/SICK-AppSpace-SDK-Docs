@@ -51,7 +51,7 @@ For more information on how to create and manage profiles, please refer to the o
 6. Once the installation is complete, you may need to reload Visual Studio Code for the extension to be fully activated. You can do this by clicking the "Reload" button that appears after installation or by manually restarting Visual Studio Code.
 7. The SICK Sentio App Designer extension will perform installation of the device connectivity module, this might take a short amount of time on the first startup.
 8. After the installation is complete, you can start using the SICK Sentio App Designer extension to develop applications for SICK Sentio devices.
-
+//TODO: Add screenshot of consent dialog
 //footer: navigation
 
 ---

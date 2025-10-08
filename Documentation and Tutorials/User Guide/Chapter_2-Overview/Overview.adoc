@@ -1,18 +1,8 @@
 = SICK Sentio App Designer - Overview
-:toc-title:
-:toc:
 
 This chapter provides an overview of the SICK Sentio App Designer, its features, and its capabilities and includes a general overview over the user interface.
 
 ---
-
-//footer: navigation
-== Sidebar
-//TODO: Renew screenshot as soon as new icons are available
-image::media/sidebar.png[Sidebar with SICK Sentio App Designer icon] 
-The Sidebar is located on the very left of VSCode and contains quick access to various VSCode features and extensions. After installing the *SICK Sentio App Designer* extension, a new icon will appear in the sidebar that provides access to the main features of the extension.
-
-We recommend moving the *SICK Sentio App Designer* icon to the secondary sidebar on the very right, this way all Designer related features can be viewed while also accessing the VSCode file explorer, debugger and additional tools.
 
 == Components
 //TODO: Renew screenshot as soon as new icons are available
@@ -20,7 +10,7 @@ We recommend moving the *SICK Sentio App Designer* icon to the secondary sidebar
 image::media/components.png[Components] 
 // mockup like an ifixit guide with a lot of components (image with parts marked in different colors and a legend below)
 |===
-a|image::media/color_sidebar.png[light blue]|<<Sidebar>>
+a|image::media/color_sidebar.png[light blue]|xref:2.1-Sidebar/Sidebar.adoc[Sidebar]
 a|image::media/color_explorer.png[blue]|Explorer
 a|image::media/color_editor_area.png[purple]|Editor Area
 a|image::media/color_auxiliary_panel.png[pink]|Auxiliary Panel
