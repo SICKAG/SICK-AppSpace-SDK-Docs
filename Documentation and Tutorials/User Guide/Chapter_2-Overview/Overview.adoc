@@ -20,24 +20,16 @@ We recommend moving the *SICK Sentio App Designer* icon to the secondary sidebar
 image::media/components.png[Components] 
 // mockup like an ifixit guide with a lot of components (image with parts marked in different colors and a legend below)
 |===
-|+++<span style="color: #00eaff;">■</span>+++|Sidebar
-|+++<span style="color: #2300ff;">■</span>+++|Explorer
-|+++<span style="color: #c200ff;">■</span>+++|Editor Area
-|+++<span style="color: #ff009e;">■</span>+++|Auxiliary Panel
-|+++<span style="color: #01ff00;">■</span>+++|Home View
-|+++<span style="color: #a8ff00;">■</span>+++|Workspace View
-|+++<span style="color: #e9ff00;">■</span>+++|Device List
-|+++<span style="color: #ffa800;">■</span>+++|Device Model Configuration
-|+++<span style="color: #ff3d00;">■</span>+++|App Model Configuration
+a|image::media/color_sidebar.png[light blue]|<<Sidebar>>
+a|image::media/color_explorer.png[blue]|Explorer
+a|image::media/color_editor_area.png[purple]|Editor Area
+a|image::media/color_auxiliary_panel.png[pink]|Auxiliary Panel
+a|image::media/color_home_view.png[green]|Home View
+a|image::media/color_workspace_view.png[lime]|Workspace View
+a|image::media/color_device_list.png[yellow]|Device List
+a|image::media/color_device_model_config.png[orange]|Device Model Configuration
+a|image::media/color_app_model_config.png[red]|App Model Configuration
 |===
-// Components:
-// Explorer
-// Home
-// Workspace
-// Device List
-// Device Model Config
-// App Model Config
-// Device Monitor
 
 == Editors
 There are several different editors available in the *SICK Sentio App Designer* extension, each designed for specific tasks in the application development process. Below is an overview of the available editors:
