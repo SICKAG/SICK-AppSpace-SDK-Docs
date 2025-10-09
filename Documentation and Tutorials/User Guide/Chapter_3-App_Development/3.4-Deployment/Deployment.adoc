@@ -1,0 +1,18 @@
+= SICK Sentio App Designer - App development
+
+== Packaging and Deployment
+
+=== Packaging
+//TODO: Creating SAPK files
+
+=== Deployment
+//TODO: Deploying to devices
+
+=== Protecting Intellectual Property
+//TODO: aka encryption workflow
+
+// footer
+[cols="<,^,>", frame=none, grid=none]
+|===
+|xref:../3.3-Debugging/Debugging.adoc[Back: Debugging]|xref:../App-Development.adoc[Back to App Development]|
+|===

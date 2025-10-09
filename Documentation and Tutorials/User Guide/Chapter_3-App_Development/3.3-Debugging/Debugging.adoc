@@ -1,0 +1,21 @@
+= SICK Sentio App Designer - App development
+
+== Debugging
+
+=== Start debugger
+//TODO: Single and multi app debugging
+
+=== Breakpoints
+//TODO: Basic and conditional breakpoints
+=== Timings
+=== Inspecting Variables
+//TODO: Basic variables as well as 2D and 3D variables
+=== Stack Trace
+=== Interacting with the Device
+//TODO: Debug Console, Set Variables, etc.
+
+// footer
+[cols="<,^,>", frame=none, grid=none]
+|===
+|xref:../3.2-Development-Cycle/Development-Cycle.adoc[Back: Development Cycle]|xref:../App-Development.adoc[Back to App Development]|xref:../3.4-Deployment/Deployment.adoc[Next: Packaging and Deployment]
+|===
