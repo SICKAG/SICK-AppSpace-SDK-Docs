@@ -1,0 +1,51 @@
+= SICK Sentio App Designer - Miscellaneous
+
+== Commands
+The *SICK Sentio App Designer* extension adds several commands to the VSCode command palette. You can access the command palette by pressing `Ctrl+Shift+P` and typing the desired command name.
+
+=== Available commands:
+
+//TODO: Extract commands new after rename to sentio platform
+|===
+|SICK AppSpace: Add device filesystem to workspace
+|SICK AppSpace: Change telemetry settings
+|SICK AppSpace: Change UserLevel
+|SICK AppSpace: Clean all build artifacts
+|SICK AppSpace: Clean build artifacts
+|SICK AppSpace: Create API documentation
+|SICK AppSpace: Create SAPK app package
+|SICK AppSpace: Delete samples
+|SICK AppSpace: Download apps
+|SICK AppSpace: Export apps
+|SICK AppSpace: Hide samples in explorer/workspaces
+|SICK AppSpace: Import apps
+|SICK AppSpace: Import samples
+|SICK AppSpace: Jump to Code
+|SICK AppSpace: New flow
+|SICK AppSpace: New project
+|SICK AppSpace: Open device user interfaces
+|SICK AppSpace: Remove all apps
+|SICK AppSpace: Remove app
+|SICK AppSpace: Remove device
+|SICK AppSpace: Reupload projects on device
+|SICK AppSpace: Run app
+|SICK AppSpace: Scan for devices
+|SICK AppSpace: Set device alias
+|SICK AppSpace: Show samples in explorer/workspaces
+|SICK AppSpace: Start all apps
+|SICK AppSpace: Stop all apps
+|SICK AppSpace: Stop app
+|SICK AppSpace: Stop watching all projects
+|SICK AppSpace: Stop watching projects
+|SICK AppSpace: Upload all projects in workspace to device
+|SICK AppSpace: Upload project to device
+|SICK AppSpace: Watch all projects
+|SICK AppSpace: Watch projects
+|===
+
+// footer
+[cols="<,^,>", frame=none, grid=none]
+|===
+||xref:../Misc.adoc[Back to Miscellaneous]|
+xref:../4.2-Troubleshooting/Troubleshooting.adoc[Next: Troubleshooting]
+|===

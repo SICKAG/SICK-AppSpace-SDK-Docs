@@ -1,0 +1,13 @@
+= SICK Sentio App Designer - Miscellaneous
+
+== Troubleshooting
+Though we strive to provide a robust and reliable tool, users may occasionally encounter issues while using the *SICK Sentio App Designer*. This section provides guidance on known problems and their solutions.
+
+//TODO: Fill in known issues and solutions
+
+
+// footer
+[cols="<,^,>", frame=none, grid=none]
+|===
+|xref:../4.1-Commands/commands.adoc[Back: Commands]|xref:../Misc.adoc[Back to Miscellaneous]|
+|===
