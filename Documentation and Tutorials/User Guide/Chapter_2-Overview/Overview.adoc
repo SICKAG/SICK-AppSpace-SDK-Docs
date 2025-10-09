@@ -25,12 +25,11 @@ a|image::media/color_app_model_config.png[red]|xref:2.1.9-App-Model/App-Model.ad
 == Editors
 There are several different editors available in the *SICK Sentio App Designer*, each designed for specific tasks in the application development process. Below is an overview of the available editors:
 
-//TODO: Add subpages describing all editors in detail
-* Lua Script Editor
-* UI-Builder
-* Blocks Editor
-* Parameter Editor
-* Manifest XML Editor
+* xref:2.2.1-Lua-Editor/Lua-Editor.adoc[Lua Script Editor]
+* xref:2.2.2-UI-Builder/UI-Builder.adoc[UI Builder]
+* xref:2.2.3-Blocks-Editor/Blocks-Editor.adoc[Blocks Editor]
+* xref:2.2.4-Parameter-Editor/Parameter-Editor.adoc[Parameter Editor]
+* xref:2.2.5-Manifest-Editor/Manifest-Editor.adoc[Manifest XML Editor]
 
 ---
 [cols="<,^,>", frame=none, grid=none]

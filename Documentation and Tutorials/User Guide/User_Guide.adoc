@@ -1,3 +1,4 @@
+//TODO: Add a banner image at the top of the page
 = SICK Sentio App Designer - User Guide
 // Some opening words about the SICK Sentio App Designer
 
