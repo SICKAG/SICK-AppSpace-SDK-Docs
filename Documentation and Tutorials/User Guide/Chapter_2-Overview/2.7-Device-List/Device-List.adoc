@@ -53,8 +53,8 @@ image::media/device-context-menu.png[Device Context Menu]
 |===
 a| image::media/user-level.png[User level icon] | Manually change the currently used user level for the device
 a| image::media/ui.png[Open Device UI Action] | Opens a dialog to access the device user interfaces of the device
-a| image::media/app-start.png[Start App] | Start the selected application on the device
-a| image::media/app-stop.png[Stop App] | Stop the selected application on the device
+a| image::media/start-apps.png[Start App] | Start all applications on the device
+a| image::media/stop-apps.png[Stop App] | Stop all applications on the device
 |===
 *Context Menu:*
 |===
