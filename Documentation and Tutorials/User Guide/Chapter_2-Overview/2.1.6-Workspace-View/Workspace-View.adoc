@@ -8,8 +8,9 @@ In the workspace view all your workspaces and projects with their respective met
 image::media/workspace-view.png[Workspace View]
 
 === Workspace Actions
-image::media/workspace-actions.png[Workspace Quick Actions]
 By selecting or hovering the workspace view, the quickactions will appear in the top right corner of the view.
+
+image::media/workspace-actions.png[Workspace Quick Actions]
 [%collapsible]
 ====
 |===
