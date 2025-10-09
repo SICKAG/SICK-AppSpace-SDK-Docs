@@ -24,12 +24,11 @@ image::media/workspace-context-menu.png[Workspace Context Menu]
 |===
 
 *More actions:*
-//TODO: link CSK Modules & samples
 |===
 | Watch all projects | Builds all projects in a watch mode, meaning changes to files will automatically trigger a rebuild.
 | Export apps a| Exports projects as `.zip` files for easy sharing.
-| Import CSK Module | Import prebuild and ready to use CSK modules.
-| Import samples | Import sample applications to get started quickly.
+| Import CSK Module | Import prebuild and ready to use link:https://github.com/SICKAppSpaceCodingStarterKit[CSK] modules.
+| Import samples | Import link:https://github.com/sick-appspace-samples[sample applications] to get started quickly.
 | Show/Hide samples... | Toggles the visibility of sample applications in the workspace and explorer view.
 |===
 ====
