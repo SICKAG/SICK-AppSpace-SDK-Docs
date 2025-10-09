@@ -1,6 +1,4 @@
 = SICK Sentio App Designer - Getting Started
-:toc-title:
-:toc:
 
 This chapter provides an introduction to the SICK Sentio App Designer, including installation instructions,
 best practices like profile usage and general vscode tips and tricks.

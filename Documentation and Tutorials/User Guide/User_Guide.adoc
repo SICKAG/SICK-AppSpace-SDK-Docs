@@ -5,26 +5,24 @@
 This User guide provides a comprehensive overview of the *SICK Sentio App Designer*, its features, and its capabilities. It includes detailed instructions on how to install, configure, and use the tool effectively for developing applications for SICK Sentio devices.
 
 // list table of contents
+== Table of Contents
+//Getting Started
 * xref:Chapter_1-Getting_Started/Getting_Started.adoc[Getting Started]
 ** xref:Chapter_1-Getting_Started/Getting_Started.adoc#VSCode[VSCode]
 ** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Best Practices[Best Practices]
 ** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Installation[Installation]
-
+//Overview
 * xref:Chapter_2-Overview/Overview.adoc[Overview]
 ** xref:Chapter_2-Overview/Overview.adoc#Components[Components]
 ** xref:Chapter_2-Overview/Overview.adoc#Editors[Editors]
-
-* xref:Chapter_3-App_Development/App_Development.adoc[App Development]
-** xref:Chapter_3-App_Development/App_Development.adoc#New Sensor App[New Sensor App]
-** xref:Chapter_3-App_Development/App_Development.adoc#Development Cycle[Development Cycle]
-** xref:Chapter_3-App_Development/App_Development.adoc#Debugging[Debugging]
-** xref:Chapter_3-App_Development/App_Development.adoc#Packaging and Deployment[Packaging and Deployment]
-** xref:Chapter_3-App_Development/App_Development.adoc#Protecting Intellectual Property[Protecting Intellectual Property]
-
+//Development
+* xref:Chapter_3-App_Development/App-Development.adoc[App Development]
+** xref:Chapter_3-App_Development/App-Development.adoc#New Sensor App[New Sensor App]
+** xref:Chapter_3-App_Development/App-Development.adoc#Development Cycle[Development Cycle]
+** xref:Chapter_3-App_Development/App-Development.adoc#Debugging[Debugging]
+** xref:Chapter_3-App_Development/App-Development.adoc#Packaging and Deployment[Packaging and Deployment]
+** xref:Chapter_3-App_Development/App-Development.adoc#Protecting Intellectual Property[Protecting Intellectual Property]
+//Misc
 * xref:Chapter_4-Misc/Misc.adoc[Miscellaneous]
-* xref:Chapter_4-Misc/Misc.adoc#Commands[Commands]
-* xref:Chapter_4-Misc/Misc.adoc#Troubleshooting[Troubleshooting]
-// == link:./Chapter_1-Getting_Started/Chapter_1-Getting_Started.adoc[Chapter 1 - Getting Started]
-
-
-xref:Chapter_1-Getting_Started/Getting_Started.adoc[Getting Started]
+** xref:Chapter_4-Misc/4.1-Commands/Commands.adoc[Commands]
+** xref:Chapter_4-Misc/4.2-Troubleshooting/Troubleshooting.adoc[Troubleshooting]

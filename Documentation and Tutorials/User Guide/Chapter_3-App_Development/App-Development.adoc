@@ -1,10 +1,15 @@
 = SICK Sentio App Designer - App development
-:toc-title:
-:toc:
 
 This chapter provides the full toolchain to create, develop, debug and deploy applications using the SICK Sentio App Designer.
 
 ---
+
+The main steps of the application development cycle are:
+
+1. Create a new sensor application
+2. Develop the application using the various editors and tools provided by the *SICK Sentio App Designer*
+3. Debug the application using the integrated debugger
+4. Package and deploy the application to SICK Sentio devices
 
 //TODO: Move parts into subpages
 
@@ -36,7 +41,6 @@ This chapter provides the full toolchain to create, develop, debug and deploy ap
 //TODO: Creating SAPK files
 === Protecting Intellectual Property
 //TODO: aka encryption workflow
-
 
 ---
 [cols="<,^,>", frame=none, grid=none]
