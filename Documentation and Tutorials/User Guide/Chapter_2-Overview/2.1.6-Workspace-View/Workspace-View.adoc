@@ -70,6 +70,6 @@ The code icon opens the corresponding LUA code to that element, where the file i
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../2.5-Home-View/Home-View.adoc[Back: Home View]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../2.7-Device-List/Device-List.adoc[Next: Device List]
+|xref:../2.1.5-Home-View/Home-View.adoc[Back: Home View]|xref:../Overview.adoc[Back to Overview]|
+xref:../2.1.7-Device-List/Device-List.adoc[Next: Device List]
 |===

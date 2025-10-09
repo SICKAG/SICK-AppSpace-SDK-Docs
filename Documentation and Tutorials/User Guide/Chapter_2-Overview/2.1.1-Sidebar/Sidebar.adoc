@@ -11,6 +11,6 @@ We recommend moving the *SICK Sentio App Designer* icon to the secondary sidebar
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../Overview.adoc[Back: Overview]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../2.2-Explorer/Explorer.adoc[Next: Explorer]
+||xref:../Overview.adoc[Back to Overview]|
+xref:../2.1.2-Explorer/Explorer.adoc[Next: Explorer]
 |===

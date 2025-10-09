@@ -18,5 +18,5 @@ List of available commands
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../Chapter_3-App_Development/App_Development.adoc[Back: App Development]|xref:../User_Guide.adoc[Back to User Guide]|
+|xref:../Chapter_3-App_Development/App_Development.adoc[Back: App Development]|xref:../Overview.adoc[Back to Overview]|
 |===

@@ -11,6 +11,6 @@ Here all project related files can be found, including source code files, config
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../2.1-Sidebar/Sidebar.adoc[Back: Sidebar]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../2.3-Editor/Editor.adoc[Next: Editor]
+|xref:../2.1.1-Sidebar/Sidebar.adoc[Back: Sidebar]|xref:../Overview.adoc[Back to Overview]|
+xref:../2.1.3-Editor/Editor.adoc[Next: Editor]
 |===

@@ -37,6 +37,6 @@ A list of enabled extensions directly related to the Sentio environment.
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../2.4-Auxiliary-Panel/Auxiliary-Panel.adoc[Back: Auxiliary Panel]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../2.6-Workspace-View/Workspace-View.adoc[Next: Workspace View]
+|xref:../2.1.4-Auxiliary-Panel/Auxiliary-Panel.adoc[Back: Auxiliary Panel]|xref:../Overview.adoc[Back to Overview]|
+xref:../2.1.6-Workspace-View/Workspace-View.adoc[Next: Workspace View]
 |===

@@ -27,6 +27,6 @@ The monitoring interval (default: 5s) can be adjusted in the settings, available
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../2.3-Editor/Editor.adoc[Back: Editor]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../2.5-Home-View/Home-View.adoc[Next: Home View]
+|xref:../2.1.3-Editor/Editor.adoc[Back: Editor]|xref:../Overview.adoc[Back to Overview]|
+xref:../2.1.5-Home-View/Home-View.adoc[Next: Home View]
 |===

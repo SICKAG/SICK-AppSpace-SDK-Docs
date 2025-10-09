@@ -58,6 +58,6 @@ For more information on how to create and manage profiles, please refer to the o
 
 [cols="<,^,>", frame=none, grid=none]
 |===
-||xref:../User_Guide.adoc[Back to User Guide]|
+||xref:../Overview.adoc[Back to Overview]|
 xref:../Chapter_2-Overview/Overview.adoc[Next: Overview]
 |===

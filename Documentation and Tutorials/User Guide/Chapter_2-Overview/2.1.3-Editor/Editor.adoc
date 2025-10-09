@@ -14,6 +14,6 @@ At the top right of the editor, you can find a button to quick deploy the curren
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../2.2-Explorer/Explorer.adoc[Back: Explorer]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../2.4-Auxiliary-Panel/Auxiliary-Panel.adoc[Next: Auxiliary Panel]
+|xref:../2.1.2-Explorer/Explorer.adoc[Back: Explorer]|xref:../Overview.adoc[Back to Overview]|
+xref:../2.1.4-Auxiliary-Panel/Auxiliary-Panel.adoc[Next: Auxiliary Panel]
 |===

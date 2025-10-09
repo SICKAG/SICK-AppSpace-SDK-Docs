@@ -21,7 +21,7 @@ image::media/device-list-actions.png[Device List Quick Actions]
 |===
 a| image::media/add-device.png[Add Device Action] | Opens the workflow to add a new device, either manually or via network scan.
 a| image::media/refresh-devices.png[Refresh Device List Action] | Refreshes the state of all devices in the list.
-a| image::media/device-console.png[Open Device Console Action] | Opens the xref:../2.4-Auxiliary-Panel/Auxiliary-Panel.adoc#Device Console[device console] of the selected device.
+a| image::media/device-console.png[Open Device Console Action] | Opens the xref:../2.1.4-Auxiliary-Panel/Auxiliary-Panel.adoc#Device Console[device console] of the selected device.
 a| image::media/more-actions.png[More Actions] a| Show more actions:
 |===
 
@@ -91,6 +91,6 @@ Trough those actions the app can be started and stopped and also be removed from
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../2.6-Workspace-View/Workspace-View.adoc[Back: Workspace View]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../2.8-Device-Model/Device-Model.adoc[Next: Device Model Configuration]
+|xref:../2.1.6-Workspace-View/Workspace-View.adoc[Back: Workspace View]|xref:../Overview.adoc[Back to Overview]|
+xref:../2.1.8-Device-Model/Device-Model.adoc[Next: Device Model Configuration]
 |===

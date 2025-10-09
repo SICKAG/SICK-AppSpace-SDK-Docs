@@ -41,6 +41,6 @@ This chapter provides the full toolchain to create, develop, debug and deploy ap
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../Chapter_2-Overview/Overview.adoc[Back: Overview]|xref:../User_Guide.adoc[Back to User Guide]|
+|xref:../Chapter_2-Overview/Overview.adoc[Back: Overview]|xref:../Overview.adoc[Back to Overview]|
 xref:../Chapter_4-Misc/Misc.adoc[Next: Miscellaneous]
 |===
