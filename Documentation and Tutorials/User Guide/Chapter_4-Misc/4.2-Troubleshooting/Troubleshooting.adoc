@@ -3,7 +3,182 @@
 == Troubleshooting
 Though we strive to provide a robust and reliable tool, users may occasionally encounter issues while using the *SICK Sentio App Designer*. This section provides guidance on known problems and their solutions.
 
-//TODO: Fill in known issues and solutions
+---
+
+=== Workspace & building
+
+|===
+|Issue |Description |Workaround
+
+|Build watcher does not register changes
+|The watcher does NOT work for symlinked *files*; it only works for directories.
+|If possible, include the parent directory as symlink.
+
+|Multiple build triggered
+|After removing a symlinked directory, the VS Code watcher still triggers the change event as if the symlink was never removed. This shouldn't have any bad side effects, except for performance (unnecessary rebuilds).
+|Restart VS Code
+
+|Name conflicts in project manifest are not validated
+|Name conflicts in the `project.mf.xml` are not displayed as error and are not validated when building SAR or SAPK files. This can lead to unpredictable behavior.
+|None
+
+|Building SAPK fails
+|Deploying apps to a device or building SAPK fails. In the SICK AppSpace Log output channel a message shows: `Failed to build msdd`. This is caused by a corrupted UIBuilder control-library.
+|1. Close VS Code. +
+2. Delete `%APPDATA%\SICK\AppSpace\ui-builder\control-library\<version>` (e.g. `5.0.2`). +
+3. Restart VS Code (UIBuilder reinstalls the control-library; takes a moment.)
+|===
+
+=== Language server
+
+|===
+|Issue |Description |Workaround
+
+|Custom path structure not loaded
+|Directories defined by `Lua.workspace.library` are not loaded.
+|Place Lua code inside an additional `scripts` folder.
+
+|No effect of certain `Lua.format.*` options
+|The old formatter was replaced by a new one including the settings options.
+|Use `Lua.format.defaultConfig` instead.
+|===
+
+=== UI-Builder
+
+|===
+|Issue |Description |Workaround
+
+|Missing parameter bindings
+|"Parameter Bindings" work only with parameters in the workspace. Parameters from the device are not loaded.
+|-
+
+|Unexpected behavior on shortcut
+|Changed keyboard shortcuts are not respected by the UI-Builder.
+|Add `activeCustomEditorId != 'sickag.ui-builder-plugin.HtmlEditor'` to the When condition in Keyboard Shortcuts.
+
+|Unexpected behavior with edit menu
+|Not recommended to use VS Code menu Edit operations with UIBuilder: +
+* Cut-copy-paste uses VS Code's history, not UIBuilder's. +
+* Other operations should have no effect.
+|Use built-in UI-Builder functionality.
+
+|No log output for broken MSDD builds
+|No error log in OUTPUT > SICK AppSpace Build if `.msdd` build breaks.
+|Open Help > Toggle Developer Tools to view UI logs.
+
+|App not updated though build process changed
+|App change not detected when switching msdd build from legacy sopasjs to new sail build.
+|Delete app from device and retry.
+
+|Issues with `sick-viewer2d` and `sick-viewer3d`
+|* Click "Options" then "Fullscreen" → options menu misplaced. +
+* Click "Fullscreen" → type errors "Element is not connected" and "Permissions check failed" may appear.
+|-
+|===
+
+=== Device connectivity
+
+|===
+|Issue |Description |Workaround
+
+|"Failed to activate extension"
+|Possible reason: VS Code closed during installation of device connectivity services; installation might be corrupt.
+|If services fail to start a diagnostics webview opens; try offered solutions. +
+Manual: Restart VS Code. If not resolved, reset SickConnectX: +
+1. Check device connectivity log (output channel) for blocked ports. +
+2. Delete folder: +
+Windows: `%APPDATA%/SICK/AppSpace/MaxwellConnect/instances/scx-runtime-win-x64-1.3.10` +
+Linux: `~/.config/SICK/AppSpace/MaxwellConnect/instances/scx-runtime-linux-x64-1.3.10` +
+3. Restart VS Code.
+
+|Device list empty after update
+|Update of Device connectivity causes loss of device list/configuration. Migration from SDK 1.3.0 to ≥ 1.4.0 not supported.
+|Populate device list again.
+
+|WSL: Devices are not reachable
+|USB Support might be blocked by IT; device connectivity refuses to work.
+a|Disable USB capability by setting `NASRT_ENABLE_USB=false`. +
+In `.bashrc`: +
+[source,shell]
+----
+echo "export NASRT_ENABLE_USB=false" >> $HOME/.bashrc
+----
+Or via Windows environment variables (mandatory if VS Code not started via WSL terminal): +
+[source]
+----
+NASRT_ENABLE_USB=false
+WSLENV=NASRT_ENABLE_USB
+----
+|===
+
+=== Device / App Model
+
+|===
+|Issue |Description |Workaround
+
+|Device manifest not loaded
+|Device must be in same network and accessible.
+|* Ensure device is in same network +
+* Add device IP to `NO_PROXY` environment variable
+
+|Device manifest not loaded (SAE 1.6.x and 1.7.0)
+|The device manifest cannot be loaded from these SAE versions.
+|None
+|===
+
+=== Device console
+
+|===
+|Issue |Description |Workaround
+
+|No output printed after (re-adding) device
+|Steps: 1. View device console 2. Remove device 3. Add device again & select it → no more messages.
+|Restart VS Code. +
+Note: All VS Code instances with active SDK must be restarted (shared device connectivity).
+
+|No device console output of any selected device
+|No output regardless of device or restarts.
+|Reset SickConnectX: +
+1. Close all VS Code instances. +
+2. Delete MaxwellConnect instance: +
+Linux: `~/.config/SICK/AppSpace/MaxwellConnect/instances/scx-runtime-linux-x64-1.3.10` +
+Windows: `%APPDATA%/SICK/AppSpace/MaxwellConnect/instances/scx-runtime-win-x64-1.3.10` +
+3. Restart VS Code (Device Connectivity reinstalls).
+|===
+
+=== Debugging
+
+|===
+|Issue |Description |Workaround
+
+|2D/3D viewer shapes are drawn incorrectly
+|-
+|None
+
+|Debugging does not start
+|VS Code stays in a loop "starting debugger" but nothing happens.
+|Reset SickConnectX: +
+1. Close all VS Code instances. +
+2. Delete MaxwellConnect instance: +
+Linux: `~/.config/SICK/AppSpace/MaxwellConnect/instances/scx-runtime-linux-x64-1.3.10` +
+Windows: `%APPDATA%/SICK/AppSpace/MaxwellConnect/instances/scx-runtime-win-x64-1.3.10` +
+3. Restart VS Code.
+|===
+
+=== Device file system
+
+|===
+|Issue |Description |Workaround
+
+|Create new file on device file system shows error
+|Creating a new file shows error; file is created but not shown until refresh.
+|Refresh the File explorer view after the error appears. +
+image::vscode-file-explorer-refresh.png[]
+
+|Files with special symbols in name are no longer accessible
+|Files with non-ASCII symbols in name become inaccessible.
+|None. Avoid special non-ASCII symbols in file names.
+|===
 
 
 // footer
