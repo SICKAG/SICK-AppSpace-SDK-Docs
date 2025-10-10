@@ -17,11 +17,10 @@ This User guide provides a comprehensive overview of the *SICK Sentio App Design
 ** xref:Chapter_2-Overview/Overview.adoc#Editors[Editors]
 //Development
 * xref:Chapter_3-App_Development/App-Development.adoc[App Development]
-** xref:Chapter_3-App_Development/App-Development.adoc#New Sensor App[New Sensor App]
-** xref:Chapter_3-App_Development/App-Development.adoc#Development Cycle[Development Cycle]
-** xref:Chapter_3-App_Development/App-Development.adoc#Debugging[Debugging]
-** xref:Chapter_3-App_Development/App-Development.adoc#Packaging and Deployment[Packaging and Deployment]
-** xref:Chapter_3-App_Development/App-Development.adoc#Protecting Intellectual Property[Protecting Intellectual Property]
+** xref:Chapter_3-App_Development/3.1-New-Sensor-App/New-Sensor-App.adoc[New Sensor App]
+** xref:Chapter_3-App_Development/3.2-Editing/Editing.adoc[Editing]
+** xref:Chapter_3-App_Development/3.3-Debugging/Debugging.adoc[Debugging]
+** xref:Chapter_3-App_Development/3.4-Deployment/Deployment.adoc[Packaging and Deployment]
 //Misc
 * xref:Chapter_4-Misc/Misc.adoc[Miscellaneous]
 ** xref:Chapter_4-Misc/4.1-Commands/Commands.adoc[Commands]
