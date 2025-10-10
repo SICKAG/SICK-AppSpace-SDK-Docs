@@ -15,5 +15,5 @@ Though we strive to provide a robust and reliable tool, users may occasionally e
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../Chapter_3-App_Development/App-Development.adoc[Back: App Development]|xref:../User_Guide.adoc[Back to User Guide]|
+|xref:../Chapter_3-App_Development/App-Development.adoc[Back: App Development]|xref:../User-Guide.adoc[Back to User Guide]|
 |===

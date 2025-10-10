@@ -7,10 +7,10 @@ This User guide provides a comprehensive overview of the *SICK Sentio App Design
 // list table of contents
 == Table of Contents
 //Getting Started
-* xref:Chapter_1-Getting_Started/Getting_Started.adoc[Getting Started]
-** xref:Chapter_1-Getting_Started/Getting_Started.adoc#VSCode[VSCode]
-** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Best Practices[Best Practices]
-** xref:Chapter_1-Getting_Started/Getting_Started.adoc#Installation[Installation]
+* xref:Chapter_1-Getting_Started/Getting-Started.adoc[Getting Started]
+** xref:Chapter_1-Getting_Started/Getting-Started.adoc#VSCode[VSCode]
+** xref:Chapter_1-Getting_Started/Getting-Started.adoc#Best Practices[Best Practices]
+** xref:Chapter_1-Getting_Started/Getting-Started.adoc#Installation[Installation]
 //Overview
 * xref:Chapter_2-Overview/Overview.adoc[Overview]
 ** xref:Chapter_2-Overview/Overview.adoc#Components[Components]

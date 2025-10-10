@@ -22,6 +22,6 @@ All steps of this cycle are described in the following sections:
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../Chapter_2-Overview/Overview.adoc[Back: Overview]|xref:../User_Guide.adoc[Back to User Guide]|
+|xref:../Chapter_2-Overview/Overview.adoc[Back: Overview]|xref:../User-Guide.adoc[Back to User Guide]|
 xref:../Chapter_4-Misc/Misc.adoc[Next: Miscellaneous]
 |===

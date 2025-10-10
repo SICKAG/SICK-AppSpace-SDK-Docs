@@ -8,7 +8,6 @@ best practices like profile usage and general vscode tips and tricks.
 == Requirements
 In order to start the development of application software (SensorApps) with *SICK Sentio App Designer*, the following hardware & software tools, devices and utilities should be available:
 
-//TODO: Replace by requirements in release notes
 [cols="1,3"]
 |===
 |Operating System|Windows 10 x86_64 +
@@ -60,7 +59,8 @@ For more information on how to create and manage profiles, please refer to the o
 5. Click the "Install" button to install the extension.
 6. Once the installation is complete, you may need to reload Visual Studio Code for the extension to be fully activated. You can do this by clicking the "Reload" button that appears after installation or by manually restarting Visual Studio Code.
 7. The SICK Sentio App Designer extension will perform installation of the device connectivity module, this might take a short amount of time on the first startup.
-8. After the installation is complete, you can start using the SICK Sentio App Designer extension to develop applications for SICK Sentio devices.
+8. After the installation is complete, the last step is to accept the terms and conditions in the consent dialog that appears on the first run of the extension.
+9. Congratulations! You're all set to begin developing innovative applications for SICK Sentio devices using the powerful SICK Sentio App Designer toolkit.
 //TODO: Add screenshot of consent dialog
 //footer: navigation
 
@@ -68,6 +68,7 @@ For more information on how to create and manage profiles, please refer to the o
 
 [cols="<,^,>", frame=none, grid=none]
 |===
-||xref:../Overview.adoc[Back to Overview]|
+||
+xref:../User-Guide.adoc[Back to User Guide]|
 xref:../Chapter_2-Overview/Overview.adoc[Next: Overview]
 |===

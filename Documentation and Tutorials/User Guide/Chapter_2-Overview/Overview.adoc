@@ -34,6 +34,7 @@ There are several different editors available in the *SICK Sentio App Designer*,
 ---
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../Chapter_1-Getting_Started/Getting_Started.adoc[Back: Getting Started]|xref:../User_Guide.adoc[Back to User Guide]|
-xref:../Chapter_3-App_Development/App_Development.adoc[Next: App Development]
+|xref:../Chapter_1-Getting_Started/Getting-Started.adoc[Back: Getting Started]|
+xref:../User-Guide.adoc[Back to User Guide]|
+xref:../Chapter_3-App_Development/App-Development.adoc[Next: App Development]
 |===
