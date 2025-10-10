@@ -2,7 +2,9 @@
 
 == Editing
 
-This chapter describes the different parts of an application and how they are connected to each other.
+The main purpose of the *SICK Sentio App Designer* is to create and edit applications for SICK Sentio devices. This section provides an overview of the editing capabilities and a description of the general application structure.
+
+---
 
 === First steps
 To Quickstart after creating a new sensor application, right click the app in the workspace view and select `Jump to Code`, this is the fastes way to jump into the main LUA file of the app
