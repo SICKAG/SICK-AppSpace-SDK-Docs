@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - App development
+= SICK Sentio App Designer - App Development
 
 This chapter provides the full toolchain to create, develop, debug and deploy applications using the SICK Sentio App Designer.
 
@@ -15,7 +15,7 @@ A typical development cycle consists of the following steps:
 All steps of this cycle are described in the following sections:
 
 * xref:3.1-New-Sensor-App/New-Sensor-App.adoc[New Sensor App]
-* xref:3.2-Development-Cycle/Development-Cycle.adoc[Development Cycle]
+* xref:3.2-Editing/Editing.adoc[Editing]
 * xref:3.3-Debugging/Debugging.adoc[Debugging]
 * xref:3.4-Deployment/Deployment.adoc[Packaging and Deployment]
 

@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - App development
+= SICK Sentio App Designer - App Development
 
 == New Sensor App
 
@@ -52,5 +52,5 @@ In case the device gets damaged or lost, the application code might be lost as w
 // footer
 [cols="<,^,>", frame=none, grid=none]
 |===
-||xref:../App-Development.adoc[Back to App Development]|xref:../3.2-Development-Cycle/Development-Cycle.adoc[Next: Development Cycle]
+||xref:../App-Development.adoc[Back to App Development]|xref:../3.2-Editing/Editing.adoc[Next: Editing]
 |===

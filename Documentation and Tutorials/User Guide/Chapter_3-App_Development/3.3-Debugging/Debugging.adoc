@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - App development
+= SICK Sentio App Designer - App Development
 
 == Debugging
 
@@ -17,5 +17,5 @@
 // footer
 [cols="<,^,>", frame=none, grid=none]
 |===
-|xref:../3.2-Development-Cycle/Development-Cycle.adoc[Back: Development Cycle]|xref:../App-Development.adoc[Back to App Development]|xref:../3.4-Deployment/Deployment.adoc[Next: Packaging and Deployment]
+|xref:../3.2-Editing/Editing.adoc[Back: Editing]|xref:../App-Development.adoc[Back to App Development]|xref:../3.4-Deployment/Deployment.adoc[Next: Packaging and Deployment]
 |===

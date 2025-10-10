@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - App development
+= SICK Sentio App Designer - App Development
 
 == Packaging and Deployment
 

@@ -1,6 +1,6 @@
-= SICK Sentio App Designer - App development
+= SICK Sentio App Designer - App Development
 
-== Development Cycle
+== Editing
 
 This chapter describes the different parts of an application and how they are connected to each other.
 
