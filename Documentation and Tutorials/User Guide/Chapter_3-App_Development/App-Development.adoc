@@ -1,6 +1,6 @@
-= SICK Sentio App Designer - App Development
+= SICK App Designer - App Development
 
-This chapter provides the full toolchain to create, develop, debug and deploy applications using the SICK Sentio App Designer.
+This chapter provides the full toolchain to create, develop, debug and deploy applications using the SICK App Designer.
 
 ---
 

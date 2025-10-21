@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 //footer: navigation
 == Home View
@@ -9,29 +9,29 @@ The Home View consists of several sections that provide quick access to importan
 image::media/home-view.png[Home View] 
 
 === Account
-Here users can sign in to their SICK ID account to access the full feature scope of the *SICK Sentio App Designer*.
+Here users can sign in to their SICK ID account to access the full feature scope of the *SICK App Designer*.
 
 === Quick actions
 //TODO: link commands
-* *Settings* - Opens the settings for the *SICK Sentio App Designer* extension.
-* *Commands* - Opens a list of all available commands for the *SICK Sentio App Designer* extension.
+* *Settings* - Opens the settings for the *SICK App Designer* extension.
+* *Commands* - Opens a list of all available commands for the *SICK App Designer* extension.
 
 === Documentation
 //TODO: link troubleshooting and sample apps
-* *Release notes* - Links to *SICK Sentio App Designer* release notes on GitHub.
-* *Troubleshooting* - Links to the troubleshooting section of the *SICK Sentio App Designer* documentation.
-* *User documentation* - Links to User documentation of the *SICK Sentio App Designer* on GitHub.
+* *Release notes* - Links to *SICK App Designer* release notes on GitHub.
+* *Troubleshooting* - Links to the troubleshooting section of the *SICK App Designer* documentation.
+* *User documentation* - Links to User documentation of the *SICK App Designer* on GitHub.
 * *Sample apps* - Links to sample applications on GitHub.
 
 === Feedback & Issues
 We appreciate your feedback!, please be incentived to reach out to us via the provided channels:
 
-* *Report bugs & issues* - Links to the issue tracker of the *SICK Sentio App Designer*.
-* *Zip log files* - Zips the all log files of the *SICK Sentio App Designer* extension for easier sharing.
-* *Create feature request* - Links to the feature tracker of the *SICK Sentio App Designer*.
+* *Report bugs & issues* - Links to the issue tracker of the *SICK App Designer*.
+* *Zip log files* - Zips the all log files of the *SICK App Designer* extension for easier sharing.
+* *Create feature request* - Links to the feature tracker of the *SICK App Designer*.
 
 === Enabled extensions
-A list of enabled extensions directly related to the Sentio environment.
+A list of enabled extensions directly related to the *SICK App Designer* environment.
 
 
 ---

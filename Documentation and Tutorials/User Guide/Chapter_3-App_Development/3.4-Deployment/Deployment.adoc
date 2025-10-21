@@ -1,13 +1,13 @@
-= SICK Sentio App Designer - App Development
+= SICK App Designer - App Development
 
 == Packaging and Deployment
 
-At the very end of the development cycle, the application needs to be packaged and deployed to one or more SICK Sentio devices. This section describes how to package and deploy applications using the *SICK Sentio App Designer* and how to avoid unauthorized access to the source code.
+At the very end of the development cycle, the application needs to be packaged and deployed to one or more SICK programmable devices. This section describes how to package and deploy applications using the *SICK App Designer* and how to avoid unauthorized access to the source code.
 
 ---
 
 === Packaging
-First thing to do when the application is ready for deployment, is to package it into a deployable format. This can be done using the built-in packaging features of the *SICK Sentio App Designer*.
+First thing to do when the application is ready for deployment, is to package it into a deployable format. This can be done using the built-in packaging features of the *SICK App Designer*.
 
 For this either use the command palette (`Ctrl+Shift+P`) and type `SICK: Create SAPK app package` or use the package button in the workspace view:
 

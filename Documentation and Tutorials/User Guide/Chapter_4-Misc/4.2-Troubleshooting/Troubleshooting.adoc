@@ -1,7 +1,7 @@
-= SICK Sentio App Designer - Miscellaneous
+= SICK App Designer - Miscellaneous
 
 == Troubleshooting
-Though we strive to provide a robust and reliable tool, users may occasionally encounter issues while using the *SICK Sentio App Designer*. This section provides guidance on known problems and their solutions.
+Though we strive to provide a robust and reliable tool, users may occasionally encounter issues while using the *SICK App Designer*. This section provides guidance on known problems and their solutions.
 
 ---
 

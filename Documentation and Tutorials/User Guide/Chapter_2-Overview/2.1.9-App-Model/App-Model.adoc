@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 == App Model Configuration
 
@@ -8,7 +8,7 @@ image::media/app-model-config.png[App Model Configuration]
 
 In the above example, the models of the `WelcomeApp` App from the device (_selected device_) and the model of the `DemoApp1` App, which is available in the current workspace, will be used for code completion. `DemoApp2` is *not* selected and will therefore not be used for code completion.
 
-The selection state of the used app models is stored between sessions of the *SICK Sentio App Designer* and can be changed by simply checking or unchecking the respective app.
+The selection state of the used app models is stored between sessions of the *SICK App Designer* and can be changed by simply checking or unchecking the respective app.
 
 //footer: navigation
 ---

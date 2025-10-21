@@ -1,8 +1,8 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 == Manifest Editor
 
-The Manifest Editor is a XML based editor to modify the project definition file `project.mf.xml` of a SICK Sentio application.
+The Manifest Editor is a XML based editor to modify the project definition file `project.mf.xml` of a SICK sensor application.
 
 image::media/editor.png[Manifest Editor]
 

@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 == Device Model Configuration
 
@@ -39,7 +39,7 @@ Imported device models can be deleted by clicking the trash icon on the very rig
 |Build-in
 a|image::media/built-in-device.png[Build-in device model]
 
-These device models are pre-shipped with the *SICK Sentio App Designer* extension and are always available for offline use.
+These device models are pre-shipped with the *SICK App Designer* extension and are always available for offline use.
 
 |===
 ====

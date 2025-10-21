@@ -1,8 +1,8 @@
-= SICK Sentio App Designer - App Development
+= SICK App Designer - App Development
 
 == Debugging
 
-The *SICK Sentio App Designer* provides a powerful debugging environment that allows you to test and debug your applications directly on a connected SICK Sentio device. This section covers the key features and workflows for debugging your applications.
+The *SICK App Designer* provides a powerful debugging environment that allows you to test and debug your applications directly on a connected SICK programmble device. This section covers the key features and workflows for debugging your applications.
 
 ---
 
@@ -80,7 +80,7 @@ Basic variables can be inspected in the _VARIABLES_ tab of the *Run and Debug* v
 image::media/variables.png[Variables]
 ====
 
-For a more detailed inspection of images, shapes, pointclouds and other complex visual data types, the *SICK Sentio App Designer* provides a dedicated *2D/3D Viewer* at the very bottom of the *Run and Debug* view.
+For a more detailed inspection of images, shapes, pointclouds and other complex visual data types, the *SICK App Designer* provides a dedicated *2D/3D Viewer* at the very bottom of the *Run and Debug* view.
 
 All supported variables entered in the _WATCH_ tab will be visualized in the viewer. You can add them in different ways:
 
@@ -133,7 +133,7 @@ image::media/callstack-variables.png[Call Stack Variables]
 
 
 === Interacting with the Device
-The *SICK Sentio App Designer* provides several ways to interact with the connected device while debugging, though not all devices support all features.
+The *SICK App Designer* provides several ways to interact with the connected device while debugging, though not all devices support all features.
 
 * *Variables tab*: Variables in the _VARIABLES_ tab can be double-clicked to overwrite their value. This works for basic types like numbers, strings and booleans.
 

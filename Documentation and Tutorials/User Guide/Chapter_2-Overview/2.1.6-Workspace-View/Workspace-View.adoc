@@ -1,4 +1,4 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 //footer: navigation
 == Workspace View

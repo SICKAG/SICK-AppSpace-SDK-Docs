@@ -1,8 +1,8 @@
 //TODO: Add a banner image at the top of the page
-= SICK Sentio App Designer - User Guide
-// Some opening words about the SICK Sentio App Designer
+= SICK App Designer - User Guide
+// Some opening words about the SICK App Designer
 
-This User guide provides a comprehensive overview of the *SICK Sentio App Designer*, its features, and its capabilities. It includes detailed instructions on how to install, configure, and use the tool effectively for developing applications for SICK Sentio devices.
+This User guide provides a comprehensive overview of the *SICK App Designer*, its features, and its capabilities. It includes detailed instructions on how to install, configure, and use the tool effectively for developing applications for SICK programmable devices.
 
 // list table of contents
 == Table of Contents

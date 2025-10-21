@@ -1,6 +1,6 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
-This chapter provides an overview of the SICK Sentio App Designer, its features, and its capabilities and includes a general overview over the user interface.
+This chapter provides an overview of the SICK App Designer, its features, and its capabilities and includes a general overview over the user interface.
 
 ---
 
@@ -23,7 +23,7 @@ a|image::media/color_app_model_config.png[red]|xref:2.1.9-App-Model/App-Model.ad
 |===
 
 == Editors
-There are several different editors available in the *SICK Sentio App Designer*, each designed for specific tasks in the application development process. Below is an overview of the available editors:
+There are several different editors available in the *SICK App Designer*, each designed for specific tasks in the application development process. Below is an overview of the available editors:
 
 * xref:2.2.1-Lua-Editor/Lua-Editor.adoc[Lua Script Editor]
 * xref:2.2.2-UI-Builder/UI-Builder.adoc[UI Builder]

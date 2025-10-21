@@ -1,8 +1,8 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 == Parameter Editor
 
-The Parameter Editor is a mix of a script and a visual editor for creating and managing parameters in SICK Sentio applications.
+The Parameter Editor is a mix of a script and a visual editor for creating and managing parameters in SICK sensor applications.
 
 image::media/editor.png[Parameter Editor]
 
@@ -26,7 +26,7 @@ image::media/quick-actions.png[Parameter Editor Code Actions]
 
 === Editor Outline
 
-An outline of the XML structure is provided on the *SICK Sentio App Designer* pane as soon as a parameter file is opened. This outline allows for easy navigation and quick access to add or remove elements:
+An outline of the XML structure is provided on the *SICK App Designer* pane as soon as a parameter file is opened. This outline allows for easy navigation and quick access to add or remove elements:
 
 image::media/outline.png[Parameter Editor Outline]
 

@@ -1,8 +1,8 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 == Lua Script Editor
 
-The Lua Script Editor is the primary editor for writing and editing Lua scripts for SICK Sentio applications. It provides syntax highlighting, code completion, and error checking to help developers write code efficiently and accurately.
+The Lua Script Editor is the primary editor for writing and editing Lua scripts for SICK sensor applications. It provides syntax highlighting, code completion, and error checking to help developers write code efficiently and accurately.
 
 image::media/editor.png[Luca Script Editor]
 
@@ -59,7 +59,7 @@ image::media/diagnostic-info.png[Info diagnostic]
 +
 image::media/quick-upload.png[Upload Button]
 * Navigate quickly through the code by using `Ctrl + Click` on functions, variables or crowns to jump to their definition
-* Sentio App Designer supports refactoring of function and events names by right-clicking the function/event name and selecting "Rename Symbol" or by pressing `F2`. This also works on served elements:
+* SICK App Designer supports refactoring of function and events names by right-clicking the function/event name and selecting "Rename Symbol" or by pressing `F2`. This also works on served elements:
 +
 image::media/rename-served-func.png[Rename function]
 

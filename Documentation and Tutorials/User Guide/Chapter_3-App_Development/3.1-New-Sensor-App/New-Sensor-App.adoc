@@ -1,8 +1,8 @@
-= SICK Sentio App Designer - App Development
+= SICK App Designer - App Development
 
 == New Sensor App
 
-To create a new sensor application using the *SICK Sentio App Designer*, follow these steps:
+To create a new sensor application using the *SICK App Designer*, follow these steps:
 
 1. On the workspace tab click on the `+` icon to create a new project
 +
@@ -37,13 +37,13 @@ image::media/enter-app-name.png[App name input]
 ====
 
 === Source Control
-*SICK Sentio App Designer* supports Git for version control. You can use the built-in source control features of VSCode to manage your code changes, create branches, and collaborate with others.
+*SICK App Designer* supports Git for version control. You can use the built-in source control features of VSCode to manage your code changes, create branches, and collaborate with others.
 
 Other version control systems can be used as well, but they might not be fully integrated into the IDE.
 
 [WARNING]
 ====
-Though *SICK Sentio App Designer* supports downloading applications from connected devices, it is not advised to use this feature as replacement for a proper version control system like Git.
+Though *SICK App Designer* supports downloading applications from connected devices, it is not advised to use this feature as replacement for a proper version control system like Git.
 
 In case the device gets damaged or lost, the application code might be lost as well. Also multiple developers working on the same application/device will run into merge conflicts and other issues without a proper version control system.
 ====

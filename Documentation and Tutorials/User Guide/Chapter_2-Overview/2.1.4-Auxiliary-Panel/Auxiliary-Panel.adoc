@@ -1,11 +1,11 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 //footer: navigation
 == Auxiliary Panel
 //TODO: Renew screenshot as soon as new icons are available
 The Auxiliary Panel is located at the bottom of VSCode and provides additional tools and features to support the development process.
 
-After installing the *SICK Sentio App Designer* extension, new functionalities like the Device Monitor and Device Console will be integrated into the Auxiliary Panel.
+After installing the *SICK App Designer* extension, new functionalities like the Device Monitor and Device Console will be integrated into the Auxiliary Panel.
 
 === Device Console
 image::media/device-console.png[Auxiliary Panel area] 

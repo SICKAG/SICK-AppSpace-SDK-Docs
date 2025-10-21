@@ -1,8 +1,8 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 == Blocks Editor
 
-The Blocks Editor is a visual editor for creating block based flows in SICK Sentio applications. It allows developers to design, prototype, and implement application logic without writing extensive code.
+The Blocks Editor is a visual editor for creating block based flows in SICK sensor applications. It allows developers to design, prototype, and implement application logic without writing extensive code.
 
 image::media/editor.png[Blocks Editor]
 

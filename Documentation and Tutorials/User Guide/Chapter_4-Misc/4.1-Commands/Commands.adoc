@@ -1,11 +1,11 @@
-= SICK Sentio App Designer - Miscellaneous
+= SICK App Designer - Miscellaneous
 
 == Commands
-The *SICK Sentio App Designer* extension adds several commands to the VSCode command palette. You can access the command palette by pressing `Ctrl+Shift+P` and typing the desired command name.
+The *SICK App Designer* extension adds several commands to the VSCode command palette. You can access the command palette by pressing `Ctrl+Shift+P` and typing the desired command name.
 
 === Available commands:
 
-//TODO: Extract commands new after rename to sentio platform
+//TODO: Extract commands new after renaming
 |===
 |SICK AppSpace: Add device filesystem to workspace
 |SICK AppSpace: Change telemetry settings

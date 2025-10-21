@@ -1,8 +1,8 @@
-= SICK Sentio App Designer - Overview
+= SICK App Designer - Overview
 
 == UI Builder
 
-The UI Builder is a visual design tool for creating user interfaces in SICK Sentio applications. It allows developers to design, prototype, and implement user interfaces without writing extensive code.
+The UI Builder is a visual design tool for creating user interfaces for SICK sensor applications. It allows developers to design, prototype, and implement user interfaces without writing extensive code.
 
 image::media/editor.png[UI Builder]
 

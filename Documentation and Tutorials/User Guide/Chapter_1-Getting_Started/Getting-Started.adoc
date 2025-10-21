@@ -1,12 +1,12 @@
-= SICK Sentio App Designer - Getting Started
+= SICK App Designer - Getting Started
 
-This chapter provides an introduction to the SICK Sentio App Designer, including installation instructions,
+This chapter provides an introduction to the SICK App Designer, including installation instructions,
 best practices like profile usage and general vscode tips and tricks.
 
 ---
 
 == Requirements
-In order to start the development of application software (SensorApps) with *SICK Sentio App Designer*, the following hardware & software tools, devices and utilities should be available:
+In order to start the development of application software (SensorApps) with *SICK App Designer*, the following hardware & software tools, devices and utilities should be available:
 
 [cols="1,3"]
 |===
@@ -21,14 +21,14 @@ Ubuntu 22.04 x86_64
 |VSCode|Microsoft Visual Studio Code v1.92
 |===
 
-* Optional: Ethernet cable to connect the programmable *SICK Sentio* device, USB Ethernet adapter
+* Optional: Ethernet cable to connect the programmable *SICK* device, USB Ethernet adapter
 ** If the Ethernet port of the PC/notebook is reserved for a LAN connection, a USB port of the PC can be used with a USB-to-Ethernet adapter. In that case, the IP address of the adapter must be adjusted accordingly to the device's subnet.
 
-* *Microsoft Visual Studio Code* and *SICK Sentio App Designer* extensions
-** For productive use of *SICK Sentio App Designer*, a https://id.sick.com/[*SICK ID*] account is required.
+* *Microsoft Visual Studio Code* and *SICK App Designer* extensions
+** For productive use of *SICK App Designer*, a https://id.sick.com/[*SICK ID*] account is required.
 
 * *SICK AppEngine*
-** *SICK Sentio App Designer* also provides emulator functionality, making it possible to emulate a device. This can be used to start software development without the need for a HW device. However, any kind of input data like images must be available as resources in the corresponding app.
+** *SICK App Designer* also provides emulator functionality, making it possible to emulate a device. This can be used to start software development without the need for a HW device. However, any kind of input data like images must be available as resources in the corresponding app.
 ** The software does not actually replace the real device and features only the emulation of functions. It does not emulate the actual capabilities, such as limited hard drive space, memory or other physical resources
 
 * Optional: https://www.sick.com/de/de/produkte/digitale-dienste-und-software/software/sentio-creator/p/p686849[*SICK Sentio Creator*]
@@ -46,7 +46,7 @@ VSCode is a powerful and state-of-the-art source code editor. It is highly custo
 == Best Practices
 === Profiles
 Using profiles in VSCode adds a big performance boost to the environment by only having the necessary extensions and settings loaded for a specific environment.
-We highly recommend to create a dedicated profile for developing with SICK Sentio App Designer.
+We highly recommend to create a dedicated profile for developing with SICK App Designer.
 
 
 For more information on how to create and manage profiles, please refer to the official https://code.visualstudio.com/docs/editor/profiles[VSCode Profiles Documentation].
@@ -54,13 +54,13 @@ For more information on how to create and manage profiles, please refer to the o
 == Installation
 1. Open up Visual Studio Code.
 2. Navigate to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
-3. In the search bar, type "SICK Sentio App Designer".
-4. Locate the "SICK Sentio App Designer" extension in the search results and click on it.
+3. In the search bar, type "SICK App Designer".
+4. Locate the "SICK App Designer" extension in the search results and click on it.
 5. Click the "Install" button to install the extension.
 6. Once the installation is complete, you may need to reload Visual Studio Code for the extension to be fully activated. You can do this by clicking the "Reload" button that appears after installation or by manually restarting Visual Studio Code.
-7. The SICK Sentio App Designer extension will perform installation of the device connectivity module, this might take a short amount of time on the first startup.
+7. The SICK App Designer extension will perform installation of the device connectivity module, this might take a short amount of time on the first startup.
 8. After the installation is complete, the last step is to accept the terms and conditions in the consent dialog that appears on the first run of the extension.
-9. Congratulations! You're all set to begin developing innovative applications for SICK Sentio devices using the powerful SICK Sentio App Designer toolkit.
+9. Congratulations! You're all set to begin developing innovative applications for SICK programmable devices using the powerful SICK App Designer toolkit.
 //TODO: Add screenshot of consent dialog
 //footer: navigation
 
