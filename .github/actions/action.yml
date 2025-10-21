@@ -1,0 +1,147 @@
+name: 'Sync to Azure Blob Storage'
+author: vettejaSICKAG
+description: 'Syncs repository files to Azure Blob Storage with GitHub URL metadata'
+
+inputs:
+  azure-storage-account:
+    description: 'Azure Storage Account name'
+    required: true
+  azure-storage-container:
+    description: 'Azure Blob Storage container name'
+    required: true
+  azure-credentials:
+    description: 'Azure credentials (connection string or SAS token)'
+    required: true
+  source-path:
+    description: 'Source path to sync (relative to repository root)'
+    required: false
+    default: '.'
+  github-repository:
+    description: 'GitHub repository (owner/repo)'
+    required: true
+  github-branch:
+    description: 'GitHub branch name'
+    required: false
+    default: 'main'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Azure CLI
+      shell: bash
+      run: |
+        if ! command -v az &> /dev/null; then
+          echo "Installing Azure CLI..."
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+        else
+          echo "Azure CLI already installed"
+        fi
+
+    - name: Login to Azure
+      shell: bash
+      run: |
+        # Using connection string or SAS token
+        echo "Azure credentials configured"
+      env:
+        AZURE_STORAGE_CONNECTION_STRING: ${{ inputs.azure-credentials }}
+
+    - name: Sync files to Azure Blob Storage
+      shell: bash
+      run: |
+        set -e
+        
+        STORAGE_ACCOUNT="${{ inputs.azure-storage-account }}"
+        CONTAINER="${{ inputs.azure-storage-container }}"
+        SOURCE_PATH="${{ inputs.source-path }}"
+        REPO="${{ inputs.github-repository }}"
+        BRANCH="${{ inputs.github-branch }}"
+        
+        echo "Starting smart sync process..."
+        echo "Storage Account: $STORAGE_ACCOUNT"
+        echo "Container: $CONTAINER"
+        echo "Source Path: $SOURCE_PATH"
+        echo "Repository: $REPO"
+        echo "Branch: $BRANCH"
+        echo ""
+        
+        # Navigate to source path
+        cd "$SOURCE_PATH"
+        
+        # Step 1: Get list of all files in repository (only .md and .adoc from Documentation and Tutorials)
+        echo "📂 Scanning repository files..."
+        repo_files_list=$(mktemp)
+        find "Documentation and Tutorials" -type f \( -name "*.md" -o -name "*.adoc" \) 2>/dev/null | sed 's|^\./||' | sort > "$repo_files_list" || touch "$repo_files_list"
+        repo_file_count=$(wc -l < "$repo_files_list")
+        echo "Found $repo_file_count .md and .adoc files in 'Documentation and Tutorials' directory"
+        echo ""
+        
+        # Step 2: Get list of all blobs in Azure Storage
+        echo "☁️  Fetching blob list from Azure Storage..."
+        blob_files_list=$(mktemp)
+        az storage blob list \
+          --account-name "$STORAGE_ACCOUNT" \
+          --container-name "$CONTAINER" \
+          --query "[].name" \
+          --output tsv \
+          --only-show-errors | sort > "$blob_files_list" || echo "" > "$blob_files_list"
+        blob_file_count=$(wc -l < "$blob_files_list")
+        echo "Found $blob_file_count files in blob storage"
+        echo ""
+        
+        # Step 3: Upload new and modified files
+        echo "⬆️  Uploading files to Azure Storage..."
+        uploaded_count=0
+        while IFS= read -r relative_path; do
+          if [ -n "$relative_path" ]; then
+            file_path="./$relative_path"
+            github_url="https://github.com/${REPO}/blob/${BRANCH}/${relative_path}"
+            
+            echo "Uploading: $relative_path"
+            
+            az storage blob upload \
+              --account-name "$STORAGE_ACCOUNT" \
+              --container-name "$CONTAINER" \
+              --name "$relative_path" \
+              --file "$file_path" \
+              --metadata sourceUrl="$github_url" \
+              --overwrite true \
+              --only-show-errors
+            
+            ((uploaded_count++))
+          fi
+        done < "$repo_files_list"
+        echo "✅ Uploaded $uploaded_count files"
+        echo ""
+        
+        # Step 4: Delete orphaned blobs (files that exist in storage but not in repo)
+        echo "🗑️  Checking for orphaned blobs..."
+        deleted_count=0
+        while IFS= read -r blob_name; do
+          if [ -n "$blob_name" ]; then
+            # Check if blob exists in repo files
+            if ! grep -Fxq "$blob_name" "$repo_files_list"; then
+              echo "Deleting orphaned blob: $blob_name"
+              az storage blob delete \
+                --account-name "$STORAGE_ACCOUNT" \
+                --container-name "$CONTAINER" \
+                --name "$blob_name" \
+                --only-show-errors
+              ((deleted_count++))
+            fi
+          fi
+        done < "$blob_files_list"
+        
+        if [ $deleted_count -eq 0 ]; then
+          echo "No orphaned blobs found"
+        else
+          echo "✅ Deleted $deleted_count orphaned blobs"
+        fi
+        echo ""
+        
+        # Cleanup temp files
+        rm -f "$repo_files_list" "$blob_files_list"
+        
+        echo "🎉 Smart sync completed successfully!"
+        echo "Summary: $uploaded_count uploaded, $deleted_count deleted"
+      env:
+        AZURE_STORAGE_CONNECTION_STRING: ${{ inputs.azure-credentials }}
