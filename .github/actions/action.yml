@@ -45,6 +45,17 @@ runs:
       env:
         AZURE_STORAGE_CONNECTION_STRING: ${{ inputs.azure-credentials }}
 
+    - name: Display runner IP for whitelisting
+      shell: bash
+      run: |
+        RUNNER_IP=$(curl -s https://api.ipify.org)
+        echo "=========================================="
+        echo "GitHub Runner IP Address: $RUNNER_IP"
+        echo "=========================================="
+        echo ""
+        echo "If you encounter network firewall errors, whitelist this IP in your Azure Storage Account"
+        echo ""
+
     - name: Sync files to Azure Blob Storage
       shell: bash
       run: |
