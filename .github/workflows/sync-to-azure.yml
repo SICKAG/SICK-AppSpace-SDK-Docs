@@ -1,0 +1,22 @@
+name: Sync to Azure Blob Storage
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-to-azure:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Sync to Azure Blob Storage
+        uses: ./.github/actions
+        with:
+          azure-storage-account: ${{ secrets.AZURE_STORAGE_ACCOUNT }}
+          azure-storage-container: ${{ secrets.AZURE_STORAGE_CONTAINER }}
+          azure-credentials: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+          source-path: '.'
+          github-repository: ${{ github.repository }}
+          github-branch: ${{ github.ref_name }}
