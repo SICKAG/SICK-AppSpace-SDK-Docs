@@ -17,8 +17,8 @@ After completing this tutorial you will have basic knowledge in visualization an
 * Interaction (pointer, change and connection events)
 
 ## Pre-requisites
-* General introduction to SICK AppSpace (see link:https://supportportal.sick.com/tutorial/appstudio-introduction/[AppStudio Tutorial])
-* Basic skills in SICK AppStudio
+* General introduction to SICK AppSpace (see xref:../../User%20Guide/User-Guide.adoc[App Designer User Guide])
+* Basic skills with SICK App Designer
 * Basic programming skills (scripting)
 
 # View
