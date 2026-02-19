@@ -84,7 +84,7 @@ The second option is advised as it supports proper version control of SAPKs and 
 === Protecting Intellectual Property
 There are two options to create a `.sapk` package with protected applications:
 
-1. After packaging, the `.sapk` file using the *SICK Sentio Creator* upload it to the SICK AppPool. During the upload process an option to protect the applications inside of the package is presented.
+1. After packaging, the `.sapk` file using the *SICK App Designer* upload it to the SICK AppPool. During the upload process an option to protect the applications inside of the package is presented.
 +
 [%collapsible]
 .Protection Option

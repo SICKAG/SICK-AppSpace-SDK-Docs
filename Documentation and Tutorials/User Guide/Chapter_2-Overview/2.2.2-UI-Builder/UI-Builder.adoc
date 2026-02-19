@@ -13,7 +13,7 @@ The UI Builder features a drag-and-drop interface, enabling developers to easily
 The UI Builder includes a comprehensive library of pre-built components, such as buttons, sliders, and text fields. Developers can customize these components to fit their application's needs, ensuring a consistent look and feel.
 
 === Extended Documentation
-To access the full documentation of the UI Builder, please refer to the dedicated tutorials: link:https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/tree/SDK-268_Documentation_update/Documentation%20and%20Tutorials/UIBuilder%20Tutorials[UI Builder tutorials].
+To access the full documentation of the UI Builder, please refer to the dedicated tutorials: link:https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/tree/master/Documentation%20and%20Tutorials/UIBuilder%20Tutorials[UI Builder tutorials].
 
 //footer: navigation
 ---

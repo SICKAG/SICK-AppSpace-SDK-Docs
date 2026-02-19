@@ -80,7 +80,7 @@ Possible solution (manual):
 .. Linux: '~/.config/SICK/AppSpace/MaxwellConnect'
 
 | Device list
-| Device list empty after SICK AppSpace SDK update
+| Device list empty after SICK App Designer update
 a| Either populate the device list again or migrate the configuration:
 
 . Identify the current and previous version of the device connectivity services. Respectively the ones with the highest and second highest version.

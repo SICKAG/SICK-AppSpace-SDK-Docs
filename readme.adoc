@@ -1,19 +1,21 @@
-# SICK AppSpace SDK docs
+# SICK App Designer Docs
 
-This repository provides documentation and helpful resources for the SICK AppSpace SDK.
+This repository provides documentation and helpful resources for the SICK App Designer.
 
-SICK AppSpace SDK is an extension pack published on the Visual Studio Code Marketplace. It provides all extensions that are required to develop apps for devices of the SICK AppSpace ecosystem.
+SICK App Designer is an extension pack published on the Visual Studio Code Marketplace. It provides all extensions that are required to develop apps for programmable devices of the SICK ecosystem.
+
+NOTE: Documentation for the predecessor SICK AppSpace SDK can be found https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/tree/archive_sick-appspace-sdk[here]
 
 ## How to give feedback
 
-If you encounter a bug or an issue with the SICK AppSpace development tools for VSCode please https://jira.sick.com/rest/collectors/1.0/template/form/5e947ee6[Report a bug] at our Jira project.
+If you encounter a bug or an issue with the SICK App Designer development tools for VSCode please https://jira.sick.com/rest/collectors/1.0/template/form/5e947ee6[Report a bug] at our Jira project.
 If you're missing features feel free to  https://jira.sick.com/rest/collectors/1.0/template/form/08bd7384[Create a feature request] at our Jira project.
 
 ## Find more information here
 
-https://www.sick.com/de/de/sick-appspace-developers/s/sas-developers[General overview about SICK AppSpace]
+https://www.sick.com/de/de/sick-appspace-developers/s/sas-developers[General overview about SICK Programmable Ecosystem]
 
-https://marketplace.visualstudio.com/items?itemName=sickag.appspace-sdk-extension-pack[SICK AppSpace - SDK in VSCode marketplace]
+https://marketplace.visualstudio.com/items?itemName=sickag.app-designer-extension-pack[SICK App Designer in VSCode marketplace]
 
 
 ## Supported platforms
@@ -23,15 +25,10 @@ Windows x64
 
 ## Quick links
 ### Release Notes
-https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Release%20Notes/SICKAppSpaceSDK1.5.0_Release_Notes.pdf[Latest release notes]
+xref:Release%20Notes/SICKAppDesigner1.0.0_Release_Notes.pdf[Latest release notes]
 
 
-### SICK AppSpace SDK - Getting started
-This tutorial explains how to install the SICK AppSpace SDK for Microsoft Visual Studio Code and how to start developing SensorApps.
+### SICK App Designer - User Guide
+This User guide provides a comprehensive overview of the *SICK App Designer*, its features, and its capabilities. It includes detailed instructions on how to install, configure, and use the tool effectively for developing applications for SICK programmable devices.
 
-https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/tree/master/Documentation%20and%20Tutorials/AppStudio%20VSC%20extensions%20User%20Guide/SICK-AppSpace-SDK-Getting-Started/SICK-AppSpace-SDK-Getting-Started.adoc[Getting started]
-
-### SICK AppSpace SDK - Your first SensorApp
-Take the perspective of Doris Developer and Ulrike User to develop your first SensorApp. The described activity can be done without additional instructions to obtain a hands-on experience with SICK AppSpace, and it can be used as a demo in a training or discussion context.
-
-https://github.com/SICKAG/SICK-AppSpace-SDK-Docs/blob/master/Documentation%20and%20Tutorials/Overview%20of%20SICK%20AppSpace%20eco-system/SICK-AppSpace-SDK-Your-First-SensorApp/SICK-AppSpace-SDK-Your-First-SensorApp.adoc[Your first SensorApp]
+xref:Documentation%20and%20Tutorials/User%20Guide/User-Guide.adoc[Userguide]
