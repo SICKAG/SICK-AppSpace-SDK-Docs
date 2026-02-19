@@ -29,7 +29,7 @@ For further information on how to use the 2D and 3D viewer, please take a look i
 ## Create a Page
 If you want to create a page, you need to create the pages file structure first.
 
-In *SICK AppSpace SDK* the SensorApps are automatically created with all the available components, including pages
+In *SICK App Designer* the SensorApps are automatically created with all the available components, including pages
 
 In case you already have created the file structure and just want to create another page
 
@@ -389,8 +389,6 @@ You are free to add any language by putting .json files with the translations in
 
 Please note, that the core UI (see highlighted basic UI structure in the screenshot below) will not be translated into the newly added language. To add the translation also for this part of the UI, you need to copy a core language file from "_$home/.vscode/extensions/sickag.app-designer-ui-builder-${version}/out/bundle/node_modules/@sick-davinci/sopasjs/resources/i18n
 " and edit it to provide your own translations.
-
-// TODO: Add path for SICK AppSpace SDK once available.
 
 *Core UI (marked yellow):*
 
