@@ -161,10 +161,6 @@ image::media/sample-app-theme.png[]
 
 As shown in the paragraph <<StyleClass>>, you can design elements individually by defining a css class containing the davinci-color settings. You then apply this class to the element you want the theme applied to. The other elements on the page will then not be affected by the color theme.
 
-## List of theming colors
-
-You can find the documentation for predefined colors inside the "uiextensionrepository" directory of the SICK AppStudio installation (C:\Users\<username>\AppData\Local\SICK\AppStudio\<version>\uiextensionrepository\docu).
-
 # Modify the style of the UI frame
 
 If you intend to change the styling of the UI frame, you have the possibility to overwrite the standrad CSS definitions of the framework within the global.css and styles.css files.

@@ -8,10 +8,10 @@
 Bindings are needed to enable the user interface - and thus the user - to interact with different parts of the application (e.g. functions/events of the SensorApp lua script, functions of the device, or the UI itself). This way, the application can e.g. react to a button being pressed. Another example would be displaying a specific value (generated within the lua code of the app) on the UI. +
 The goal of this tutorial is to show you how to use bindings. You will be able to connect UI elements to the functionalities of your application.
 
-The concept and different aspects of bindings are explained in the paragraph "General information". It is followed by explanations on how to generate bindings in the UI-Builder of SICK AppStudio and SICK AppSpace SDK. At the end of the tutorial, you will find specific step-by-step examples. 
+The concept and different aspects of bindings are explained in the paragraph "General information". It is followed by explanations on how to generate bindings in the SICK App Desiger UI Builder. At the end of the tutorial, you will find specific step-by-step examples. 
 
 ## Prerequisites
-* Basic skills in SICK AppStudio or SICK AppSpace SDK, mainly how to serve functions and events and how to create apps. Consider the following tutorials for more information:
+* Basic skills the SICK App Designer, mainly how to serve functions and events and how to create apps. Consider the following tutorials for more information:
 ** "Multiple apps" link:https://supportportal.sick.com/tutorial/multiple-apps/[on the Support Portal]
 ** "App properties" link:https://supportportal.sick.com/tutorial/app-properties-serves/[on the Support Portal]
 //TODO: Link to tutorial which explains how to create apps (application specific UI?)
@@ -271,7 +271,7 @@ In general, the following steps are needed to add a binding. For more detailed i
 [[create_bindings]]
 # Creating bindings in the UI-Builder
 
-To create a binding in the UI-Builder, the app which serves the respective functionality to which you want to bind needs to be activated in SICK AppStudio. In SICK AppSpace SDK, the app that serves the functionality needs to be checked in the "App Model Configuration" subsection of the SICK AppSpace SKD view. If you want to bind the UI to device-specific functionalities, make sure that you are connected to the device.
+To create a binding in the UI-Builder, the app that serves the functionality needs to be checked in the "App Model Configuration" view subsection of the SICK App Designer. If you want to bind the UI to device-specific functionalities, make sure that you are connected to the device.
 
 If you want to see how to serve a function or an event, check out the tutorial "Multiple apps" link:https://supportportal.sick.com/tutorial/multiple-apps/[on the Support Portal].
 //TODO: Add links to github once available
@@ -382,8 +382,6 @@ end
 Script.serveFunction("BindingExamples.randomizeValues", randomizeValues)
 ----
 
-The event's parameters are named v1 and v2 as shown under "Serves" in the App properties tab in SICK AppStudio.
-
 image::media/multiple-binding-crown.png[]
 
 And in the manifest itself:
@@ -424,7 +422,7 @@ Script.serveFunction("BindingExamples.getValues", getValues)
 
 In this example, a simple interactive UI is created. The user will be able to type in their name and will be greeted accordingly.
 
-Start by downloading the link:https://gitlab.com/sick-appspace/samples/Bindings[prepared Bindings app] and open it in SICK AppStudio or SICK AppSpace SDK. As you can see, the app consists of an html page and a lua script. When you download the app onto your device the interactive elements won't do anything.
+Start by downloading the link:https://gitlab.com/sick-appspace/samples/Bindings[prepared Bindings app] and open it in the SICK App Designer. As you can see, the app consists of an html page and a lua script. When you download the app onto your device the interactive elements won't do anything.
 
 image::media/firstSteps_0.png[]
 image::media/firstSteps_0_devicePage.png[]
@@ -573,82 +571,3 @@ Start the emulator and open the UI page provided by the app. As you can see, the
 image::media/option1.png[]
 image::media/option2.png[]
 image::media/option3.png[]
-
-// should be changed to msgpack, but use case may not be important...
-// ## Advanced: Bindings to multi-return CROWN functions 
-// When dealing with larger amounts of data, you typically do not want to create a function for each item. For example, when creating a table, you might want a function to return the values for a particular row, or for a 3D coordinate, you do not want to create a function for x, y, and z separately. The solution: multi-return CROWN functions, which can be bound to, but aren't displayed in the "Create binding" dialog.
-
-// The following examples show different approaches on how you would bind the x, y, and z components of a 3D coordinate to one numeric field each.
-
-// ### Using one-value-return CROWN functions
-// The first approach which might come to your mind is to define three CROWN functions:
-
-// [source, lua]
-// ----
-// --@getX():float
-// local function getX()
-//   return x
-// end
-// Script.serveFunction("MyApp.getX", getX)
- 
-// --@getY():float
-// local function getY()
-//   return y
-// end
-// Script.serveFunction("MyApp.getY", getY)
- 
-// --@getZ():float
-// local function getZ()
-//   return z
-// end
-// Script.serveFunction("MyApp.getZ", getZ)
-// ----
-
-// This results in the following html-code for your page (assuming that the return value name is "value" for each function):
-
-// [source, html]
-// ----
-// <davinci-numeric-field id="NumericField1" type="outline" max="+Infinity" ticks="1" group-separator="," decimal-separator="." format-pattern="0">
-//   <crown-binding property="value" name="MyApp/getX" path="result/data/value" auto-update="1000" update-on-resume></crown-binding>
-// </davinci-numeric-field>
-// <davinci-numeric-field id="NumericField2" type="outline" max="+Infinity" ticks="1" group-separator="," decimal-separator="." format-pattern="0">
-//   <crown-binding property="value" name="MyApp/getY" path="result/data/value" auto-update="1000" update-on-resume></crown-binding>
-// </davinci-numeric-field>
-// <davinci-numeric-field id="NumericField3" type="outline" max="+Infinity" ticks="1" group-separator="," decimal-separator="." format-pattern="0">
-//   <crown-binding property="value" name="MyApp/getZ" path="result/data/value" auto-update="1000" update-on-resume></crown-binding>
-// </davinci-numeric-field>
-// ----
-
-// ### Using multi-return CROWN functions and the path property (advanced!)
-// Defining a function for each value can get quite tedious. Luckily, you can again use the path property (or a converter) in order to access each return value of a multi-return function. Start by defining a function as shown below:
-
-// [source, lua]
-// ----
-// --@getXYZ():float,float,float
-// local function getXYZ()
-//   return x, y, z
-// end
-// Script.serveFunction("MyApp.getXYZ", getXYZ)
-// ----
-
-// This results in the following html-code for your page:
-
-// [source, html]
-// ----
-// <davinci-numeric-field id="NumericField1" type="outline" max="+Infinity" ticks="1" group-separator="," decimal-separator="." format-pattern="0">
-//   <crown-binding property="value" name="MyApp/getXYZ" path="result/data/x" auto-update="1000" update-on-resume></crown-binding>
-// </davinci-numeric-field>
-// <davinci-numeric-field id="NumericField2" type="outline" max="+Infinity" ticks="1" group-separator="," decimal-separator="." format-pattern="0">
-//   <crown-binding property="value" name="MyApp/getXYZ" path="result/data/y" auto-update="1000" update-on-resume></crown-binding>
-// </davinci-numeric-field>
-// <davinci-numeric-field id="NumericField3" type="outline" max="+Infinity" ticks="1" group-separator="," decimal-separator="." format-pattern="0">
-//   <crown-binding property="value" name="MyApp/getXYZ" path="result/data/z" auto-update="1000" update-on-resume></crown-binding>
-// </davinci-numeric-field>
-// ----
-
-// Note how each binding addresses a different return value while all bindings use the same function.
-
-// Technical background:
-// Bindings return a .json string (a format to store information in a hierarchical way) to hand over the information and SICK AppStudio uses the "path" property to extract the data from it. For "Function (Crown)" bindings, the path to the data always has the prefix "result/data".
-
-// Since the lua function "getXYZ" returns three values, the path "result/data" would lead to extracting all three of them. By suffixing "/x", "/y" or "/z", the desired value is specified and the correct data can be extracted.

@@ -26,9 +26,8 @@ The SICK UI-Builder provides an initial set of UI elements that cover the major 
 ** Basic elements (see description below)
 ** Html elements (standard html controls like <h1> or <img>)
 ** Visualization elements (2D and 3D viewers)
-** Wrapper elements (used to wrap legacy packages of former SICK AppStudio versions, i.e. below 3.0.0; only shown in the "Elements" tab if added manually)
 ** Auxiliary elements (reserved for future usage and advanced applications)
-** Legacy packages (Legacy packages that were used in former SICK AppStudio versions)
+
 
 image::media/as.png[]
 
@@ -236,9 +235,3 @@ Standard HTML elements are also supported to be used in the UI. They must be add
 The UI element library contains several viewers that can be used to visualize 2D and 3D data such as images or point clouds. Details can be found in the tutorial 
 "Visualization and Graphical Interaction" link:https://supportportal.sick.com/tutorial/visualization-graphical-interaction/[on the Support Portal].
 //TODO: Add link to github once available.
-
-# Controls: Legacy Elements
-
-If you need to use controls of legacy packages which have been released for SICK AppStudio version <=2.4.2, you can use the Legacy section. Legacy packages (.package files) can be added to the elements library with the "+" button. Note that legacy controls are wrapped with SJSWrapper elements. This means that all properties and attributes of the control can only be changed by editing the JSON string in the options property field. The Legacy Elements group is only visible after adding the first legacy package.
-
-image::media/legacyelements.png[]

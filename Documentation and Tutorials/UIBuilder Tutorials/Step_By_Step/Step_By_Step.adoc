@@ -16,9 +16,7 @@ Additional information and explanations can be found in the following tutorials:
 The provided app "TrainingApp1" receives images of barcodes, decodes them and returns their content. It includes functions to set the cycle time in which new images are received or to take snapshots immediately.
 
 ## Prerequisites
-* Basic skills in using *SICK AppStudio* or *SICK AppSpace SDK*, mainly how to connect to a device or emulator, deploy "SensorApps" onto it and open the device page. Consider the tutorials "AppStudio introduction" link:https://supportportal.sick.com/tutorial/appstudio-introduction/[on the Support portal] or "AppStudio essentials" link:https://supportportal.sick.com/tutorial/appstudio-essentials/[on the Support Portal] for more information.
-// TODO: add links to github once available
-//TODO: SICK AppStudio essentials is missing the opportunity to open the device page in the browser yet.
+* Basic skills in using *SICK App Designer*, mainly how to connect to a device or emulator, deploy "SensorApps" onto it and open the device page. 
 
 # Goal:
 Create a UI which will show the received images, show their content and bind to the other functions to make them easily accessible for the user.
@@ -32,10 +30,9 @@ image::media/pageviewallcontrols.png[pageviewallcontrols]
 . Download the training app from 
 https://supportportal.sick.com/file/0483c6f0-0989-4ee0-9562-19e40f3f06ed/[supportportal]
 // TODO: add links to github once available
-. Open the IDE (SICK AppStudio or SICK AppSpace SDK), start the *SICK AppEngine* and connect to it.
+. Open the IDE SICK App Designer, start the *SICK AppEngine* and connect to it.
 . Import the downloaded SensorApp
-** In *SICK AppStudio* there are three possibilities to do this: use drag & drop, click "App" → "Import" or right click into some empty space in your working directory and choose "Import App"
-** In *SICK AppSpace SDK*: extract the zip file in the selected workspace
+** In *SICK App Designer*: extract the zip file in the selected workspace
 . If you are interested in the code itself, you can open the source code in "scripts/App1.lua"
 
 # Creating the UI step by step
@@ -44,20 +41,7 @@ https://supportportal.sick.com/file/0483c6f0-0989-4ee0-9562-19e40f3f06ed/[suppor
 
 To add a new page component to the SensorApp:
 
-* In *SICK AppStudio*:
-. Right-click on the app → "Create component" → "pages"
-+
-image::media/newpagecomponent.png[newpagecomponent]
-
-. A dialog will appear where you can enter a name for the new page. Name the page "TrainingUI" and press OK
-+
-image::media/newpagename.png[newpagename]
-
-. The UI-Builder will open automatically
-+
-image::media/uibuilder2.png[uibuilder]
-
-* In *SICK AppSpace SDK* there is no way of automatically adding the components to existing SensorApps as of yet. For now please follow the steps described below:
+* In *SICK App Designer* there is no way of automatically adding the components to existing SensorApps as of yet. For now please follow the steps described below:
 . Download the zipped pages component
 // TODO: Add link to the component
 . Unzip the package in the SensorApp, so the "pages" directory is in the same level as "scripts" and "project.mf.xml"

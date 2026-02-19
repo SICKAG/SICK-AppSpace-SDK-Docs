@@ -9,7 +9,7 @@ This tutorial will provide an insight into css flexbox and how to use it within 
 Flexbox is a CSS module which makes it easier to build flexible, responsive layouts.
 
 The basis for the layout of the elements used in the UI-Builder is the differentiation of flex containers and items. All elements act as containers and / or items. Flexbox differentiates between two directions / axes. +
-Note: while you would define the axes manually in standard CSS Flexbox, the directions of axes are predefined for the elements in the SICK AppStudio UI-Builder.
+Note: while you would define the axes manually in standard CSS Flexbox, the directions of axes are predefined for the elements in the SICK App Designer UI-Builder.
 
 In short:
 
@@ -174,7 +174,7 @@ Within the camera settings column, collapse elements are used to group the brigh
 
 image::media/viewer_settingscolumn_structure_example.png[viewer-with-settings-structure-view]
 
-To directly import this example into SICK AppStudio, you can either copy the following html-code into the code view of the UI-Builder or download the app which is linked further down in this tutorial:
+To directly import this example into SICK App Designer, you can either copy the following html-code into the code view of the UI-Builder or download the app which is linked further down in this tutorial:
 
 [source, html]
 ----
@@ -281,7 +281,7 @@ The source code of this example can be found here:
 https://gitlab.com/sick-appspace/samples/UILayouts/blob/master/UILayouts/pages/pages/CameraSetup/CameraSetup.html +
 
 
-You can also download the whole sample and import it into SICK AppStudio:
+You can also download the whole sample and import it into SICK App Designer:
 
 https://gitlab.com/sick-appspace/samples/UILayouts
 

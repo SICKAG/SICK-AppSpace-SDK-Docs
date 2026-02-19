@@ -12,7 +12,7 @@ The paragraph "General information" documents the used API. It is followed by tw
 *Pre-requisites:* +
 Knowledge:
 
-* Basic skills in SICK AppStudio or SICK AppSpace SDK (e.g. how to serve functions) 
+* Basic skills in SICK App Designer (e.g. how to serve functions) 
 * Basic programming skills (scripting)
 
 Software:
@@ -20,7 +20,7 @@ Software:
 * npm installed and configured (https://www.npmjs.com/get-npm)
 
 # General information
-To use an existing WebComponent in the UI-Builder, you first need to install it into the node_modules folder of the UI-Builder. For SICK AppStudio  the location is "%LOCALAPPDATA%\SICK\AppStudio\<AppStudio-Version>\uiextensionrepository" and for SICK AppSpace SDK: "%USERPROFILE%\.vscode\extensions\sickag.appspace-ui-builder-<version number>\out\bundle\uiextensionrepository"
+To use an existing WebComponent in the UI-Builder, you first need to install it into the node_modules folder of the UI-Builder: "%USERPROFILE%\.vscode\extensions\sickag.appspace-ui-builder-<version number>\out\bundle\uiextensionrepository"
 
 There are two files from which the UI-Builder gets all the information needed to integrate the WebComponent with all its possibilities:
 

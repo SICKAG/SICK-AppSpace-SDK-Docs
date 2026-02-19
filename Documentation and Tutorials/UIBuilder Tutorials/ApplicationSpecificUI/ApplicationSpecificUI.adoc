@@ -14,10 +14,6 @@ You can connect to a SICK AppSpace programmable device or the SICK AppEngine via
 
 image::media/default.png[]
 
-In *SICK AppStudio*: alternatively, you can use the "DevicePage" tab to view the UI of the currently connected device.
-
-image::media/default2.png[]
-
 Depending on the device, different pages are shown (e.g. screenshot above: INFO, 2D VIEWER, 3D VIEWER, DIAGNOSIS, ...). The shown viewers (2D / 3D) can be accessed within the app code by creating a view handle without ID:
 
 ----
@@ -32,31 +28,12 @@ For further information on how to use the 2D and 3D viewer, please take a look i
  
 ## Create a Page
 If you want to create a page, you need to create the pages file structure first.
-For this you have the following options.
 
-* In *SICK AppStudio*: 
-** Select "Pages" when creating an application, then right click the "pages" folder of the app and select "New UI files".
-+
-image::media/newpage.png[]
-
-** If you created an application without a "pages" folder just right click onto the application and select "Create component" -> "pages".
-+
-image::media/createpages.png[]
-
-* In *SICK AppSpace SDK*:
-** The SensorApps are automatically created with all the available components, including pages
+In *SICK AppSpace SDK* the SensorApps are automatically created with all the available components, including pages
 
 In case you already have created the file structure and just want to create another page
 
-* in *SICK AppStudio*: right click the "page" folder (e.g. pages/pages/pages01) and select "New page"
-+
-image::media/newpage1.png[]
-+
-A dialog will appear asking for a name for the newly created page:
-+
-image::media/newpagedialog.png[]
-
-* in *SICK AppSpace SDK*: right click the "page" folder, select "New file" and define the file extension as ".html":
+Right click the "page" folder, select "New file" and define the file extension as ".html":
 
 image::media/newpage2.png[]
 
@@ -85,10 +62,6 @@ image::media/pagesfilestructure.png[]
 ## Open the UI-Builder
 To open the UI-Builder, simply double click on the html file you want to edit.
 Please make sure that the html file is located somewhere in pages/pages, otherwise you will not be able to use the UI-Builder.
-
-In *SICK AppStudio*: You can maximize/restore the UI-Builder by double clicking the tab of the UI-Builder, by pressing F4, or by using the respective button in the upper right corner of SICK AppStudio.
-
-image::media/maxrestore.png[]
 
 # UI-Builder Overview
 
@@ -414,7 +387,8 @@ The predefined languages (including extension codes) are:
 
 You are free to add any language by putting .json files with the translations into the "i18n" directory using the file name "<two letter extension code>.json". The two letter convention should follow https://www.iso.org/iso-639-language-codes.html[ISO 639-1] standard. Example: "pl.json" for Polish. The name of the language will be displayed as "#core.settings.<extension code>". 
 
-Please note, that the core UI (see highlighted basic UI structure in the screenshot below) will not be translated into the newly added language. To add the translation also for this part of the UI, you need to copy a core language file from "_<AppStudio installation dir>_/UIBuilderService/node_modules/@sick-davinci/sopasjs/resources/i18n/" and edit it to provide your own translations.
+Please note, that the core UI (see highlighted basic UI structure in the screenshot below) will not be translated into the newly added language. To add the translation also for this part of the UI, you need to copy a core language file from "_$home/.vscode/extensions/sickag.app-designer-ui-builder-${version}/out/bundle/node_modules/@sick-davinci/sopasjs/resources/i18n
+" and edit it to provide your own translations.
 
 // TODO: Add path for SICK AppSpace SDK once available.
 
@@ -435,39 +409,10 @@ In the next step, you need to save the edited core language file either in the d
 image::media/uilanguage_addLanguageReference.png[]
 
 *Note:*
-By saving the edited core language file in the *SICK AppStudio* directory as mentioned above, this setting will be automatically available as long as you are using the same *SICK AppStudio* installation. Any changes to the core files will show only after restarting *SICK AppStudio*. Using an unmodified *SICK AppStudio* to edit and deploy an app, which has been developed with such a modified version of *SICK AppStudio*, will lead to errors and an incomplete translation.
+By saving the edited core language file in the directory as mentioned above, this setting will be automatically available as long as you are using the same extension version. Any changes to the core files will show only after restarting the *SICK App Designer*. Using an unmodified *SICK App Designer* to edit and deploy an app, which has been developed with such a modified version of *SICK App Designer*, will lead to errors and an incomplete translation.
 
 
 ## UI Deployment
 
 The UI you created needs to be converted to a runnable package that can be deployed on the device. 
 Therefore, it has to be packaged together with the _SopasAIR_ framework. This packaging process is performed by the UI-Builder when building an SAPK file or when transferring the app onto the device.
-
-*SICK AppStudio* will inform you about the current status of the UI packaging progress in the deploy dialog as shown below.
-
-image::media/uibuildprogress.png[]
-
-*Note:*
-The UI-Builder will incrementally build the UI in the background to speed up the deployment when transferring the app to the device.
-
-*SICK AppStudio* tracks the build process of the UI. If there is no update within a specified time, the following dialog will pop up:
-
-image::media/uideploynotresponding.png[]
-
-If you ever encounter this dialog, those are your options:
-
-* *Continue*: This option will close the dialog and reset the timeout for the UI deployment.
-* *Cancel deployment*: Choosing this option will cancel the deployment process. Please keep in mind that Apps which are already transferred to the device will stay there.
-* *Restart UI build*: SICK AppStudio will restart the build process of the UI and continue the deployment.
-
-In case this dialog appears too often, you can increase the UI deployment timeout in the SICK AppStudio preferences:
-
-image::media/uibuildersettings.png[]
-
-You can manually restart the UI build at any time using the "Build" -> "Clean" command, this will also mark the App as "not in sync" to force a new full deployment:
-
-image::media/cleanmenu.png[]
-
-Select the projects to clean or clean all projects:
-
-image::media/cleandialog.png[]
