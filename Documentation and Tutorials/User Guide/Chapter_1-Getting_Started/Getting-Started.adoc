@@ -35,7 +35,7 @@ Ubuntu 22.04 x86_64
 ** It is used for managing and installing SAPK packages on programmable devices
 ** Can also be used to upgrade firmware of the connected device and make a backup of the apps as well as configuration of the device
 
-* *SICK AppSpace device*, e.g. InspectorP or SIM2000:
+* *SICK programmable device*, e.g. InspectorP or SIM2000:
 ** For device-specific "first steps" tutorial information, please refer to corresponding tutorial articles in the support portal. "First steps" information also contains recommendations on basic equipment and accessories for hardware setup.
 
 == VSCode
